@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Denmark",
+    "ISOAlpha2": "DK",
+    "continent": "Europe",
+    "isDefinedByUN": true,
+    "existsToday": true
+  },
+  {
+    "name": "Finland",
+    "ISOAlpha2": "FI",
+    "continent": "Europe",
+    "isDefinedByUN": true,
+    "existsToday": true
+  },
+  {
+    "name": "Iceland",
+    "ISOAlpha2": "IS",
+    "continent": "Europe",
+    "isDefinedByUN": true,
+    "existsToday": true
+  },
+  {
+    "name": "Norway",
+    "ISOAlpha2": "NO",
+    "continent": "Europe",
+    "isDefinedByUN": true,
+    "existsToday": true
+  },
+  {
+    "name": "Sweden",
+    "ISOAlpha2": "SE",
+    "continent": "Europe",
+    "isDefinedByUN": true,
+    "existsToday": true
+  }
+]
