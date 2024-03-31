@@ -9,7 +9,7 @@ class CountryServiceImpl(
 ): CountryService  {
 
     private var countries: List<Country>? = readJSONFromAssets.createAndReturnCountryObjects()
-    private val fourRandomCountriesInSet = mutableSetOf<Country>()
+//    private val fourRandomCountriesInSet = mutableSetOf<Country>()
     private var fourRandomAndUniqueCountries = mutableListOf<Country>()
 
     init {
@@ -31,6 +31,7 @@ class CountryServiceImpl(
     }
 
     override fun getFourRandomAndUniqueCountries(): List<Country> {
+        val fourRandomCountriesInSet = mutableSetOf<Country>()
         while (fourRandomCountriesInSet.size < 4) {
             getOneRandomCountry()?.let { fourRandomCountriesInSet.add(it) }
         }

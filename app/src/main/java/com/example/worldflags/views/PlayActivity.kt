@@ -16,8 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
@@ -46,14 +45,20 @@ class PlayActivity : ComponentActivity() {
 
 @Composable
 fun TopLevel(viewModel: PlayActivityViewModel) {
-    val fourCountryNamesToDisplay = viewModel.getFourCountryNames()
-    val correctCountry = viewModel.correctCountry.value
+    val fourCountryNamesToDisplay = viewModel.fourRandomAndUniqueCountryNames.observeAsState().value
+    val correctCountry = viewModel.correctCountry.observeAsState().value
 
-    PlayScreen(fourCountriesToDisplay = fourCountryNamesToDisplay, correctCountry = correctCountry)
+    if (fourCountryNamesToDisplay != null) {
+        PlayScreen(fourCountryNamesToDisplay,correctCountry) { isCorrectClicked ->
+            if (isCorrectClicked) {
+                viewModel.onCorrectAnswerSelected()
+            }
+        }
+    }
 }
 
 @Composable
-fun PlayScreen(fourCountriesToDisplay: List<String?>, correctCountry: String?) {
+fun PlayScreen(fourCountriesToDisplay: List<String?>, correctCountry: String?, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -62,12 +67,12 @@ fun PlayScreen(fourCountriesToDisplay: List<String?>, correctCountry: String?) {
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        DisplayOptionButtons(fourCountriesToDisplay, correctCountry)
+        DisplayOptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }
 }
 
 @Composable
-private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctCountry: String?) {
+private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctCountry: String?, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .padding(100.dp),
@@ -90,7 +95,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctC
                 .padding(10.dp)
         ) {
             Button(
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[0], correctCountry) },
+                onClick = { onCountryButtonClick(fourCountriesToDisplay[0], correctCountry, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
@@ -100,7 +105,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctC
                 Text(text = fourCountriesToDisplay[0] ?: "Null 1")
             }
             Button(
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[1], correctCountry) },
+                onClick = { onCountryButtonClick(fourCountriesToDisplay[1], correctCountry, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
@@ -116,7 +121,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctC
                 .padding(10.dp)
         ) {
             Button(
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[2], correctCountry) },
+                onClick = { onCountryButtonClick(fourCountriesToDisplay[2], correctCountry, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
@@ -126,7 +131,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctC
                 Text(text = fourCountriesToDisplay[2] ?: "Null 3")
             }
             Button(
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[3], correctCountry) },
+                onClick = { onCountryButtonClick(fourCountriesToDisplay[3], correctCountry, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
@@ -139,12 +144,13 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<String?>, correctC
     }
 }
 
-fun onCountryButtonClick(buttonLabelCountry: String?, correctCountry: String?) {
+fun onCountryButtonClick(buttonLabelCountry: String?, correctCountry: String?, isCorrectClicked: (Boolean) -> Unit) {
     if (buttonLabelCountry.equals(correctCountry)) {
         println("ALFF correct!")
-
+        isCorrectClicked(true)
     } else {
         println("ALFF wrong!")
+        isCorrectClicked(false)
     }
 }
 
@@ -153,5 +159,9 @@ fun onCountryButtonClick(buttonLabelCountry: String?, correctCountry: String?) {
 private fun PreviewPlayScreen() {
     val fourCountries = listOf("Denmark", "Sweden", "Finland", "Norway")
     val correctCountry = "Sweden"
-    PlayScreen(fourCountries, correctCountry)
+    val isCorrectClicked: (Boolean) -> Unit = { isCorrect ->
+        println("Correct click: $isCorrect")
+    }
+
+    PlayScreen(fourCountries, correctCountry, isCorrectClicked)
 }
