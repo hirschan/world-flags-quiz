@@ -3,35 +3,45 @@
     "name": "Denmark",
     "ISOAlpha2": "DK",
     "continent": "Europe",
+    "capital": "Copenhagen",
     "isDefinedByUN": true,
-    "existsToday": true
+    "existsToday": true,
+    "emojiFlag": "\uD83C\uDDE9\uD83C\uDDF0"
   },
   {
     "name": "Finland",
     "ISOAlpha2": "FI",
     "continent": "Europe",
+    "capital": "Helsinki",
     "isDefinedByUN": true,
-    "existsToday": true
+    "existsToday": true,
+    "emojiFlag": "\uD83C\uDDEB\uD83C\uDDEE"
   },
   {
     "name": "Iceland",
     "ISOAlpha2": "IS",
     "continent": "Europe",
+    "capital": "Reykjavik",
     "isDefinedByUN": true,
-    "existsToday": true
+    "existsToday": true,
+    "emojiFlag": "\uD83C\uDDEE\uD83C\uDDF8"
   },
   {
     "name": "Norway",
     "ISOAlpha2": "NO",
     "continent": "Europe",
+    "capital": "Oslo",
     "isDefinedByUN": true,
-    "existsToday": true
+    "existsToday": true,
+    "emojiFlag": "\uD83C\uDDF3\uD83C\uDDF4"
   },
   {
     "name": "Sweden",
     "ISOAlpha2": "SE",
     "continent": "Europe",
+    "capital": "Stockholm",
     "isDefinedByUN": true,
-    "existsToday": true
+    "existsToday": true,
+    "emojiFlag": "\uD83C\uDDF8\uD83C\uDDEA"
   }
 ]

@@ -63,7 +63,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourCountryNamesToDisplay != null) {
-        PlayScreen(fourCountryNamesToDisplay,correctCountry) { isCorrectClicked ->
+        PlayScreen(fourCountryNamesToDisplay, correctCountry) { isCorrectClicked ->
             if (isCorrectClicked) {
                 if (correctCountry != null) {
                     viewModel.onCorrectAnswerSelected(correctCountry)
@@ -95,7 +95,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<Country?>, correct
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = correctCountry?.name ?: "Null", color = colorResource(R.color.custom_white), fontSize = 32.sp)
+        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 64.sp)
     }
 
     Column(

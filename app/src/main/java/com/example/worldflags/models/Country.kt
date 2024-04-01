@@ -6,6 +6,8 @@ data class Country(
     val name: String,
     val ISOAlpha2: String,
     val continent: String,
+    val capital: String,
     val isDefinedByUN: Boolean,
-    val existsToday: Boolean, //TODO: Add capital city, image URL
+    val existsToday: Boolean,
+    val emojiFlag: String,
 )
