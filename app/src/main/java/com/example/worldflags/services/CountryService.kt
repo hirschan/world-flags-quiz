@@ -9,8 +9,14 @@ interface CountryService {
 
     fun getAllCountries(): List<Country>?
 
-    fun getOneRandomCountry(): Country?
+    fun getTotalNumberOfAllCountries(): Int
+
+    fun getOneRandomCountryFromList(countryList: List<Country>?): Country?
+
+    fun getOneRandomCountryNotFromBlacklist(): Country?
 
     fun getFourRandomAndUniqueCountries(): List<Country>?
+
+    fun addCountryToBlacklist(correctCountry: Country)
 
 }

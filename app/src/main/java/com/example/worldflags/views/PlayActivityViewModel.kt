@@ -3,6 +3,7 @@ package com.example.worldflags.views
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.worldflags.models.Country
 import com.example.worldflags.services.CountryServiceImpl
 import kotlin.random.Random
 
@@ -13,11 +14,11 @@ class PlayActivityViewModel(
     val countryService: CountryServiceImpl,
 ): ViewModel() {
 
-    private val _fourRandomAndUniqueCountryNames = MutableLiveData<List<String>>()
-    val fourRandomAndUniqueCountryNames: LiveData<List<String>> = _fourRandomAndUniqueCountryNames
+    private val _fourRandomAndUniqueCountryNames = MutableLiveData<List<Country>>()
+    val fourRandomAndUniqueCountryNames: LiveData<List<Country>> = _fourRandomAndUniqueCountryNames
 
-    private val _correctCountry = MutableLiveData<String>()
-    val correctCountry: MutableLiveData<String> = _correctCountry
+    private val _correctCountry = MutableLiveData<Country>()
+    val correctCountry: MutableLiveData<Country> = _correctCountry
 
     init {
         println("ALF PlayActivityViewModel initialized.")
@@ -28,10 +29,10 @@ class PlayActivityViewModel(
     private fun generateFourNewCountryNames() {
         _fourRandomAndUniqueCountryNames.value = emptyList()
 
-        val tempFourRandomAndUniqueCountryNames = mutableListOf<String>()
+        val tempFourRandomAndUniqueCountryNames = mutableListOf<Country>()
         val fourRandomAndUniqueCountries = countryService.getFourRandomAndUniqueCountries()
         for (countryName in fourRandomAndUniqueCountries) {
-            tempFourRandomAndUniqueCountryNames.add(countryName.name)
+            tempFourRandomAndUniqueCountryNames.add(countryName)
         }
         _fourRandomAndUniqueCountryNames.value = tempFourRandomAndUniqueCountryNames
     }
@@ -41,11 +42,13 @@ class PlayActivityViewModel(
         _correctCountry.value = _fourRandomAndUniqueCountryNames.value?.get(randomIndex)
     }
 
-    fun getCorrectCountry(): String {
-        return _correctCountry.value ?: "Null"
+    fun getCorrectCountry(): Country? {
+        return _correctCountry.value
     }
 
-    fun onCorrectAnswerSelected() {
+    fun onCorrectAnswerSelected(correctCountry: Country) {
+        countryService.addCountryToBlacklist(correctCountry)
+
         generateFourNewCountryNames()
         setNewCorrectCountry()
     }
