@@ -13,8 +13,6 @@ interface CountryService {
 
     fun getOneRandomCountryFromList(countryList: List<Country>?): Country?
 
-    fun getOneRandomCountryNotFromBlacklist(): Country?
-
     fun getFourRandomNoDuplicateCountries(): List<Country>?
 
     fun setCorrectCountry(): Country

@@ -14,7 +14,6 @@ class CountryServiceImpl(
 
     private var _blacklistedCountries = mutableListOf<Country>()
     val blacklistedCountries: MutableList<Country> = _blacklistedCountries
-    private var _countriesLeftToGuess = mutableListOf<Country>()
 
     init {
         println("ALF CountryServiceImpl initialized.")
@@ -36,12 +35,6 @@ class CountryServiceImpl(
             val randomIndex = Random.nextInt(0, temporaryCountriesList?.size ?: 0)
             temporaryCountriesList?.get(randomIndex)
         }
-    }
-
-    override fun getOneRandomCountryNotFromBlacklist(): Country? {
-        _countriesLeftToGuess = _countries?.filter { ! _blacklistedCountries.contains(it) }?.toMutableList() ?: mutableListOf()
-        val correctCountry = getOneRandomCountryFromList(_countriesLeftToGuess)
-        return correctCountry
     }
 
     override fun getFourRandomNoDuplicateCountries(): List<Country> {

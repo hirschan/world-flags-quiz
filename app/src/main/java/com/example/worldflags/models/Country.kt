@@ -7,5 +7,5 @@ data class Country(
     val ISOAlpha2: String,
     val continent: String,
     val isDefinedByUN: Boolean,
-    val existsToday: Boolean, // Add capital city?
+    val existsToday: Boolean, //TODO: Add capital city, image URL
 )

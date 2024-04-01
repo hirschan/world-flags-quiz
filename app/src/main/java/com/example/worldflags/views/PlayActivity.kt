@@ -1,5 +1,6 @@
 package com.example.worldflags.views
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,9 +17,11 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,8 +49,18 @@ class PlayActivity : ComponentActivity() {
 
 @Composable
 fun TopLevel(viewModel: PlayActivityViewModel) {
+    val context = LocalContext.current
+
     val fourCountryNamesToDisplay = viewModel.fourRandomAndUniqueCountryNames.observeAsState().value
     val correctCountry = viewModel.correctCountry.observeAsState().value
+    val isComplete = viewModel.isComplete.observeAsState().value
+
+    // Trigger side-effect when isComplete changes to true
+    LaunchedEffect(isComplete) {
+        if (isComplete == true) {
+            context.startActivity(Intent(context, MainActivity::class.java))
+        }
+    }
 
     if (fourCountryNamesToDisplay != null) {
         PlayScreen(fourCountryNamesToDisplay,correctCountry) { isCorrectClicked ->
@@ -162,5 +175,5 @@ private fun PreviewPlayScreen() {
     val correctCountry = "Sweden"
     val isCorrectClicked: (Boolean) -> Unit = {}
 
-//    PlayScreen(fourCountries, correctCountry, isCorrectClicked)
+//    PlayScreen(fourCountries, correctCountry, isCorrectClicked) // TODO: refactor function PlayScreen()
 }

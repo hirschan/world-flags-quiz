@@ -20,6 +20,9 @@ class PlayActivityViewModel(
     private val _correctCountry = MutableLiveData<Country>()
     val correctCountry: MutableLiveData<Country> = _correctCountry
 
+    private val _isComplete = MutableLiveData<Boolean>(false)
+    val isComplete: MutableLiveData<Boolean> = _isComplete
+
     init {
         println("ALF PlayActivityViewModel initialized.")
         generateFourNewCountryNames()
@@ -38,11 +41,17 @@ class PlayActivityViewModel(
         countryService.addCountryToBlacklist(correctCountry)
 
         if (countryService.blacklistedCountries.size == countryService.getTotalNumberOfAllCountries()) {
+            _isComplete.value = true
             println("ALFF return to main page")
         }
 
         generateFourNewCountryNames()
         setNewCorrectCountry()
+    }
+
+    override fun onCleared() {
+        // Perform cleanup tasks here
+        super.onCleared()
     }
 
 }

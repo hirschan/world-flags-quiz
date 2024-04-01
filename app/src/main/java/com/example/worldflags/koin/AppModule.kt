@@ -12,9 +12,9 @@ val appModule = module {
 
     single { ReadJSONFromAssets(androidContext()) }
 
-    single { CountryServiceImpl(readJSONFromAssets = get()) }
+    factory { CountryServiceImpl(readJSONFromAssets = get()) } // TODO: investigate Service as Factory
 
-    single { PlayActivityViewModel(countryService = get()) } // TODO: investigate Singleton for VM, bet practices?
+    factory { PlayActivityViewModel(countryService = get()) }
 
     single { MainActivityViewModel() }
 }
