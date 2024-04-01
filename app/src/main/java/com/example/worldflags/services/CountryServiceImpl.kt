@@ -37,6 +37,12 @@ class CountryServiceImpl(
         }
     }
 
+    private fun getRandomWhitelistCountry(): Country? {
+        val whitelistOfCountries = _countries?.minus(_blacklistedCountries)
+        val randomWhitelistedCountry = whitelistOfCountries?.random()
+        return randomWhitelistedCountry
+    }
+
     override fun getFourRandomNoDuplicateCountries(): List<Country> {
         _fourRandomNoDuplicateCountries = emptyList<Country>().toMutableList()
 

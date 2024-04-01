@@ -51,13 +51,13 @@ class PlayActivity : ComponentActivity() {
 fun TopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
-    val fourCountryNamesToDisplay = viewModel.fourRandomAndUniqueCountryNames.observeAsState().value
+    val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateCountries.observeAsState().value
     val correctCountry = viewModel.correctCountry.observeAsState().value
-    val isComplete = viewModel.isComplete.observeAsState().value
+    val isGameComplete = viewModel.isComplete.observeAsState().value
 
     // Trigger side-effect when isComplete changes to true
-    LaunchedEffect(isComplete) {
-        if (isComplete == true) {
+    LaunchedEffect(isGameComplete) {
+        if (isGameComplete == true) {
             context.startActivity(Intent(context, MainActivity::class.java))
         }
     }
