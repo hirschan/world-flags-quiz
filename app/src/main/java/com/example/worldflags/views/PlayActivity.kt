@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.models.Country
+import com.example.worldflags.utils.MockData
 import org.koin.android.ext.android.get
 
 /** UI for play screen. */
@@ -95,7 +96,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<Country?>, correct
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 72.sp)
+        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 100.sp)
     }
 
     Column(
@@ -171,9 +172,12 @@ fun onCountryButtonClick(buttonLabelCountry: String?, correctCountry: String?, i
 @Preview(showBackground = true)
 @Composable
 private fun PreviewPlayScreen() {
-    val fourCountries = listOf("Denmark", "Sweden", "Finland", "Norway")
-    val correctCountry = "Sweden"
+
+    val mockData = MockData()
+
+    val fourCountries = listOf(mockData.mockCountry, mockData.mockCountry, mockData.mockCountry, mockData.mockCountry)
+    val correctCountry = mockData.mockCountry
     val isCorrectClicked: (Boolean) -> Unit = {}
 
-//    PlayScreen(fourCountries, correctCountry, isCorrectClicked) // TODO: refactor function PlayScreen()
+    PlayScreen(fourCountries, correctCountry, isCorrectClicked)
 }

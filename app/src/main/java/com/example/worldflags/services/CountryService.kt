@@ -11,9 +11,9 @@ interface CountryService {
 
     fun getTotalNumberOfAllCountries(): Int
 
-    fun getOneRandomCountryFromList(countryList: List<Country>?): Country?
+    fun getRandomCountry(countryList: List<Country>?): Country?
 
-    fun getFourRandomNoDuplicateCountries(): List<Country>?
+    fun getFourRandomCountriesToDisplay(): List<Country>?
 
     fun setCorrectCountry(): Country
 

@@ -1,6 +1,5 @@
 package com.example.worldflags.services
 
-import androidx.lifecycle.MutableLiveData
 import com.example.worldflags.models.Country
 import com.example.worldflags.utils.ReadJSONFromAssets
 import kotlin.random.Random
@@ -9,7 +8,7 @@ class CountryServiceImpl(
     readJSONFromAssets: ReadJSONFromAssets
 ): CountryService  {
 
-    private var _countries: List<Country>? = readJSONFromAssets.createAndReturnCountryObjects()
+    private var listOfCountries: List<Country>? = readJSONFromAssets.createAndReturnCountryObjects()
     private var _fourRandomNoDuplicateCountries = mutableListOf<Country>()
 
     private var _blacklistedCountries = mutableListOf<Country>()
@@ -20,14 +19,14 @@ class CountryServiceImpl(
     }
 
     override fun getAllCountries(): List<Country>? {
-        return _countries
+        return listOfCountries
     }
 
     override fun getTotalNumberOfAllCountries(): Int {
-        return _countries?.size ?: 0
+        return listOfCountries?.size ?: 0
     }
 
-    override fun getOneRandomCountryFromList(countryList: List<Country>?): Country? {
+    override fun getRandomCountry(countryList: List<Country>?): Country? {
         val temporaryCountriesList = countryList
         return if (temporaryCountriesList?.isEmpty() == true) {
             null
@@ -38,7 +37,7 @@ class CountryServiceImpl(
     }
 
     private fun getRandomWhitelistCountry(): Country? {
-        val whitelistOfCountries = _countries?.minus(_blacklistedCountries)
+        val whitelistOfCountries = listOfCountries?.minus(_blacklistedCountries)
         if (whitelistOfCountries?.size?.equals(0) == true) {
             return null
         }
@@ -46,7 +45,7 @@ class CountryServiceImpl(
         return randomWhitelistedCountry
     }
 
-    override fun getFourRandomNoDuplicateCountries(): List<Country> {
+    override fun getFourRandomCountriesToDisplay(): List<Country> {
         _fourRandomNoDuplicateCountries = emptyList<Country>().toMutableList()
         val fourRandomCountriesInSet = mutableSetOf<Country>()
 
@@ -56,14 +55,13 @@ class CountryServiceImpl(
         }
 
         while (fourRandomCountriesInSet.size < 4) {
-            getOneRandomCountryFromList(_countries)?.let { fourRandomCountriesInSet.add(it) }
+            getRandomCountry(listOfCountries)?.let { fourRandomCountriesInSet.add(it) }
         }
         _fourRandomNoDuplicateCountries = ArrayList(fourRandomCountriesInSet)
         return _fourRandomNoDuplicateCountries.shuffled()
     }
 
     override fun setCorrectCountry(): Country {
-        val randomIndex = Random.nextInt(0, 4)
         return _fourRandomNoDuplicateCountries[0]
     }
 

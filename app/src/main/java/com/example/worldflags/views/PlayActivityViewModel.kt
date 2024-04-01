@@ -28,7 +28,7 @@ class PlayActivityViewModel(
     }
 
     private fun generateFourNewCountries() {
-        _fourRandomNoDuplicateCountries.value = countryService.getFourRandomNoDuplicateCountries()
+        _fourRandomNoDuplicateCountries.value = countryService.getFourRandomCountriesToDisplay()
         setNewCorrectCountry()
     }
 
@@ -41,7 +41,6 @@ class PlayActivityViewModel(
 
         if (countryService.blacklistedCountries.size == countryService.getTotalNumberOfAllCountries()) {
             _isComplete.value = true
-            println("ALFF return to main page")
         }
 
         generateFourNewCountries()
