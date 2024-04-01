@@ -14,8 +14,8 @@ class PlayActivityViewModel(
     val countryService: CountryServiceImpl,
 ): ViewModel() {
 
-    private val _fourRandomAndUniqueCountryNames = MutableLiveData<List<Country>>()
-    val fourRandomAndUniqueCountryNames: LiveData<List<Country>> = _fourRandomAndUniqueCountryNames
+    private val _fourRandomNoDuplicateCountries = MutableLiveData<List<Country>>()
+    val fourRandomAndUniqueCountryNames: LiveData<List<Country>> = _fourRandomNoDuplicateCountries
 
     private val _correctCountry = MutableLiveData<Country>()
     val correctCountry: MutableLiveData<Country> = _correctCountry
@@ -27,27 +27,19 @@ class PlayActivityViewModel(
     }
 
     private fun generateFourNewCountryNames() {
-        _fourRandomAndUniqueCountryNames.value = emptyList()
-
-        val tempFourRandomAndUniqueCountryNames = mutableListOf<Country>()
-        val fourRandomAndUniqueCountries = countryService.getFourRandomAndUniqueCountries()
-        for (countryName in fourRandomAndUniqueCountries) {
-            tempFourRandomAndUniqueCountryNames.add(countryName)
-        }
-        _fourRandomAndUniqueCountryNames.value = tempFourRandomAndUniqueCountryNames
+        _fourRandomNoDuplicateCountries.value = countryService.getFourRandomNoDuplicateCountries()
     }
 
     private fun setNewCorrectCountry() {
-        val randomIndex = Random.nextInt(0, 4)
-        _correctCountry.value = _fourRandomAndUniqueCountryNames.value?.get(randomIndex)
-    }
-
-    fun getCorrectCountry(): Country? {
-        return _correctCountry.value
+        _correctCountry.value = countryService.setCorrectCountry()
     }
 
     fun onCorrectAnswerSelected(correctCountry: Country) {
         countryService.addCountryToBlacklist(correctCountry)
+
+        if (countryService.blacklistedCountries.size == countryService.getTotalNumberOfAllCountries()) {
+            println("ALFF return to main page")
+        }
 
         generateFourNewCountryNames()
         setNewCorrectCountry()

@@ -15,7 +15,9 @@ interface CountryService {
 
     fun getOneRandomCountryNotFromBlacklist(): Country?
 
-    fun getFourRandomAndUniqueCountries(): List<Country>?
+    fun getFourRandomNoDuplicateCountries(): List<Country>?
+
+    fun setCorrectCountry(): Country
 
     fun addCountryToBlacklist(correctCountry: Country)
 
