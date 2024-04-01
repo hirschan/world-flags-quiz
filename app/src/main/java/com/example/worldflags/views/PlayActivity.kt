@@ -95,7 +95,7 @@ private fun DisplayOptionButtons(fourCountriesToDisplay: List<Country?>, correct
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 64.sp)
+        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 72.sp)
     }
 
     Column(
