@@ -22,6 +22,9 @@ class PlayActivityViewModel(
     private val _isComplete = MutableLiveData<Boolean>(false)
     val isComplete: MutableLiveData<Boolean> = _isComplete
 
+    private val _nbrOfGuessedCountries = MutableLiveData<Int>(0)
+    val nbrOfGuessedCountries: MutableLiveData<Int> = _nbrOfGuessedCountries
+
     init {
         println("ALF PlayActivityViewModel initialized.")
         generateFourNewCountries()
@@ -37,6 +40,7 @@ class PlayActivityViewModel(
     }
 
     fun onCorrectAnswerSelected(correctCountry: Country) {
+        _nbrOfGuessedCountries.value = countryService.blacklistedCountries.size + 1
         countryService.addCountryToBlacklist(correctCountry)
 
         if (countryService.blacklistedCountries.size == countryService.getTotalNumberOfAllCountries()) {

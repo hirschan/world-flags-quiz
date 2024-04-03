@@ -6,12 +6,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -19,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -55,6 +58,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
     val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateCountries.observeAsState().value
     val correctCountry = viewModel.correctCountry.observeAsState().value
     val isGameComplete = viewModel.isComplete.observeAsState().value
+    val nbrOfGuessedCountries = viewModel.nbrOfGuessedCountries.observeAsState().value ?: 0
 
     // Trigger side-effect when isComplete changes to true
     LaunchedEffect(isGameComplete) {
@@ -64,7 +68,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourCountryNamesToDisplay != null) {
-        PlayScreen(fourCountryNamesToDisplay, correctCountry) { isCorrectClicked ->
+        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries) { isCorrectClicked ->
             if (isCorrectClicked) {
                 if (correctCountry != null) {
                     viewModel.onCorrectAnswerSelected(correctCountry)
@@ -75,7 +79,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
+fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -84,12 +88,28 @@ fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?,
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        DisplayOptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
+        CounterText(nbrOfGuessedCountries)
+        OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }
 }
 
 @Composable
-private fun DisplayOptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
+private fun CounterText(nbrOfGuessedCountries: Int) {
+    Box(
+        modifier = Modifier
+            .padding(10.dp) // Add padding to give some space from the edges
+            .offset(x = 170.dp), // Offset to position the text in the top left corner
+//        contentAlignment = Alignment.TopEnd
+    ) {
+        Text(
+            text = "${nbrOfGuessedCountries}/5",
+            color = colorResource(R.color.custom_white)
+        )
+    }
+}
+
+@Composable
+private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .padding(100.dp),
@@ -178,6 +198,7 @@ private fun PreviewPlayScreen() {
     val fourCountries = listOf(mockData.mockCountry, mockData.mockCountry, mockData.mockCountry, mockData.mockCountry)
     val correctCountry = mockData.mockCountry
     val isCorrectClicked: (Boolean) -> Unit = {}
+    val nbrOfGuessedCountries = 1
 
-    PlayScreen(fourCountries, correctCountry, isCorrectClicked)
+    PlayScreen(fourCountries, correctCountry, nbrOfGuessedCountries, isCorrectClicked)
 }

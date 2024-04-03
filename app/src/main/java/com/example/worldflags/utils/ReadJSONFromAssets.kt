@@ -12,7 +12,7 @@ import java.io.InputStream
 class ReadJSONFromAssets(private val context: Context) {
 
     fun createAndReturnCountryObjects(): List<Country>? {
-        val jsonString = readJsonFile("countries_en.json")
+        val jsonString = readJsonFile("countries_nordics_en.json")
         val countries = jsonString?.let { parseJsonStringToCountries(it) }
         return countries
     }
