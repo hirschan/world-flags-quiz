@@ -50,6 +50,10 @@ class PlayActivityViewModel(
         generateFourNewCountries()
     }
 
+    fun getNumberOfCountries(): Int {
+        return countryService.getTotalNumberOfAllCountries()
+    }
+
     override fun onCleared() {
         // Perform cleanup tasks here
         super.onCleared()

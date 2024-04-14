@@ -28,8 +28,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.models.Country
 import com.example.worldflags.utils.MockData
@@ -60,6 +62,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
     val correctCountry = viewModel.correctCountry.observeAsState().value
     val isGameComplete = viewModel.isComplete.observeAsState().value
     val nbrOfGuessedCountries = viewModel.nbrOfGuessedCountries.observeAsState().value ?: 0
+    val nbrOfCountries = viewModel.getNumberOfCountries()
 
     // Trigger side-effect when isComplete changes to true
     LaunchedEffect(isGameComplete) {
@@ -69,7 +72,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourCountryNamesToDisplay != null) {
-        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries) { isCorrectClicked ->
+        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries, nbrOfCountries) { isCorrectClicked ->
             if (isCorrectClicked) {
                 if (correctCountry != null) {
                     viewModel.onCorrectAnswerSelected(correctCountry)
@@ -80,7 +83,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
+fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -89,14 +92,14 @@ fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?,
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        CounterText(nbrOfGuessedCountries)
+        CounterText(nbrOfGuessedCountries, nbrOfCountries)
         FlagPlaceholder(correctCountry)
         OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }
 }
 
 @Composable
-private fun CounterText(nbrOfGuessedCountries: Int) {
+private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
     Box(
         modifier = Modifier
             .padding(10.dp) // Add padding to give some space from the edges
@@ -104,7 +107,7 @@ private fun CounterText(nbrOfGuessedCountries: Int) {
 //        contentAlignment = Alignment.TopEnd
     ) {
         Text(
-            text = "${nbrOfGuessedCountries}/5",
+            text = "${nbrOfGuessedCountries}/${nbrOfCountries}",
             color = colorResource(R.color.custom_white)
         )
     }
@@ -134,7 +137,7 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         Image(
             painter = painterResource(resourceId),
             contentDescription = null,
-            modifier = Modifier.size(150.dp)
+            modifier = Modifier.size(180.dp)
         )
     }
 }
@@ -161,7 +164,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                     .padding(end = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[0]?.name ?: "Null 1")
+                Text(text = fourCountriesToDisplay[0]?.name ?: "Null 1", style = TextStyle(fontSize = 18.sp))
             }
             Button(
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[1]?.name, correctCountry?.name, isCorrectClicked) },
@@ -171,7 +174,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                     .padding(start = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[1]?.name ?: "Null 2")
+                Text(text = fourCountriesToDisplay[1]?.name ?: "Null 2", style = TextStyle(fontSize = 18.sp))
             }
         }
         Row(
@@ -187,7 +190,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                     .padding(end = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[2]?.name ?: "Null 3")
+                Text(text = fourCountriesToDisplay[2]?.name ?: "Null 3", style = TextStyle(fontSize = 18.sp))
             }
             Button(
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[3]?.name, correctCountry?.name, isCorrectClicked) },
@@ -197,7 +200,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                     .padding(start = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[3]?.name ?: "Null 4")
+                Text(text = fourCountriesToDisplay[3]?.name ?: "Null 4", style = TextStyle(fontSize = 18.sp))
             }
         }
     }
@@ -217,10 +220,11 @@ private fun PreviewPlayScreen() {
 
     val mockData = MockData()
 
-    val fourCountries = listOf(mockData.mockCountry, mockData.mockCountry, mockData.mockCountry, mockData.mockCountry)
-    val correctCountry = mockData.mockCountry
-    val isCorrectClicked: (Boolean) -> Unit = {}
-    val nbrOfGuessedCountries = 1
+    val mockFourCountries = listOf(mockData.mockCountry, mockData.mockCountry, mockData.mockCountry, mockData.mockCountry)
+    val mockCorrectCountry = mockData.mockCountry
+    val mockIsCorrectClicked: (Boolean) -> Unit = {}
+    val mockNbrOfGuessedCountries = 1
+    val mockNbrOfCountries = 4
 
-    PlayScreen(fourCountries, correctCountry, nbrOfGuessedCountries, isCorrectClicked)
+    PlayScreen(mockFourCountries, mockCorrectCountry, mockNbrOfGuessedCountries, mockNbrOfCountries, mockIsCorrectClicked)
 }

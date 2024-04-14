@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Åland Islands",
+    "ISOAlpha2": "AX",
+    "continent": "Europe",
+    "capital": "Mariehamn",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Faroe Islands",
+    "ISOAlpha2": "FO",
+    "continent": "Europe",
+    "capital": "Tórshavn",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Gibraltar",
+    "ISOAlpha2": "GI",
+    "continent": "Europe",
+    "capital": "Gibraltar",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Greenland",
+    "ISOAlpha2": "GL",
+    "continent": "Europe",
+    "capital": "Nuuk",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Guernsey",
+    "ISOAlpha2": "GG",
+    "continent": "Europe",
+    "capital": "St. Peter Port",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Isle of Man",
+    "ISOAlpha2": "IM",
+    "continent": "Europe",
+    "capital": "Douglas",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Jersey",
+    "ISOAlpha2": "JE",
+    "continent": "Europe",
+    "capital": "St. Helier",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Kosovo",
+    "ISOAlpha2": "XK",
+    "continent": "Europe",
+    "capital": "Pristina",
+    "type": "state",
+    "isSovereign": true,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Svalbard",
+    "ISOAlpha2": "SJ",
+    "continent": "Europe",
+    "capital": "Longyearbyen",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Vatican City",
+    "ISOAlpha2": "VA",
+    "continent": "Europe",
+    "capital": "Vatican City",
+    "type": "state",
+    "isSovereign": true,
+    "isUNMember": false,
+    "existsToday": true
+  }
+]

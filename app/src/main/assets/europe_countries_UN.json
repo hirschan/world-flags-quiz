@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Albania",
+    "ISOAlpha2": "AL",
+    "continent": "Europe",
+    "capital": "Tirana",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Andorra",
+    "ISOAlpha2": "AD",
+    "continent": "Europe",
+    "capital": "Andorra la Vella",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Austria",
+    "ISOAlpha2": "AT",
+    "continent": "Europe",
+    "capital": "Vienna",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Belarus",
+    "ISOAlpha2": "BY",
+    "continent": "Europe",
+    "capital": "Minsk",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Belgium",
+    "ISOAlpha2": "BE",
+    "continent": "Europe",
+    "capital": "Brussels",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "ISOAlpha2": "BA",
+    "continent": "Europe",
+    "capital": "Sarajevo",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Bulgaria",
+    "ISOAlpha2": "BG",
+    "continent": "Europe",
+    "capital": "Sofia",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Croatia",
+    "ISOAlpha2": "HR",
+    "continent": "Europe",
+    "capital": "Zagreb",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Cyprus",
+    "ISOAlpha2": "CY",
+    "continent": "Europe",
+    "capital": "Nicosia",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Czech Republic",
+    "ISOAlpha2": "CZ",
+    "continent": "Europe",
+    "capital": "Prague",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Denmark",
+    "ISOAlpha2": "DK",
+    "continent": "Europe",
+    "capital": "Copenhagen",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Estonia",
+    "ISOAlpha2": "EE",
+    "continent": "Europe",
+    "capital": "Tallinn",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Finland",
+    "ISOAlpha2": "FI",
+    "continent": "Europe",
+    "capital": "Helsinki",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "France",
+    "ISOAlpha2": "FR",
+    "continent": "Europe",
+    "capital": "Paris",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Germany",
+    "ISOAlpha2": "DE",
+    "continent": "Europe",
+    "capital": "Berlin",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Greece",
+    "ISOAlpha2": "GR",
+    "continent": "Europe",
+    "capital": "Athens",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Hungary",
+    "ISOAlpha2": "HU",
+    "continent": "Europe",
+    "capital": "Budapest",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Iceland",
+    "ISOAlpha2": "IS",
+    "continent": "Europe",
+    "capital": "Reykjavik",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Ireland",
+    "ISOAlpha2": "IE",
+    "continent": "Europe",
+    "capital": "Dublin",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Italy",
+    "ISOAlpha2": "IT",
+    "continent": "Europe",
+    "capital": "Rome",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Latvia",
+    "ISOAlpha2": "LV",
+    "continent": "Europe",
+    "capital": "Riga",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Liechtenstein",
+    "ISOAlpha2": "LI",
+    "continent": "Europe",
+    "capital": "Vaduz",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Lithuania",
+    "ISOAlpha2": "LT",
+    "continent": "Europe",
+    "capital": "Vilnius",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Luxembourg",
+    "ISOAlpha2": "LU",
+    "continent": "Europe",
+    "capital": "Luxembourg",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Malta",
+    "ISOAlpha2": "MT",
+    "continent": "Europe",
+    "capital": "Valletta",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Moldova",
+    "ISOAlpha2": "MD",
+    "continent": "Europe",
+    "capital": "Chisinau",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Monaco",
+    "ISOAlpha2": "MC",
+    "continent": "Europe",
+    "capital": "Monaco",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Montenegro",
+    "ISOAlpha2": "ME",
+    "continent": "Europe",
+    "capital": "Podgorica",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Netherlands",
+    "ISOAlpha2": "NL",
+    "continent": "Europe",
+    "capital": "Amsterdam",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "North Macedonia",
+    "ISOAlpha2": "MK",
+    "continent": "Europe",
+    "capital": "Skopje",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Norway",
+    "ISOAlpha2": "NO",
+    "continent": "Europe",
+    "capital": "Oslo",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Poland",
+    "ISOAlpha2": "PL",
+    "continent": "Europe",
+    "capital": "Warsaw",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Portugal",
+    "ISOAlpha2": "PT",
+    "continent": "Europe",
+    "capital": "Lisbon",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Romania",
+    "ISOAlpha2": "RO",
+    "continent": "Europe",
+    "capital": "Bucharest",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Russia",
+    "ISOAlpha2": "RU",
+    "continent": "Europe",
+    "capital": "Moscow",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "San Marino",
+    "ISOAlpha2": "SM",
+    "continent": "Europe",
+    "capital": "San Marino",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Serbia",
+    "ISOAlpha2": "RS",
+    "continent": "Europe",
+    "capital": "Belgrade",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Slovakia",
+    "ISOAlpha2": "SK",
+    "continent": "Europe",
+    "capital": "Bratislava",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Slovenia",
+    "ISOAlpha2": "SI",
+    "continent": "Europe",
+    "capital": "Ljubljana",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Spain",
+    "ISOAlpha2": "ES",
+    "continent": "Europe",
+    "capital": "Madrid",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Sweden",
+    "ISOAlpha2": "SE",
+    "continent": "Europe",
+    "capital": "Stockholm",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Switzerland",
+    "ISOAlpha2": "CH",
+    "continent": "Europe",
+    "capital": "Bern",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "Ukraine",
+    "ISOAlpha2": "UA",
+    "continent": "Europe",
+    "capital": "Kyiv",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  },
+  {
+    "name": "United Kingdom",
+    "ISOAlpha2": "GB",
+    "continent": "Europe",
+    "capital": "London",
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
+  }
+]
