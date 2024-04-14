@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,20 +16,20 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.models.Country
 import com.example.worldflags.utils.MockData
@@ -89,6 +90,7 @@ fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         CounterText(nbrOfGuessedCountries)
+        FlagPlaceholder(correctCountry)
         OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }
 }
@@ -109,16 +111,36 @@ private fun CounterText(nbrOfGuessedCountries: Int) {
 }
 
 @Composable
-private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
+private fun FlagPlaceholder(correctCountry: Country?) {
     Column(
         modifier = Modifier
             .padding(100.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 100.sp)
-    }
+        //Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 100.sp)
 
+        val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "null"
+
+        // Get the resource ID dynamically
+        val resourceId = try {
+            val field = R.drawable::class.java.getField(correctCountryISO)
+            field.getInt(null)
+        } catch (e: Exception) {
+            // Handle the case where the resource for the given country code doesn't exist
+            R.drawable.se // TODO: add default flag in case we can't read the flag
+        }
+
+        Image(
+            painter = painterResource(resourceId),
+            contentDescription = null,
+            modifier = Modifier.size(150.dp)
+        )
+    }
+}
+
+@Composable
+private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()

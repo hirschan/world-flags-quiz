@@ -7,7 +7,8 @@ data class Country(
     val ISOAlpha2: String,
     val continent: String,
     val capital: String,
-    val isDefinedByUN: Boolean,
+    val type: String, // TODO: ALLIANCE, COUNTRY, US_STATE, REGION
+    val isSovereign: Boolean,
+    val isUNMember: Boolean,
     val existsToday: Boolean,
-    val emojiFlag: String,
 )

@@ -4,44 +4,49 @@
     "ISOAlpha2": "DK",
     "continent": "Europe",
     "capital": "Copenhagen",
-    "isDefinedByUN": true,
-    "existsToday": true,
-    "emojiFlag": "\uD83C\uDDE9\uD83C\uDDF0"
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
   },
   {
     "name": "Finland",
     "ISOAlpha2": "FI",
     "continent": "Europe",
     "capital": "Helsinki",
-    "isDefinedByUN": true,
-    "existsToday": true,
-    "emojiFlag": "\uD83C\uDDEB\uD83C\uDDEE"
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
   },
   {
     "name": "Iceland",
     "ISOAlpha2": "IS",
     "continent": "Europe",
     "capital": "Reykjavik",
-    "isDefinedByUN": true,
-    "existsToday": true,
-    "emojiFlag": "\uD83C\uDDEE\uD83C\uDDF8"
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
   },
   {
     "name": "Norway",
     "ISOAlpha2": "NO",
     "continent": "Europe",
     "capital": "Oslo",
-    "isDefinedByUN": true,
-    "existsToday": true,
-    "emojiFlag": "\uD83C\uDDF3\uD83C\uDDF4"
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
   },
   {
     "name": "Sweden",
     "ISOAlpha2": "SE",
     "continent": "Europe",
     "capital": "Stockholm",
-    "isDefinedByUN": true,
-    "existsToday": true,
-    "emojiFlag": "\uD83C\uDDF8\uD83C\uDDEA"
+    "type": "country",
+    "isSovereign": true,
+    "isUNMember": true,
+    "existsToday": true
   }
 ]

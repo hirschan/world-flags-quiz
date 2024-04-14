@@ -7,13 +7,14 @@ import com.example.worldflags.models.Country
 class MockData {
 
     val mockCountry = Country(
-        name = "Mock",
-        ISOAlpha2 = "MO",
-        continent = "Mock",
-        capital = "Mock City",
-        isDefinedByUN = false,
+        name = "Sweden",
+        ISOAlpha2 = "SE",
+        continent = "Europe",
+        capital = "Stockholm",
+        type = "country",
+        isSovereign = true,
+        isUNMember = true,
         existsToday = false,
-        emojiFlag = "\uD83C\uDDF8\uD83C\uDDEA",
-    )
+        )
 
 }
