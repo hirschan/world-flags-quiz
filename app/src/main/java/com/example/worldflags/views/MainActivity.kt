@@ -67,7 +67,10 @@ private fun PlayButton() {
         onClick = {
             context.startActivity(Intent(context, PlayActivity::class.java))
         }) {
-        Text(text = "Play", color = colorResource(id = R.color.custom_white), fontSize = 25.sp)
+        Text(
+            text = "Play",
+            color = colorResource(id = R.color.custom_white),
+            fontSize = 25.sp)
     }
 }
 
@@ -81,7 +84,10 @@ private fun OptionButton() {
         onClick = {
             context.startActivity(Intent(context, OptionActivity::class.java))
         }) {
-        Text(text = "Options", color = colorResource(id = R.color.custom_white), fontSize = 25.sp)
+        Text(
+            text = "Options",
+            color = colorResource(id = R.color.custom_white),
+            fontSize = 25.sp)
     }
 }
 

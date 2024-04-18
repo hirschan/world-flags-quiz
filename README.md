@@ -16,6 +16,7 @@ An Android app intended for learning all the world's flags.
 - [ ] Add unit tests and integration tests
 - [ ] Refactor existing code
 - [ ] Add feature for categorizing continents
-- [ ] Design logo for app project
+- [ ] Design: improve UI and create a DesignSystem for this project
+- [ ] Design: create logo for app project
 - [ ] Add map and have flags as option, or country names (stretch goal)
 - [ ] Add feature for U.S. states and regions (stretch goal)
