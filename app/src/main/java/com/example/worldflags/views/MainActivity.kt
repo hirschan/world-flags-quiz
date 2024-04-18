@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen() {
+private fun MainScreen() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -52,13 +52,9 @@ fun MainScreen() {
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        MainTopLevel()
+        PlayButton()
+        OptionButton()
     }
-}
-
-@Composable
-private fun MainTopLevel() { // TODO: remove?
-    PlayButton()
 }
 
 @Composable
@@ -72,6 +68,20 @@ private fun PlayButton() {
             context.startActivity(Intent(context, PlayActivity::class.java))
         }) {
         Text(text = "Play", color = colorResource(id = R.color.custom_white), fontSize = 25.sp)
+    }
+}
+
+@Composable
+private fun OptionButton() {
+    val context = LocalContext.current
+    Button(
+        modifier = Modifier
+            .height(60.dp)
+            .width(200.dp),
+        onClick = {
+            context.startActivity(Intent(context, OptionActivity::class.java))
+        }) {
+        Text(text = "Options", color = colorResource(id = R.color.custom_white), fontSize = 25.sp)
     }
 }
 

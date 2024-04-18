@@ -25,6 +25,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -55,7 +56,7 @@ class PlayActivity : ComponentActivity() {
 }
 
 @Composable
-fun TopLevel(viewModel: PlayActivityViewModel) {
+private fun TopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
     val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateCountries.observeAsState().value
@@ -83,7 +84,7 @@ fun TopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -104,7 +105,6 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
         modifier = Modifier
             .padding(10.dp) // Add padding to give some space from the edges
             .offset(x = 170.dp), // Offset to position the text in the top left corner
-//        contentAlignment = Alignment.TopEnd
     ) {
         Text(
             text = "${nbrOfGuessedCountries}/${nbrOfCountries}",
@@ -121,7 +121,6 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //Text(text = correctCountry?.emojiFlag ?: "Null", color = colorResource(R.color.custom_white), fontSize = 100.sp)
 
         val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "null"
 
@@ -137,7 +136,8 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         Image(
             painter = painterResource(resourceId),
             contentDescription = null,
-            modifier = Modifier.size(180.dp)
+            modifier = Modifier
+                .clip(RoundedCornerShape(7.dp))
         )
     }
 }
