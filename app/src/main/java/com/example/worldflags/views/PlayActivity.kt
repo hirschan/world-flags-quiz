@@ -16,9 +16,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -89,7 +89,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: C
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .background(colorResource(id = R.color.dark_blue)),
+            .background(colorResource(id = R.color.dark_blue_background)),
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -157,6 +157,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                 .padding(10.dp)
         ) {
             Button(
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[0]?.name, correctCountry?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
@@ -167,6 +168,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                 Text(text = fourCountriesToDisplay[0]?.name ?: "Null 1", style = TextStyle(fontSize = 18.sp))
             }
             Button(
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[1]?.name, correctCountry?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
@@ -183,6 +185,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                 .padding(10.dp)
         ) {
             Button(
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[2]?.name, correctCountry?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
@@ -193,6 +196,7 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
                 Text(text = fourCountriesToDisplay[2]?.name ?: "Null 3", style = TextStyle(fontSize = 18.sp))
             }
             Button(
+                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
                 onClick = { onCountryButtonClick(fourCountriesToDisplay[3]?.name, correctCountry?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)

@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.WorldFlags" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/dark_blue</item>
+        <item name="android:statusBarColor">@color/dark_blue_background</item>
     </style>
 
 </resources>

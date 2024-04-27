@@ -13,8 +13,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,12 +25,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
-import com.example.worldflags.models.Country
 import org.koin.android.ext.android.get
 
 /** UI for options screen. */
@@ -53,12 +56,24 @@ private fun OptionScreen() {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
-            .background(colorResource(id = R.color.dark_blue)),
+            .background(colorResource(id = R.color.dark_blue_background)),
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        TopAppBarHeader()
         RadioButtonOptions()
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun TopAppBarHeader() {
+    TopAppBar(
+        title = {
+            Text(text = "Options", color = White)
+                },
+        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = colorResource(id = R.color.light_blue))
+    )
 }
 
 @Composable
@@ -73,14 +88,14 @@ private fun RadioButtonOptions() {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         RadioButton(
-            text = "Non-UN countries in Europe",
+            text = "European flags (non-UN)",
             option = CountryCategories.EU_COUNTRIES_NON_UN,
             selectedOption = selectedOption,
             onOptionSelected = { selectedOption = it }
         )
 
         RadioButton(
-            text = "UN countries in Europe",
+            text = "European flags (UN)",
             option = CountryCategories.EU_COUNTRIES_UN,
             selectedOption = selectedOption,
             onOptionSelected = { selectedOption = it }

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="dark_blue">#17181F</color>
-    <color name="light_purple">#6C72CB</color>
+    <color name="dark_blue_background">#11212D</color>
+    <color name="dark_green">#0D3021</color>
+    <color name="green_stroke">#2ACE80</color>
+    <color name="dark_blue_btn">#112846</color>
+    <color name="blue_btn_stroke">#7ABFFF</color>
+    <color name="light_blue">#253745</color>
     <color name="pink">#CB69C1</color>
     <color name="custom_white">#EEEDF0</color>
 </resources>
