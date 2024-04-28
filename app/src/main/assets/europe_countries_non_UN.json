@@ -1,7 +1,7 @@
 [
   {
     "name": "Åland Islands",
-    "ISOAlpha2": "AX",
+    "ISOAlpha2": "EU_AX",
     "continent": "Europe",
     "capital": "Mariehamn",
     "type": "territory",
@@ -11,7 +11,7 @@
   },
   {
     "name": "Faroe Islands",
-    "ISOAlpha2": "FO",
+    "ISOAlpha2": "EU_FO",
     "continent": "Europe",
     "capital": "Tórshavn",
     "type": "territory",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Gibraltar",
-    "ISOAlpha2": "GI",
+    "ISOAlpha2": "EU_GI",
     "continent": "Europe",
     "capital": "Gibraltar",
     "type": "territory",
@@ -31,7 +31,7 @@
   },
   {
     "name": "Greenland",
-    "ISOAlpha2": "GL",
+    "ISOAlpha2": "EU_GL",
     "continent": "Europe",
     "capital": "Nuuk",
     "type": "territory",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Guernsey",
-    "ISOAlpha2": "GG",
+    "ISOAlpha2": "EU_GG",
     "continent": "Europe",
     "capital": "St. Peter Port",
     "type": "territory",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Isle of Man",
-    "ISOAlpha2": "IM",
+    "ISOAlpha2": "EU_IM",
     "continent": "Europe",
     "capital": "Douglas",
     "type": "territory",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Jersey",
-    "ISOAlpha2": "JE",
+    "ISOAlpha2": "EU_JE",
     "continent": "Europe",
     "capital": "St. Helier",
     "type": "territory",
@@ -71,7 +71,7 @@
   },
   {
     "name": "Kosovo",
-    "ISOAlpha2": "XK",
+    "ISOAlpha2": "EU_XK",
     "continent": "Europe",
     "capital": "Pristina",
     "type": "state",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Svalbard",
-    "ISOAlpha2": "SJ",
+    "ISOAlpha2": "EU_SJ",
     "continent": "Europe",
     "capital": "Longyearbyen",
     "type": "territory",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Vatican City",
-    "ISOAlpha2": "VA",
+    "ISOAlpha2": "EU_VA",
     "continent": "Europe",
     "capital": "Vatican City",
     "type": "state",

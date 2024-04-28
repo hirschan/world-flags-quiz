@@ -152,7 +152,7 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "null"
+        val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "eu_se"
 
         // Get the resource ID dynamically
         val resourceId = try {
@@ -160,7 +160,7 @@ private fun FlagPlaceholder(correctCountry: Country?) {
             field.getInt(null)
         } catch (e: Exception) {
             // Handle the case where the resource for the given country code doesn't exist
-            R.drawable.se // TODO: add default flag in case we can't read the flag
+            R.drawable.eu_se // TODO: add default flag in case we can't read the flag
         }
 
         Image(

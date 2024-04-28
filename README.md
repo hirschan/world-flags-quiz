@@ -23,3 +23,7 @@ An Android app intended for learning all the world's flags.
 ### Stretch goals
 - [ ] Add map and have flags as option, or country names
 - [ ] Add feature for U.S. states and regions
+
+## Links
+
+* Abbreviations of the world's continents: [here](https://planetarynames.wr.usgs.gov/Abbreviations) (`AF, AN, AS, EU, NA, OC, SA`)

@@ -119,15 +119,15 @@ private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelec
     ) {
         RadioButton(
             mainText = "European flags (non-UN)",
-            subText = "13 countries",
+            subText = "10 countries",
             option = CountryCategories.EU_COUNTRIES_NON_UN,
-            selectedOption = selectedOption!!,
+            selectedOption = selectedOption!!, // TODO: fix null handling
             onOptionSelected = { onOptionSelected(it) }
         )
 
         RadioButton(
             mainText = "European flags (UN)",
-            subText = "46 countries",
+            subText = "44 countries",
             option = CountryCategories.EU_COUNTRIES_UN,
             selectedOption = selectedOption,
             onOptionSelected = { onOptionSelected(it) }
