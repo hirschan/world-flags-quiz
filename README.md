@@ -11,7 +11,7 @@ An Android app intended for learning all the world's flags.
 - [X] Have a counter that keeps track of how many you guessed and how many is left
 - [X] Flags: add flags locally to application and display, [Flagpedia](https://flagpedia.net)?
 - [ ] Investigate using json file for storing all countries or move to a database (local SQLite vs. remote MySQL vs. use existing API) 
-- [ ] Investigate free icons (icon manager or plugin to use?)
+- [ ] Investigate free icons (icon manager or plugin to use?), [Androidicons](https://www.androidicons.com/)?
 - [ ] Add all countries
 - [ ] Add tracker for correct/incorrect?
 - [ ] Add unit tests and integration tests

@@ -1,5 +1,6 @@
 package com.example.worldflags.views
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,7 +15,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -25,8 +29,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -68,10 +75,21 @@ private fun OptionScreen() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TopAppBarHeader() {
+    val context = LocalContext.current
+
     TopAppBar(
-        title = {
-            Text(text = "Options", color = White)
-                },
+        navigationIcon = {
+            IconButton(
+                onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_action_arrow_left),
+                    contentDescription = "Go back arrow icon",
+                    tint = White
+                )
+            }
+        },
+        title = { Text(text = "Options", color = White) },
         colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = colorResource(id = R.color.light_blue))
     )
 }
@@ -84,7 +102,7 @@ private fun RadioButtonOptions() {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
-            .wrapContentSize(Alignment.Center),
+            .wrapContentSize(Alignment.TopStart),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         RadioButton(
@@ -118,8 +136,13 @@ private fun RadioButton(
             selected = option == selectedOption,
             onClick = {
                 onOptionSelected(option)
-
-            }
+            },
+            colors = RadioButtonColors(
+                selectedColor = White,
+                unselectedColor = White,
+                disabledSelectedColor = White,
+                disabledUnselectedColor = White,
+            )
         )
         Text(
             text = text,
