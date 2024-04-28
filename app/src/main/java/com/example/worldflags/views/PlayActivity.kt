@@ -16,16 +16,23 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -93,18 +100,43 @@ private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: C
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        CounterText(nbrOfGuessedCountries, nbrOfCountries)
+        TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries)
+        //CounterText(nbrOfGuessedCountries, nbrOfCountries)
         FlagPlaceholder(correctCountry)
         OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
+    val context = LocalContext.current
+
+    TopAppBar(
+        navigationIcon = {
+            IconButton(
+                onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_action_arrow_left),
+                    contentDescription = "Go back arrow icon",
+                    tint = Color.White
+                )
+            }
+        },
+        title = { Text(text = "", color = Color.White) },
+        actions = { CounterText(nbrOfGuessedCountries, nbrOfCountries) },
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(id = R.color.light_blue))
+
+    )
 }
 
 @Composable
 private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
     Box(
         modifier = Modifier
-            .padding(10.dp) // Add padding to give some space from the edges
-            .offset(x = 170.dp), // Offset to position the text in the top left corner
+            .padding(end = 16.dp)
+            .wrapContentWidth(Alignment.End),
     ) {
         Text(
             text = "${nbrOfGuessedCountries}/${nbrOfCountries}",

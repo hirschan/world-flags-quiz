@@ -90,7 +90,7 @@ private fun TopAppBarHeader() {
             }
         },
         title = { Text(text = "Options", color = White) },
-        colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = colorResource(id = R.color.light_blue))
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(id = R.color.light_blue))
     )
 }
 
