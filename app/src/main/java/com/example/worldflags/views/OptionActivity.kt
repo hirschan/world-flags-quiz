@@ -7,11 +7,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,6 +22,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonColors
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -30,6 +34,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -105,7 +110,6 @@ private fun TopAppBarHeader() {
 
 @Composable
 private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelected: (CountryCategories) -> Unit) {
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -114,24 +118,31 @@ private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelec
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         RadioButton(
-            text = "European flags (non-UN)",
+            mainText = "European flags (non-UN)",
+            subText = "13 countries",
             option = CountryCategories.EU_COUNTRIES_NON_UN,
             selectedOption = selectedOption!!,
             onOptionSelected = { onOptionSelected(it) }
         )
 
         RadioButton(
-            text = "European flags (UN)",
+            mainText = "European flags (UN)",
+            subText = "46 countries",
             option = CountryCategories.EU_COUNTRIES_UN,
             selectedOption = selectedOption,
             onOptionSelected = { onOptionSelected(it) }
         )
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        BottomText()
     }
 }
 
 @Composable
 private fun RadioButton(
-    text: String,
+    mainText: String,
+    subText: String,
     option: CountryCategories,
     selectedOption: CountryCategories,
     onOptionSelected: (CountryCategories) -> Unit
@@ -142,21 +153,39 @@ private fun RadioButton(
     ) {
         RadioButton(
             selected = option == selectedOption,
-            onClick = {
-                onOptionSelected(option)
-            },
-            colors = RadioButtonColors(
-                selectedColor = White,
-                unselectedColor = White,
-                disabledSelectedColor = White,
-                disabledUnselectedColor = White,
-            )
+            onClick = { onOptionSelected(option) },
+            colors = RadioButtonDefaults.colors(selectedColor = White)
         )
+        Column(
+            modifier = Modifier.padding(start = 8.dp)
+        ) {
+            Text(
+                text = mainText,
+                color = White,
+                fontSize = 18.sp
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = subText,
+                color = White,
+                fontSize = 12.sp
+            )
+        }
+    }
+}
+
+@Composable
+private fun BottomText() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 16.dp), // Add padding to push the text off the bottom
+        contentAlignment = Alignment.BottomStart
+    ) {
         Text(
-            text = text,
-            modifier = Modifier.padding(start = 8.dp),
-            color = colorResource(id = R.color.custom_white),
-            fontSize = 18.sp
+            text = "Our definition of a country is from Flagpedia, meaning countries whose flag is represented by emojis.",
+            color = White,
+            fontSize = 10.sp,
         )
     }
 }

@@ -28,7 +28,7 @@ class OptionActivityViewModel(
 
     private fun loadNewJsonFile(newOption: CountryCategories) {
         val tempFile = when (newOption) {
-            CountryCategories.EU_COUNTRIES_UN -> "europe_countries_UN.json"
+            CountryCategories.EU_COUNTRIES_UN -> "europe_countries_UN.json" // TODO: move hardcoded strings, Service task?
             else -> "europe_countries_non_UN.json"
         }
         optionService.changeJSONAssetFile(tempFile)
