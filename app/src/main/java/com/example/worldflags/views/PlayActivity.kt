@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -57,13 +56,13 @@ class PlayActivity : ComponentActivity() {
         viewModel = get<PlayActivityViewModel>()
 
         setContent {
-            TopLevel(viewModel)
+            PlayTopLevel(viewModel)
         }
     }
 }
 
 @Composable
-private fun TopLevel(viewModel: PlayActivityViewModel) {
+private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
     val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateCountries.observeAsState().value
@@ -101,7 +100,6 @@ private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: C
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries)
-        //CounterText(nbrOfGuessedCountries, nbrOfCountries)
         FlagPlaceholder(correctCountry)
         OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
     }

@@ -24,12 +24,12 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -52,13 +52,22 @@ class OptionActivity : ComponentActivity() {
         viewModel = get<OptionActivityViewModel>()
 
         setContent {
-            OptionScreen()
+            OptionsTopLevel(viewModel)
         }
     }
 }
 
 @Composable
-private fun OptionScreen() {
+private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
+    val selectedOption = viewModel.selectedOption.observeAsState().value
+
+    OptionScreen(selectedOption) {
+        viewModel.changeSelectedOption(it)
+    }
+}
+
+@Composable
+private fun OptionScreen(selectedOption: CountryCategories?, onOptionSelected: (CountryCategories) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -68,7 +77,7 @@ private fun OptionScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopAppBarHeader()
-        RadioButtonOptions()
+        RadioButtonOptions(selectedOption, onOptionSelected)
     }
 }
 
@@ -95,8 +104,7 @@ private fun TopAppBarHeader() {
 }
 
 @Composable
-private fun RadioButtonOptions() {
-    var selectedOption by remember { mutableStateOf(CountryCategories.EU_COUNTRIES_NON_UN) }
+private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelected: (CountryCategories) -> Unit) {
 
     Column(
         modifier = Modifier
@@ -108,15 +116,15 @@ private fun RadioButtonOptions() {
         RadioButton(
             text = "European flags (non-UN)",
             option = CountryCategories.EU_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { selectedOption = it }
+            selectedOption = selectedOption!!,
+            onOptionSelected = { onOptionSelected(it) }
         )
 
         RadioButton(
             text = "European flags (UN)",
             option = CountryCategories.EU_COUNTRIES_UN,
             selectedOption = selectedOption,
-            onOptionSelected = { selectedOption = it }
+            onOptionSelected = { onOptionSelected(it) }
         )
     }
 }
@@ -157,5 +165,7 @@ private fun RadioButton(
 @Preview(showBackground = true)
 @Composable
 private fun PreviewOptionScreen() {
-    OptionScreen()
+    val mockSelectedOption = CountryCategories.EU_COUNTRIES_UN
+
+    OptionScreen(mockSelectedOption, onOptionSelected = {})
 }
