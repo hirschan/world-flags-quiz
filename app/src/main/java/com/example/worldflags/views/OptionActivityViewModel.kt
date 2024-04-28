@@ -3,6 +3,8 @@ package com.example.worldflags.views
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.worldflags.models.JSONFiles.Companion.EUROPE_NON_UN
+import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
 import com.example.worldflags.services.OptionServiceImpl
 
 enum class CountryCategories {
@@ -28,8 +30,8 @@ class OptionActivityViewModel(
 
     private fun loadNewJsonFile(newOption: CountryCategories) {
         val tempFile = when (newOption) {
-            CountryCategories.EU_COUNTRIES_UN -> "europe_countries_UN.json" // TODO: move hardcoded strings, Service task?
-            else -> "europe_countries_non_UN.json"
+            CountryCategories.EU_COUNTRIES_UN -> EUROPE_UN
+            else -> EUROPE_NON_UN
         }
         optionService.changeJSONAssetFile(tempFile)
     }

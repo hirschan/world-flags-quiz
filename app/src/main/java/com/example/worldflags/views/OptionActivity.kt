@@ -64,7 +64,7 @@ class OptionActivity : ComponentActivity() {
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
-    val selectedOption = viewModel.selectedOption.observeAsState().value
+    val selectedOption = viewModel.selectedOption.observeAsState().value ?: CountryCategories.EU_COUNTRIES_NON_UN
 
     OptionScreen(selectedOption) {
         viewModel.changeSelectedOption(it)
@@ -72,7 +72,7 @@ private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
 }
 
 @Composable
-private fun OptionScreen(selectedOption: CountryCategories?, onOptionSelected: (CountryCategories) -> Unit) {
+private fun OptionScreen(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -109,7 +109,7 @@ private fun TopAppBarHeader() {
 }
 
 @Composable
-private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelected: (CountryCategories) -> Unit) {
+private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -121,7 +121,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories?, onOptionSelec
             mainText = "European flags (non-UN)",
             subText = "10 countries",
             option = CountryCategories.EU_COUNTRIES_NON_UN,
-            selectedOption = selectedOption!!, // TODO: fix null handling
+            selectedOption = selectedOption,
             onOptionSelected = { onOptionSelected(it) }
         )
 
