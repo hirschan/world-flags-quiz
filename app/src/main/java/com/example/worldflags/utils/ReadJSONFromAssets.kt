@@ -11,8 +11,8 @@ import java.io.InputStream
 
 class ReadJSONFromAssets(private val context: Context) {
 
-    fun createAndReturnCountryObjects(): List<Country>? {
-        val jsonString = readJsonFile("europe_countries_non_UN.json")
+    fun createAndReturnCountryObjects(jsonFileName: String): List<Country>? {
+        val jsonString = readJsonFile(jsonFileName)
         val countries = jsonString?.let { parseJsonStringToCountries(it) }
         return countries
     }

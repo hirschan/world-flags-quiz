@@ -11,13 +11,15 @@ An Android app intended for learning all the world's flags.
 - [X] Have a counter that keeps track of how many you guessed and how many is left
 - [X] Flags: add flags locally to application and display, [Flagpedia](https://flagpedia.net)?
 - [ ] Investigate using json file for storing all countries or move to a database (local SQLite vs. remote MySQL vs. use existing API) 
-- [ ] Investigate free icons (icon manager or plugin to use?), [Androidicons](https://www.androidicons.com/)?
+- [X] Investigate free icons (icon manager or plugin to use?), [Androidicons](https://www.androidicons.com/)?
 - [ ] Add all countries
 - [ ] Add tracker for correct/incorrect?
 - [ ] Add unit tests and integration tests
 - [ ] Refactor existing code
-- [ ] Add feature for categorizing continents
+- [X] Add feature for categorizing continents
 - [ ] Design: improve UI and create a DesignSystem for this project
 - [ ] Design: create logo for app project
-- [ ] Add map and have flags as option, or country names (stretch goal)
-- [ ] Add feature for U.S. states and regions (stretch goal)
+
+### Stretch goals
+- [ ] Add map and have flags as option, or country names
+- [ ] Add feature for U.S. states and regions

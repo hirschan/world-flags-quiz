@@ -5,10 +5,12 @@ import com.example.worldflags.utils.ReadJSONFromAssets
 import kotlin.random.Random
 
 class CountryServiceImpl(
-    readJSONFromAssets: ReadJSONFromAssets
+    readJSONFromAssets: ReadJSONFromAssets,
+    optionService: OptionServiceImpl,
 ): CountryService  {
 
-    private var listOfCountries: List<Country>? = readJSONFromAssets.createAndReturnCountryObjects()
+    private var jsonFileName = optionService.getJSONAssetFile()
+    private var listOfCountries: List<Country>? = readJSONFromAssets.createAndReturnCountryObjects(jsonFileName)
     private var _fourRandomNoDuplicateCountries = mutableListOf<Country>()
 
     private var _blacklistedCountries = mutableListOf<Country>()
