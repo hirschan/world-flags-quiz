@@ -5,11 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
+import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_NON_UN
+import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_UN
 import com.example.worldflags.services.OptionServiceImpl
 
 enum class CountryCategories {
     EU_COUNTRIES_NON_UN,
     EU_COUNTRIES_UN,
+    NA_COUNTRIES_UN,
+    NA_COUNTRIES_NON_UN,
 }
 
 class OptionActivityViewModel(
@@ -31,6 +35,8 @@ class OptionActivityViewModel(
     private fun loadNewJsonFile(newOption: CountryCategories) {
         val tempFile = when (newOption) {
             CountryCategories.EU_COUNTRIES_UN -> EUROPE_UN
+            CountryCategories.NA_COUNTRIES_UN -> NORTH_AMERICA_UN
+            CountryCategories.NA_COUNTRIES_NON_UN -> NORTH_AMERICA_NON_UN
             else -> EUROPE_NON_UN
         }
         optionService.changeJSONAssetFile(tempFile)

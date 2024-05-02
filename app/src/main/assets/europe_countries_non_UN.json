@@ -30,16 +30,6 @@
     "existsToday": true
   },
   {
-    "name": "Greenland",
-    "ISOAlpha2": "EU_GL",
-    "continent": "Europe",
-    "capital": "Nuuk",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
-    "existsToday": true
-  },
-  {
     "name": "Guernsey",
     "ISOAlpha2": "EU_GG",
     "continent": "Europe",

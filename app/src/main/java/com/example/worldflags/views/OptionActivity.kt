@@ -118,17 +118,105 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         RadioButton(
-            mainText = "European flags (non-UN)",
-            subText = "10 countries",
+            mainText = "Europea flags (non-UN)",
+            subText = "9 countries", // TODO: create function for counting json file items
             option = CountryCategories.EU_COUNTRIES_NON_UN,
             selectedOption = selectedOption,
             onOptionSelected = { onOptionSelected(it) }
         )
 
         RadioButton(
-            mainText = "European flags (UN)",
+            mainText = "Europea flags (UN)",
             subText = "44 countries",
             option = CountryCategories.EU_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "North America flags (UN)",
+            subText = "23 countries",
+            option = CountryCategories.NA_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "North America (non-UN)",
+            subText = "23 countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "South America flags (UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "South America flags (non-UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Africa flags (UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Africa flags (non-UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Asia flags (UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Asia flags (non-UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Oceania flags (UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Oceania flags (non-UN)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
+            selectedOption = selectedOption,
+            onOptionSelected = { onOptionSelected(it) }
+        )
+
+        RadioButton(
+            mainText = "Antarctica flags (misc)",
+            subText = "X countries",
+            option = CountryCategories.NA_COUNTRIES_NON_UN,
             selectedOption = selectedOption,
             onOptionSelected = { onOptionSelected(it) }
         )

@@ -155,6 +155,7 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "eu_se"
 
         // Get the resource ID dynamically
+        // TODO: refactor into a function as it contains UI logic
         val resourceId = try {
             val field = R.drawable::class.java.getField(correctCountryISO)
             field.getInt(null)
@@ -162,7 +163,6 @@ private fun FlagPlaceholder(correctCountry: Country?) {
             // Handle the case where the resource for the given country code doesn't exist
             R.drawable.eu_se // TODO: add default flag in case we can't read the flag
         }
-
         Image(
             painter = painterResource(resourceId),
             contentDescription = null,

@@ -14,6 +14,7 @@ An Android app intended for learning all the world's flags.
 - [X] Investigate free icons (icon manager or plugin to use?), [Androidicons](https://www.androidicons.com/)?
 - [ ] Add all countries
 - [ ] Add tracker for correct/incorrect?
+- [ ] Feature: implement localStorage when changing options and store in phone
 - [ ] Add unit tests and integration tests
 - [ ] Refactor existing code
 - [X] Add feature for categorizing continents
