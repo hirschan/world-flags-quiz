@@ -21,6 +21,21 @@ An Android app intended for learning all the world's flags.
 - [ ] Design: improve UI and create a DesignSystem for this project
 - [ ] Design: create logo for app project
 
+### Flags progress
+- [X] Europe flags
+- [X] Europe flags (non-UN)
+- [X] North America flags
+- [X] North America flags (non-UN)
+- [ ] South America flags
+- [ ] South America flags (non-UN)
+- [ ] Africa flags
+- [ ] Africa flags (non-UN)
+- [ ] Asia flags
+- [ ] Africa flags (non-UN)
+- [ ] Oceania flags
+- [ ] Oceania flags (non-UN)
+- [ ] Antarctica flags (misc)
+
 ### Stretch goals
 - [ ] Add map and have flags as option, or country names
 - [ ] Add feature for U.S. states and regions
