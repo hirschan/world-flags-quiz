@@ -17,24 +17,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
-import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -108,127 +103,152 @@ private fun TopAppBarHeader() {
     )
 }
 
+// TODO: refactor function
 @Composable
 private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
             .wrapContentSize(Alignment.TopStart),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        RadioButton(
-            mainText = "Europea flags (non-UN)",
-            subText = "9 countries", // TODO: create function for counting json file items
-            option = CountryCategories.EU_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Europe flags (non-UN)",
+                subText = "9 countries", // TODO: create function for counting json file items
+                option = CountryCategories.EU_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
+        item {
+            CustomRadioButton(
+                mainText = "Europe flags (UN)",
+                subText = "44 countries",
+                option = CountryCategories.EU_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
+        item {
+            CustomRadioButton(
+                mainText = "North America flags (UN)",
+                subText = "23 countries",
+                option = CountryCategories.NA_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Europea flags (UN)",
-            subText = "44 countries",
-            option = CountryCategories.EU_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "North America (non-UN)",
+                subText = "23 countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "North America flags (UN)",
-            subText = "23 countries",
-            option = CountryCategories.NA_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "South America flags (UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "North America (non-UN)",
-            subText = "23 countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "South America flags (non-UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "South America flags (UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Africa flags (UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "South America flags (non-UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Africa flags (non-UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Africa flags (UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Asia flags (UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Africa flags (non-UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Asia flags (non-UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Asia flags (UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Oceania flags (UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Asia flags (non-UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Oceania flags (non-UN)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Oceania flags (UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
+        item {
+            CustomRadioButton(
+                mainText = "Antarctica flags (misc)",
+                subText = "X countries",
+                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                selectedOption = selectedOption,
+                onOptionSelected = { onOptionSelected(it) }
+            )
+        }
 
-        RadioButton(
-            mainText = "Oceania flags (non-UN)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
-
-        RadioButton(
-            mainText = "Antarctica flags (misc)",
-            subText = "X countries",
-            option = CountryCategories.NA_COUNTRIES_NON_UN,
-            selectedOption = selectedOption,
-            onOptionSelected = { onOptionSelected(it) }
-        )
-
-        Spacer(modifier = Modifier.weight(1f))
-
-        BottomText()
+        item {
+            BottomText()
+        }
     }
 }
 
 @Composable
-private fun RadioButton(
+private fun CustomRadioButton(
     mainText: String,
     subText: String,
     option: CountryCategories,
