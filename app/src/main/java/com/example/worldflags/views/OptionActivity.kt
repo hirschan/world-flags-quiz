@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -37,6 +38,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
+import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.models.CountryCategories
 import org.koin.android.ext.android.get
 
@@ -91,11 +93,7 @@ private fun TopAppBarHeader() {
             IconButton(
                 onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_action_arrow_left),
-                    contentDescription = "Go back arrow icon",
-                    tint = White
-                )
+                IconComponent()
             }
         },
         title = { Text(text = "Options", color = White) },
