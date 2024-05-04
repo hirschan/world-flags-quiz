@@ -80,6 +80,16 @@
     "existsToday": true
   },
   {
+    "name": "Transnistria",
+    "ISOAlpha2": "EU_MD2",
+    "continent": "Europe",
+    "capital": "Tiraspol",
+    "type": "breakaway state",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
     "name": "Vatican City",
     "ISOAlpha2": "EU_VA",
     "continent": "Europe",

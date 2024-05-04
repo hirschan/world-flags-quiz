@@ -116,7 +116,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Europe flags (non-UN)",
-                subText = "9 countries", // TODO: create function for counting json file items
+                subText = "10 countries", // TODO: create function for counting json file items
                 option = CountryCategories.EU_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
