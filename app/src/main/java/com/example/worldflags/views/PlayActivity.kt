@@ -163,13 +163,13 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
     }
 }
 
-private fun getResourceId(correctCountryISO: String): Int {
+private fun getResourceId(correctFlagISO: String): Int {
     val resourceId = try {
-        val field = R.drawable::class.java.getField(correctCountryISO)
+        val field = R.drawable::class.java.getField(correctFlagISO)
         field.getInt(null)
     } catch (e: Exception) {
         // Handle the case where the resource for the given country code doesn't exist
-        R.drawable.eu_se // TODO: add default flag in case we can't read the flag
+        R.drawable._missing_flag
     }
     return resourceId
 }
