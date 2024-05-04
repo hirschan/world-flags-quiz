@@ -4,9 +4,7 @@
     "ISOAlpha2": "NA_AG",
     "continent": "North America",
     "capital": "St. John's",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -14,9 +12,7 @@
     "ISOAlpha2": "NA_BS",
     "continent": "North America",
     "capital": "Nassau",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -24,9 +20,7 @@
     "ISOAlpha2": "NA_BB",
     "continent": "North America",
     "capital": "Bridgetown",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -34,9 +28,7 @@
     "ISOAlpha2": "NA_BZ",
     "continent": "North America",
     "capital": "Belmopan",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -44,9 +36,7 @@
     "ISOAlpha2": "NA_CA",
     "continent": "North America",
     "capital": "Ottawa",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -54,9 +44,7 @@
     "ISOAlpha2": "NA_CR",
     "continent": "North America",
     "capital": "San José",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -64,9 +52,7 @@
     "ISOAlpha2": "NA_CU",
     "continent": "North America",
     "capital": "Havana",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -74,9 +60,7 @@
     "ISOAlpha2": "NA_DM",
     "continent": "North America",
     "capital": "Roseau",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -84,9 +68,7 @@
     "ISOAlpha2": "NA_DO",
     "continent": "North America",
     "capital": "Santo Domingo",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -94,9 +76,7 @@
     "ISOAlpha2": "NA_SV",
     "continent": "North America",
     "capital": "San Salvador",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -104,9 +84,7 @@
     "ISOAlpha2": "NA_GD",
     "continent": "North America",
     "capital": "St. George's",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -114,9 +92,7 @@
     "ISOAlpha2": "NA_GT",
     "continent": "North America",
     "capital": "Guatemala City",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -124,9 +100,7 @@
     "ISOAlpha2": "NA_HT",
     "continent": "North America",
     "capital": "Port-au-Prince",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -134,9 +108,7 @@
     "ISOAlpha2": "NA_HN",
     "continent": "North America",
     "capital": "Tegucigalpa",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -144,9 +116,7 @@
     "ISOAlpha2": "NA_JM",
     "continent": "North America",
     "capital": "Kingston",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -154,9 +124,7 @@
     "ISOAlpha2": "NA_MX",
     "continent": "North America",
     "capital": "Mexico City",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -164,9 +132,7 @@
     "ISOAlpha2": "NA_NI",
     "continent": "North America",
     "capital": "Managua",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -174,9 +140,7 @@
     "ISOAlpha2": "NA_PA",
     "continent": "North America",
     "capital": "Panama City",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -184,9 +148,7 @@
     "ISOAlpha2": "NA_KN",
     "continent": "North America",
     "capital": "Basseterre",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -194,9 +156,7 @@
     "ISOAlpha2": "NA_LC",
     "continent": "North America",
     "capital": "Castries",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -204,9 +164,7 @@
     "ISOAlpha2": "NA_VC",
     "continent": "North America",
     "capital": "Kingstown",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -214,9 +172,7 @@
     "ISOAlpha2": "NA_TT",
     "continent": "North America",
     "capital": "Port of Spain",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -224,9 +180,7 @@
     "ISOAlpha2": "NA_US",
     "continent": "North America",
     "capital": "Washington, D.C.",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   }
 ]

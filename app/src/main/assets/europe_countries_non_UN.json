@@ -4,9 +4,7 @@
     "ISOAlpha2": "EU_AX",
     "continent": "Europe",
     "capital": "Mariehamn",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -14,9 +12,7 @@
     "ISOAlpha2": "EU_FO",
     "continent": "Europe",
     "capital": "Tórshavn",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -24,9 +20,7 @@
     "ISOAlpha2": "EU_GI",
     "continent": "Europe",
     "capital": "Gibraltar",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "colony",
     "existsToday": true
   },
   {
@@ -34,9 +28,7 @@
     "ISOAlpha2": "EU_GG",
     "continent": "Europe",
     "capital": "St. Peter Port",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -44,9 +36,7 @@
     "ISOAlpha2": "EU_IM",
     "continent": "Europe",
     "capital": "Douglas",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -54,9 +44,7 @@
     "ISOAlpha2": "EU_JE",
     "continent": "Europe",
     "capital": "St. Helier",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -64,9 +52,7 @@
     "ISOAlpha2": "EU_XK",
     "continent": "Europe",
     "capital": "Pristina",
-    "type": "state",
-    "isSovereign": true,
-    "isUNMember": false,
+    "type": "partly sovereign",
     "existsToday": true
   },
   {
@@ -74,9 +60,7 @@
     "ISOAlpha2": "EU_SJ",
     "continent": "Europe",
     "capital": "Longyearbyen",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -85,8 +69,6 @@
     "continent": "Europe",
     "capital": "Tiraspol",
     "type": "breakaway state",
-    "isSovereign": false,
-    "isUNMember": false,
     "existsToday": true
   },
   {
@@ -95,8 +77,6 @@
     "continent": "Europe",
     "capital": "Vatican City",
     "type": "state",
-    "isSovereign": true,
-    "isUNMember": false,
     "existsToday": true
   }
 ]

@@ -4,9 +4,7 @@
     "ISOAlpha2": "EU_AL",
     "continent": "Europe",
     "capital": "Tirana",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -14,9 +12,7 @@
     "ISOAlpha2": "EU_AD",
     "continent": "Europe",
     "capital": "Andorra la Vella",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -24,9 +20,7 @@
     "ISOAlpha2": "EU_AT",
     "continent": "Europe",
     "capital": "Vienna",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -34,9 +28,7 @@
     "ISOAlpha2": "EU_BY",
     "continent": "Europe",
     "capital": "Minsk",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -44,9 +36,7 @@
     "ISOAlpha2": "EU_BE",
     "continent": "Europe",
     "capital": "Brussels",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -54,9 +44,7 @@
     "ISOAlpha2": "EU_BA",
     "continent": "Europe",
     "capital": "Sarajevo",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -64,9 +52,7 @@
     "ISOAlpha2": "EU_BG",
     "continent": "Europe",
     "capital": "Sofia",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -74,9 +60,7 @@
     "ISOAlpha2": "EU_HR",
     "continent": "Europe",
     "capital": "Zagreb",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -84,9 +68,7 @@
     "ISOAlpha2": "EU_CY",
     "continent": "Europe",
     "capital": "Nicosia",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -94,9 +76,7 @@
     "ISOAlpha2": "EU_CZ",
     "continent": "Europe",
     "capital": "Prague",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -104,9 +84,7 @@
     "ISOAlpha2": "EU_DK",
     "continent": "Europe",
     "capital": "Copenhagen",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -114,9 +92,7 @@
     "ISOAlpha2": "EU_EE",
     "continent": "Europe",
     "capital": "Tallinn",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -124,9 +100,7 @@
     "ISOAlpha2": "EU_FI",
     "continent": "Europe",
     "capital": "Helsinki",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -134,9 +108,7 @@
     "ISOAlpha2": "EU_FR",
     "continent": "Europe",
     "capital": "Paris",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -144,9 +116,7 @@
     "ISOAlpha2": "EU_DE",
     "continent": "Europe",
     "capital": "Berlin",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -154,9 +124,7 @@
     "ISOAlpha2": "EU_GR",
     "continent": "Europe",
     "capital": "Athens",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -164,9 +132,7 @@
     "ISOAlpha2": "EU_HU",
     "continent": "Europe",
     "capital": "Budapest",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -174,9 +140,7 @@
     "ISOAlpha2": "EU_IS",
     "continent": "Europe",
     "capital": "Reykjavik",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -184,9 +148,7 @@
     "ISOAlpha2": "EU_IE",
     "continent": "Europe",
     "capital": "Dublin",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -194,9 +156,7 @@
     "ISOAlpha2": "EU_IT",
     "continent": "Europe",
     "capital": "Rome",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -204,9 +164,7 @@
     "ISOAlpha2": "EU_LV",
     "continent": "Europe",
     "capital": "Riga",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -214,9 +172,7 @@
     "ISOAlpha2": "EU_LI",
     "continent": "Europe",
     "capital": "Vaduz",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -224,9 +180,7 @@
     "ISOAlpha2": "EU_LT",
     "continent": "Europe",
     "capital": "Vilnius",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -234,9 +188,7 @@
     "ISOAlpha2": "EU_LU",
     "continent": "Europe",
     "capital": "Luxembourg",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -244,9 +196,7 @@
     "ISOAlpha2": "EU_MT",
     "continent": "Europe",
     "capital": "Valletta",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -254,9 +204,7 @@
     "ISOAlpha2": "EU_MD",
     "continent": "Europe",
     "capital": "Chisinau",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -264,9 +212,7 @@
     "ISOAlpha2": "EU_MC",
     "continent": "Europe",
     "capital": "Monaco",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -274,9 +220,7 @@
     "ISOAlpha2": "EU_ME",
     "continent": "Europe",
     "capital": "Podgorica",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -284,9 +228,7 @@
     "ISOAlpha2": "EU_NL",
     "continent": "Europe",
     "capital": "Amsterdam",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -294,9 +236,7 @@
     "ISOAlpha2": "EU_MK",
     "continent": "Europe",
     "capital": "Skopje",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -304,9 +244,7 @@
     "ISOAlpha2": "EU_NO",
     "continent": "Europe",
     "capital": "Oslo",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -314,9 +252,7 @@
     "ISOAlpha2": "EU_PL",
     "continent": "Europe",
     "capital": "Warsaw",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -324,9 +260,7 @@
     "ISOAlpha2": "EU_PT",
     "continent": "Europe",
     "capital": "Lisbon",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -334,9 +268,7 @@
     "ISOAlpha2": "EU_RO",
     "continent": "Europe",
     "capital": "Bucharest",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -344,9 +276,7 @@
     "ISOAlpha2": "EU_RU",
     "continent": "Europe",
     "capital": "Moscow",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -354,9 +284,7 @@
     "ISOAlpha2": "EU_SM",
     "continent": "Europe",
     "capital": "San Marino",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -364,9 +292,7 @@
     "ISOAlpha2": "EU_RS",
     "continent": "Europe",
     "capital": "Belgrade",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -374,9 +300,7 @@
     "ISOAlpha2": "EU_SK",
     "continent": "Europe",
     "capital": "Bratislava",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -384,9 +308,7 @@
     "ISOAlpha2": "EU_SI",
     "continent": "Europe",
     "capital": "Ljubljana",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -394,9 +316,7 @@
     "ISOAlpha2": "EU_ES",
     "continent": "Europe",
     "capital": "Madrid",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -404,9 +324,7 @@
     "ISOAlpha2": "EU_SE",
     "continent": "Europe",
     "capital": "Stockholm",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -414,9 +332,7 @@
     "ISOAlpha2": "EU_CH",
     "continent": "Europe",
     "capital": "Bern",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -424,9 +340,7 @@
     "ISOAlpha2": "EU_UA",
     "continent": "Europe",
     "capital": "Kyiv",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -434,9 +348,7 @@
     "ISOAlpha2": "EU_GB",
     "continent": "Europe",
     "capital": "London",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   }
 ]

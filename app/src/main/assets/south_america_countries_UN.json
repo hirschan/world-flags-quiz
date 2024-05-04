@@ -4,9 +4,7 @@
     "ISOAlpha2": "SA_AR",
     "continent": "South America",
     "capital": "Buenos Aires",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -14,9 +12,7 @@
     "ISOAlpha2": "SA_BO",
     "continent": "South America",
     "capital": "Sucre",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -24,9 +20,7 @@
     "ISOAlpha2": "SA_BR",
     "continent": "South America",
     "capital": "Brasília",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -34,9 +28,7 @@
     "ISOAlpha2": "SA_CL",
     "continent": "South America",
     "capital": "Santiago",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -44,9 +36,7 @@
     "ISOAlpha2": "SA_CO",
     "continent": "South America",
     "capital": "Bogotá",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -54,9 +44,7 @@
     "ISOAlpha2": "SA_EC",
     "continent": "South America",
     "capital": "Quito",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -64,9 +52,7 @@
     "ISOAlpha2": "SA_GY",
     "continent": "South America",
     "capital": "Georgetown",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -74,9 +60,7 @@
     "ISOAlpha2": "SA_PY",
     "continent": "South America",
     "capital": "Asunción",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -84,9 +68,7 @@
     "ISOAlpha2": "SA_PE",
     "continent": "South America",
     "capital": "Lima",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -94,9 +76,7 @@
     "ISOAlpha2": "SA_SR",
     "continent": "South America",
     "capital": "Paramaribo",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -104,9 +84,7 @@
     "ISOAlpha2": "SA_UY",
     "continent": "South America",
     "capital": "Montevideo",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   },
   {
@@ -114,9 +92,7 @@
     "ISOAlpha2": "SA_VE",
     "continent": "South America",
     "capital": "Caracas",
-    "type": "country",
-    "isSovereign": true,
-    "isUNMember": true,
+    "type": "sovereign",
     "existsToday": true
   }
 ]

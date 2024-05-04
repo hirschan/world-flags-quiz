@@ -7,8 +7,8 @@ data class Country( // TODO: re-name to CountryFlag, Flag?
     val ISOAlpha2: String,
     val continent: String,
     val capital: String,
-    val type: String, // Other types for flags could be: ALLIANCE, COUNTRY, US_STATE, REGION
-    val isSovereign: Boolean,
+    val type: String, //TODO: define all types for flags could be: ALLIANCE, COUNTRY, US_STATE, REGION
+    val isSovereign: Boolean, // TODO: add parentState?
     val isUNMember: Boolean,
     val existsToday: Boolean,
 )

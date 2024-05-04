@@ -4,9 +4,7 @@
     "ISOAlpha2": "NA_AI",
     "continent": "North America",
     "capital": "The Valley",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -14,9 +12,7 @@
     "ISOAlpha2": "NA_AW",
     "continent": "North America",
     "capital": "Oranjestad",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -24,9 +20,7 @@
     "ISOAlpha2": "NA_BM",
     "continent": "North America",
     "capital": "Hamilton",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -34,9 +28,7 @@
     "ISOAlpha2": "NA_BQ",
     "continent": "North America",
     "capital": "Kralendijk",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "special municipality",
     "existsToday": true
   },
   {
@@ -44,9 +36,7 @@
     "ISOAlpha2": "NA_VG",
     "continent": "North America",
     "capital": "Road Town",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -54,9 +44,7 @@
     "ISOAlpha2": "NA_KY",
     "continent": "North America",
     "capital": "George Town",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -64,9 +52,7 @@
     "ISOAlpha2": "NA_CW",
     "continent": "North America",
     "capital": "Willemstad",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -74,9 +60,7 @@
     "ISOAlpha2": "NA_GL",
     "continent": "North America",
     "capital": "Nuuk",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -84,9 +68,7 @@
     "ISOAlpha2": "NA_GP",
     "continent": "North America",
     "capital": "Basse-Terre",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "non-self governing",
     "existsToday": true
   },
   {
@@ -94,9 +76,7 @@
     "ISOAlpha2": "NA_MQ",
     "continent": "North America",
     "capital": "Fort-de-France",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "non-self governing",
     "existsToday": true
   },
   {
@@ -104,9 +84,7 @@
     "ISOAlpha2": "NA_MS",
     "continent": "North America",
     "capital": "Plymouth",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -114,9 +92,7 @@
     "ISOAlpha2": "NA_UM",
     "continent": "North America",
     "capital": "",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "non-self governing",
     "existsToday": true
   },
   {
@@ -124,9 +100,7 @@
     "ISOAlpha2": "NA_PN",
     "continent": "North America",
     "capital": "Adamstown",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -134,9 +108,7 @@
     "ISOAlpha2": "NA_PR",
     "continent": "North America",
     "capital": "San Juan",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "partly self-governing",
     "existsToday": true
   },
   {
@@ -144,9 +116,7 @@
     "ISOAlpha2": "NA_BQ2",
     "continent": "North America",
     "capital": "The Bottom",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "special municipality",
     "existsToday": true
   },
   {
@@ -154,19 +124,15 @@
     "ISOAlpha2": "NA_BL",
     "continent": "North America",
     "capital": "Gustavia",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "non-self governing",
     "existsToday": true
   },
   {
-    "name": "Saint Martin (French part)",
+    "name": "Saint Martin (French)",
     "ISOAlpha2": "NA_MF",
     "continent": "North America",
     "capital": "Marigot",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -174,9 +140,7 @@
     "ISOAlpha2": "NA_PM",
     "continent": "North America",
     "capital": "Saint-Pierre",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -184,19 +148,15 @@
     "ISOAlpha2": "NA_BQ3",
     "continent": "North America",
     "capital": "Oranjestad",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "special municipality",
     "existsToday": true
   },
   {
-    "name": "Sint Maarten (Dutch part)",
+    "name": "Sint Maarten (Dutch)",
     "ISOAlpha2": "NA_SX",
     "continent": "North America",
     "capital": "Philipsburg",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -204,9 +164,7 @@
     "ISOAlpha2": "NA_TC",
     "continent": "North America",
     "capital": "Cockburn Town",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "self-governing",
     "existsToday": true
   },
   {
@@ -214,9 +172,7 @@
     "ISOAlpha2": "NA_VI",
     "continent": "North America",
     "capital": "Charlotte Amalie",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
+    "type": "non-self governing",
     "existsToday": true
   }
 ]

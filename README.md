@@ -2,6 +2,16 @@
 
 An Android app intended for learning all the world's flags.
 
+## Definitions
+
+States and territories are split into following types:
+* `sovereign`, including `partly sovereign`
+* `non-sovereign`, meaning: `self-governing`, `partly self-governing`, `non-self governing` (including uninhabited), `special municipality`, `colony` or `breakaway state`
+
+States and territories can also be divided into:
+* UN member states
+* Non-UN member states
+
 ## Tasks & roadmap
 
 - [X] Set up project
@@ -26,8 +36,8 @@ An Android app intended for learning all the world's flags.
 - [X] Europe flags (non-UN)
 - [X] North America flags
 - [X] North America flags (non-UN)
-- [ ] South America flags
-- [ ] South America flags (non-UN)
+- [X] South America flags
+- [X] South America flags (non-UN)
 - [ ] Africa flags
 - [ ] Africa flags (non-UN)
 - [ ] Asia flags
@@ -43,3 +53,4 @@ An Android app intended for learning all the world's flags.
 ## Links
 
 * Abbreviations of the world's continents: [here](https://planetarynames.wr.usgs.gov/Abbreviations) (`AF, AN, AS, EU, NA, OC, SA`)
+* Android emulator bugfix: [here](https://stackoverflow.com/questions/42816127/waiting-for-target-device-to-come-online)
