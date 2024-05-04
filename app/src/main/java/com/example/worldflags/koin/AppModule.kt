@@ -1,6 +1,6 @@
 package com.example.worldflags.koin
 
-import com.example.worldflags.services.CountryServiceImpl
+import com.example.worldflags.services.FlagServiceImpl
 import com.example.worldflags.services.OptionServiceImpl
 import com.example.worldflags.utils.ReadJSONFromAssets
 import com.example.worldflags.views.MainActivityViewModel
@@ -14,11 +14,11 @@ val appModule = module {
 
     single { ReadJSONFromAssets(androidContext()) }
 
-    factory { CountryServiceImpl(readJSONFromAssets = get(), optionService = get()) } // TODO: investigate Service as Factory
+    factory { FlagServiceImpl(readJSONFromAssets = get(), optionService = get()) } // TODO: investigate Service as Factory
 
     single { OptionServiceImpl() }
 
-    factory { PlayActivityViewModel(countryService = get()) }
+    factory { PlayActivityViewModel(flagService = get()) }
 
     single { MainActivityViewModel() }
 

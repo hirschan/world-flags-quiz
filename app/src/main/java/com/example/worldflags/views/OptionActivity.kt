@@ -117,7 +117,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Europe flags (non-UN)",
-                subText = "10 countries", // TODO: create function for counting json file items
+                subText = "10 territories", // TODO: create function for counting json file items
                 option = CountryCategories.EU_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -126,7 +126,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Europe flags (UN)",
-                subText = "44 countries",
+                subText = "44 states",
                 option = CountryCategories.EU_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -135,7 +135,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "North America flags (UN)",
-                subText = "23 countries",
+                subText = "23 states",
                 option = CountryCategories.NA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -145,7 +145,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "North America (non-UN)",
-                subText = "22 countries",
+                subText = "22 territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -155,7 +155,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "South America flags (UN)",
-                subText = "13 countries",
+                subText = "13 states",
                 option = CountryCategories.SA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -165,7 +165,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "South America flags (non-UN)",
-                subText = "6 countries",
+                subText = "6 territories",
                 option = CountryCategories.SA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -175,7 +175,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Africa flags (UN)",
-                subText = "X countries",
+                subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -185,7 +185,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Africa flags (non-UN)",
-                subText = "X countries",
+                subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -195,7 +195,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Asia flags (UN)",
-                subText = "X countries",
+                subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -205,7 +205,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Asia flags (non-UN)",
-                subText = "X countries",
+                subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -215,7 +215,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Oceania flags (UN)",
-                subText = "X countries",
+                subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -225,7 +225,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "Oceania flags (non-UN)",
-                subText = "X countries",
+                subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -234,8 +234,8 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
 
         item {
             CustomRadioButton(
-                mainText = "Antarctica flags (misc)",
-                subText = "X countries",
+                mainText = "Antarctica flags and misc",
+                subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }

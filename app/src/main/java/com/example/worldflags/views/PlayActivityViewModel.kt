@@ -3,55 +3,55 @@ package com.example.worldflags.views
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.worldflags.models.Country
-import com.example.worldflags.services.CountryServiceImpl
+import com.example.worldflags.models.FlagProperty
+import com.example.worldflags.services.FlagServiceImpl
 
 /**
- * An ViewModel-class that handles all UI logic, related to countries. */
+ * An ViewModel-class that handles all UI logic, related to flags. */
 
 class PlayActivityViewModel(
-    private val countryService: CountryServiceImpl,
+    private val flagService: FlagServiceImpl,
 ): ViewModel() {
 
-    private val _fourRandomNoDuplicateCountries = MutableLiveData<List<Country>>()
-    val fourRandomNoDuplicateCountries: LiveData<List<Country>> = _fourRandomNoDuplicateCountries
+    private val _fourRandomNoDuplicateFlagProps = MutableLiveData<List<FlagProperty>>()
+    val fourRandomNoDuplicateFlagProps: LiveData<List<FlagProperty>> = _fourRandomNoDuplicateFlagProps
 
-    private val _correctCountry = MutableLiveData<Country>()
-    val correctCountry: MutableLiveData<Country> = _correctCountry
+    private val _correctFlagProperty = MutableLiveData<FlagProperty>()
+    val correctFlagProperty: MutableLiveData<FlagProperty> = _correctFlagProperty
 
     private val _isComplete = MutableLiveData<Boolean>(false)
     val isComplete: MutableLiveData<Boolean> = _isComplete
 
-    private val _nbrOfGuessedCountries = MutableLiveData<Int>(0)
-    val nbrOfGuessedCountries: MutableLiveData<Int> = _nbrOfGuessedCountries
+    private val _nbrOfGuessedFlags = MutableLiveData<Int>(0)
+    val nbrOfGuessedFlags: MutableLiveData<Int> = _nbrOfGuessedFlags
 
     init {
         println("ALF PlayActivityViewModel initialized.")
-        generateFourNewCountries()
+        generateFourNewFlagProps()
     }
 
-    private fun generateFourNewCountries() {
-        _fourRandomNoDuplicateCountries.value = countryService.getFourRandomCountriesToDisplay()
-        setNewCorrectCountry()
+    private fun generateFourNewFlagProps() {
+        _fourRandomNoDuplicateFlagProps.value = flagService.getFourRandomFlagPropsToDisplay()
+        setNewCorrectFlagProp()
     }
 
-    private fun setNewCorrectCountry() {
-        _correctCountry.value = countryService.setCorrectCountry()
+    private fun setNewCorrectFlagProp() {
+        _correctFlagProperty.value = flagService.setCorrectFlagProp()
     }
 
-    fun onCorrectAnswerSelected(correctCountry: Country) {
-        _nbrOfGuessedCountries.value = countryService.blacklistedCountries.size + 1
-        countryService.addCountryToBlacklist(correctCountry)
+    fun onCorrectAnswerSelected(correctFlagProperty: FlagProperty) {
+        _nbrOfGuessedFlags.value = flagService.blacklistedFlags.size + 1
+        flagService.addFlagPropToBlacklist(correctFlagProperty)
 
-        if (countryService.blacklistedCountries.size == countryService.getTotalNumberOfAllCountries()) {
+        if (flagService.blacklistedFlags.size == flagService.getTotalNumberOfFlags()) {
             _isComplete.value = true
         }
 
-        generateFourNewCountries()
+        generateFourNewFlagProps()
     }
 
-    fun getNumberOfCountries(): Int {
-        return countryService.getTotalNumberOfAllCountries()
+    fun getNumberOfFlags(): Int {
+        return flagService.getTotalNumberOfFlags()
     }
 
     override fun onCleared() {

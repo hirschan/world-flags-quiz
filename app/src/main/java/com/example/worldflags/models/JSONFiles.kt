@@ -1,7 +1,7 @@
 package com.example.worldflags.models
 
 /**
- * Stores all json files and their names in strings. */
+ * Stores all json files and their file-names in strings. */
 
 class JSONFiles {
     companion object {

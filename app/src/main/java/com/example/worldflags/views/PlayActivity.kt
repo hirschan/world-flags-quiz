@@ -40,7 +40,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
-import com.example.worldflags.models.Country
+import com.example.worldflags.models.FlagProperty
 import com.example.worldflags.utils.MockData
 import org.koin.android.ext.android.get
 
@@ -65,11 +65,11 @@ class PlayActivity : ComponentActivity() {
 private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
-    val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateCountries.observeAsState().value
-    val correctCountry = viewModel.correctCountry.observeAsState().value
+    val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateFlagProps.observeAsState().value
+    val correctCountry = viewModel.correctFlagProperty.observeAsState().value
     val isGameComplete = viewModel.isComplete.observeAsState().value
-    val nbrOfGuessedCountries = viewModel.nbrOfGuessedCountries.observeAsState().value ?: 0
-    val nbrOfCountries = viewModel.getNumberOfCountries()
+    val nbrOfGuessedCountries = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
+    val nbrOfCountries = viewModel.getNumberOfFlags()
 
     // Trigger side-effect when isComplete changes to true
     LaunchedEffect(isGameComplete) {
@@ -90,7 +90,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -100,8 +100,8 @@ private fun PlayScreen(fourCountriesToDisplay: List<Country?>, correctCountry: C
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries)
-        FlagPlaceholder(correctCountry)
-        OptionButtons(fourCountriesToDisplay, correctCountry, isCorrectClicked)
+        FlagPlaceholder(correctFlagProperty)
+        OptionButtons(fourCountriesToDisplay, correctFlagProperty, isCorrectClicked)
     }
 }
 
@@ -144,7 +144,7 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
 }
 
 @Composable
-private fun FlagPlaceholder(correctCountry: Country?) {
+private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
     Column(
         modifier = Modifier
             .padding(100.dp),
@@ -152,10 +152,10 @@ private fun FlagPlaceholder(correctCountry: Country?) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        val correctCountryISO = correctCountry?.ISOAlpha2?.lowercase() ?: "eu_se"
+        val correctFlagISO = correctFlagProperty?.ISOAlpha2?.lowercase() ?: "eu_se"
 
         Image(
-            painter = painterResource(getResourceId(correctCountryISO)),
+            painter = painterResource(getResourceId(correctFlagISO)),
             contentDescription = null,
             modifier = Modifier
                 .clip(RoundedCornerShape(7.dp))
@@ -175,7 +175,7 @@ private fun getResourceId(correctCountryISO: String): Int {
 }
 
 @Composable
-private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry: Country?, isCorrectClicked: (Boolean) -> Unit) {
+private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -190,25 +190,25 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
         ) {
             Button(
                 colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[0]?.name, correctCountry?.name, isCorrectClicked) },
+                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[0]?.name, correctFlagProperty?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
                     .padding(end = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[0]?.name ?: "Null 1", style = TextStyle(fontSize = 18.sp))
+                Text(text = fourFlagsToDisplay[0]?.name ?: "Null 1", style = TextStyle(fontSize = 18.sp))
             }
             Button(
                 colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[1]?.name, correctCountry?.name, isCorrectClicked) },
+                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[1]?.name, correctFlagProperty?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
                     .padding(start = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[1]?.name ?: "Null 2", style = TextStyle(fontSize = 18.sp))
+                Text(text = fourFlagsToDisplay[1]?.name ?: "Null 2", style = TextStyle(fontSize = 18.sp))
             }
         }
         Row(
@@ -218,32 +218,32 @@ private fun OptionButtons(fourCountriesToDisplay: List<Country?>, correctCountry
         ) {
             Button(
                 colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[2]?.name, correctCountry?.name, isCorrectClicked) },
+                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[2]?.name, correctFlagProperty?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
                     .padding(end = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[2]?.name ?: "Null 3", style = TextStyle(fontSize = 18.sp))
+                Text(text = fourFlagsToDisplay[2]?.name ?: "Null 3", style = TextStyle(fontSize = 18.sp))
             }
             Button(
                 colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
-                onClick = { onCountryButtonClick(fourCountriesToDisplay[3]?.name, correctCountry?.name, isCorrectClicked) },
+                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[3]?.name, correctFlagProperty?.name, isCorrectClicked) },
                 modifier = Modifier
                     .weight(1f)
                     .height(100.dp)
                     .padding(start = 8.dp),
                 shape = RoundedCornerShape(20.dp)
             ) {
-                Text(text = fourCountriesToDisplay[3]?.name ?: "Null 4", style = TextStyle(fontSize = 18.sp))
+                Text(text = fourFlagsToDisplay[3]?.name ?: "Null 4", style = TextStyle(fontSize = 18.sp))
             }
         }
     }
 }
 
-fun onCountryButtonClick(buttonLabelCountry: String?, correctCountry: String?, isCorrectClicked: (Boolean) -> Unit) {
-    if (buttonLabelCountry.equals(correctCountry)) {
+fun onFlagNameButtonClick(buttonFlagLabel: String?, correctFlag: String?, isCorrectClicked: (Boolean) -> Unit) {
+    if (buttonFlagLabel.equals(correctFlag)) {
         isCorrectClicked(true)
     } else {
         isCorrectClicked(false)
@@ -256,11 +256,11 @@ private fun PreviewPlayScreen() {
 
     val mockData = MockData()
 
-    val mockFourCountries = listOf(mockData.mockCountry, mockData.mockCountry, mockData.mockCountry, mockData.mockCountry)
-    val mockCorrectCountry = mockData.mockCountry
+    val mockFourFlagProps = listOf(mockData.mockFlagProperty, mockData.mockFlagProperty, mockData.mockFlagProperty, mockData.mockFlagProperty)
+    val mockCorrectFlag = mockData.mockFlagProperty
     val mockIsCorrectClicked: (Boolean) -> Unit = {}
-    val mockNbrOfGuessedCountries = 1
-    val mockNbrOfCountries = 4
+    val mockNbrOfGuessedFlags = 1
+    val mockNbrOfFlags = 4
 
-    PlayScreen(mockFourCountries, mockCorrectCountry, mockNbrOfGuessedCountries, mockNbrOfCountries, mockIsCorrectClicked)
+    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockIsCorrectClicked)
 }

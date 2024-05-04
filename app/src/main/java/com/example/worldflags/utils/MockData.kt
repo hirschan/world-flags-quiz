@@ -1,12 +1,12 @@
 package com.example.worldflags.utils
 
-import com.example.worldflags.models.Country
+import com.example.worldflags.models.FlagProperty
 
 /** This class is only intended for displaying mock data in @Previews, using Jetpack Compose and Composable functions. */
 
 class MockData {
 
-    val mockCountry = Country(
+    val mockFlagProperty = FlagProperty(
         name = "Sweden",
         ISOAlpha2 = "SE",
         continent = "Europe",

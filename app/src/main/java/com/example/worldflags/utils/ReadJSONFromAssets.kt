@@ -1,7 +1,7 @@
 package com.example.worldflags.utils
 
 import android.content.Context
-import com.example.worldflags.models.Country
+import com.example.worldflags.models.FlagProperty
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.InputStream
@@ -11,10 +11,10 @@ import java.io.InputStream
 
 class ReadJSONFromAssets(private val context: Context) {
 
-    fun createAndReturnCountryObjects(jsonFileName: String): List<Country>? {
+    fun createAndReturnFlagPropObjects(jsonFileName: String): List<FlagProperty>? {
         val jsonString = readJsonFile(jsonFileName)
-        val countries = jsonString?.let { parseJsonStringToCountries(it) }
-        return countries
+        val flags = jsonString?.let { parseJsonStringToFlagProps(it) }
+        return flags
     }
 
     private fun readJsonFile(fileName: String): String? {
@@ -35,10 +35,10 @@ class ReadJSONFromAssets(private val context: Context) {
         return json
     }
 
-    private fun parseJsonStringToCountries(json: String): List<Country>? {
+    private fun parseJsonStringToFlagProps(json: String): List<FlagProperty>? {
         return try {
-            val listType = object : TypeToken<List<Country>>() {}.type
-            Gson().fromJson<List<Country>>(json, listType)
+            val listType = object : TypeToken<List<FlagProperty>>() {}.type
+            Gson().fromJson<List<FlagProperty>>(json, listType)
         } catch (ex: Exception) {
             ex.printStackTrace()
             null
