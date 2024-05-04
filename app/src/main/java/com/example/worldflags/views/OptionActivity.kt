@@ -144,7 +144,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "North America (non-UN)",
-                subText = "23 countries",
+                subText = "22 countries",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
@@ -154,8 +154,8 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "South America flags (UN)",
-                subText = "X countries",
-                option = CountryCategories.NA_COUNTRIES_UN,
+                subText = "13 countries",
+                option = CountryCategories.SA_COUNTRIES_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
             )
@@ -164,8 +164,8 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         item {
             CustomRadioButton(
                 mainText = "South America flags (non-UN)",
-                subText = "X countries",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
+                subText = "6 countries",
+                option = CountryCategories.SA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
                 onOptionSelected = { onOptionSelected(it) }
             )

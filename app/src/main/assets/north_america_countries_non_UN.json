@@ -70,16 +70,6 @@
     "existsToday": true
   },
   {
-    "name": "French Guiana",
-    "ISOAlpha2": "NA_GF",
-    "continent": "North America",
-    "capital": "Cayenne",
-    "type": "territory",
-    "isSovereign": false,
-    "isUNMember": false,
-    "existsToday": true
-  },
-  {
     "name": "Greenland",
     "ISOAlpha2": "NA_GL",
     "continent": "North America",

@@ -7,13 +7,18 @@ import com.example.worldflags.models.JSONFiles.Companion.EUROPE_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
 import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_UN
+import com.example.worldflags.models.JSONFiles.Companion.SOUTH_AMERICA_NON_UN
+import com.example.worldflags.models.JSONFiles.Companion.SOUTH_AMERICA_UN
 import com.example.worldflags.services.OptionServiceImpl
 
+// TODO: move out?
 enum class CountryCategories {
     EU_COUNTRIES_NON_UN,
     EU_COUNTRIES_UN,
     NA_COUNTRIES_UN,
     NA_COUNTRIES_NON_UN,
+    SA_COUNTRIES_UN,
+    SA_COUNTRIES_NON_UN,
 }
 
 class OptionActivityViewModel(
@@ -37,6 +42,8 @@ class OptionActivityViewModel(
             CountryCategories.EU_COUNTRIES_UN -> EUROPE_UN
             CountryCategories.NA_COUNTRIES_UN -> NORTH_AMERICA_UN
             CountryCategories.NA_COUNTRIES_NON_UN -> NORTH_AMERICA_NON_UN
+            CountryCategories.SA_COUNTRIES_UN -> SOUTH_AMERICA_UN
+            CountryCategories.SA_COUNTRIES_NON_UN -> SOUTH_AMERICA_NON_UN
             else -> EUROPE_NON_UN
         }
         optionService.changeJSONAssetFile(tempFile)

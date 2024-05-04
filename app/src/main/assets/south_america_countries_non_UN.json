@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ascension Island",
+    "ISOAlpha2": "SA_AC",
+    "continent": "South America",
+    "capital": "Georgetown",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Bouvet Island",
+    "ISOAlpha2": "SA_BV",
+    "continent": "South America",
+    "capital": "",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Curaçao",
+    "ISOAlpha2": "SA_CW",
+    "continent": "South America",
+    "capital": "Willemstad",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Falkland Islands",
+    "ISOAlpha2": "SA_FK",
+    "continent": "South America",
+    "capital": "Stanley",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "French Guiana",
+    "ISOAlpha2": "SA_GF",
+    "continent": "South America",
+    "capital": "Cayenne",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "ISOAlpha2": "SA_GS",
+    "continent": "South America",
+    "capital": "King Edward Point",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  }
+]
