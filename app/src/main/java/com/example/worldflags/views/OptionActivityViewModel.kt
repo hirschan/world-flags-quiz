@@ -3,6 +3,7 @@ package com.example.worldflags.views
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.worldflags.models.CountryCategories
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
 import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_NON_UN
@@ -11,18 +12,8 @@ import com.example.worldflags.models.JSONFiles.Companion.SOUTH_AMERICA_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.SOUTH_AMERICA_UN
 import com.example.worldflags.services.OptionServiceImpl
 
-// TODO: move out?
-enum class CountryCategories {
-    EU_COUNTRIES_NON_UN,
-    EU_COUNTRIES_UN,
-    NA_COUNTRIES_UN,
-    NA_COUNTRIES_NON_UN,
-    SA_COUNTRIES_UN,
-    SA_COUNTRIES_NON_UN,
-}
-
 class OptionActivityViewModel(
-    val optionService: OptionServiceImpl,
+    private val optionService: OptionServiceImpl,
 ): ViewModel() {
 
     private val _selectedOption = MutableLiveData<CountryCategories>(CountryCategories.EU_COUNTRIES_NON_UN)

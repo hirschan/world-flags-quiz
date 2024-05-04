@@ -38,6 +38,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
+import com.example.worldflags.models.CountryCategories
 import org.koin.android.ext.android.get
 
 /** UI for options screen. */

@@ -10,7 +10,7 @@ import com.example.worldflags.services.CountryServiceImpl
  * An ViewModel-class that handles all UI logic, related to countries. */
 
 class PlayActivityViewModel(
-    val countryService: CountryServiceImpl,
+    private val countryService: CountryServiceImpl,
 ): ViewModel() {
 
     private val _fourRandomNoDuplicateCountries = MutableLiveData<List<Country>>()

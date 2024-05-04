@@ -1,4 +1,4 @@
-# World Flags Quiz
+# World Flags Quiz 🌎
 
 An Android app intended for learning all the world's flags.
 

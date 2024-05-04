@@ -11,9 +11,7 @@ class MockData {
         ISOAlpha2 = "SE",
         continent = "Europe",
         capital = "Stockholm",
-        type = "country",
-        isSovereign = true,
-        isUNMember = true,
+        type = "sovereign",
         existsToday = false,
         )
 
