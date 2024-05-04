@@ -7,7 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -144,7 +143,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
 
         item {
             CustomRadioButton(
-                mainText = "North America (non-UN)",
+                mainText = "North America flags (non-UN)",
                 subText = "22 territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
                 selectedOption = selectedOption,
@@ -241,10 +240,6 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
                 onOptionSelected = { onOptionSelected(it) }
             )
         }
-
-        item {
-            BottomText()
-        }
     }
 }
 
@@ -280,22 +275,6 @@ private fun CustomRadioButton(
                 fontSize = 12.sp
             )
         }
-    }
-}
-
-@Composable
-private fun BottomText() {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(bottom = 16.dp), // Add padding to push the text off the bottom
-        contentAlignment = Alignment.BottomStart
-    ) {
-        Text(
-            text = "Our definition of a country is from Flagpedia, meaning countries whose flag is represented by emojis.",
-            color = White,
-            fontSize = 10.sp,
-        )
     }
 }
 
