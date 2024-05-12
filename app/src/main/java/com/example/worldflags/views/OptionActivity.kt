@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -41,6 +42,7 @@ import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
 import com.example.worldflags.models.CountryCategories
+import com.example.worldflags.models.RadioButtonData
 import org.koin.android.ext.android.get
 
 /** UI for options screen. */
@@ -102,9 +104,24 @@ private fun TopAppBarHeader() {
     )
 }
 
-// TODO: refactor function
 @Composable
 private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
+    val radioButtons = listOf(
+        RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_COUNTRIES_NON_UN),
+        RadioButtonData("Europe flags (UN)", "44 states", CountryCategories.EU_COUNTRIES_UN),
+        RadioButtonData("North America flags (UN)", "23 states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_COUNTRIES_NON_UN),
+        RadioButtonData("South America flags (UN)", "13 states", CountryCategories.SA_COUNTRIES_UN),
+        RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_COUNTRIES_NON_UN),
+        RadioButtonData("Africa flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Africa flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
+        RadioButtonData("Asia flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
+        RadioButtonData("Oceania flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
+        RadioButtonData("Antarctica flags and misc", "X territories", CountryCategories.NA_COUNTRIES_NON_UN)
+    )
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -112,131 +129,13 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
             .wrapContentSize(Alignment.TopStart),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        item {
+        items(radioButtons) { radioButton ->
             RadioButtonComponent(
-                mainText = "Europe flags (non-UN)",
-                subText = "10 territories", // TODO: create function for counting json file items
-                option = CountryCategories.EU_COUNTRIES_NON_UN,
+                mainText = radioButton.mainText,
+                subText = radioButton.subText,
+                option = radioButton.option,
                 selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-        item {
-            RadioButtonComponent(
-                mainText = "Europe flags (UN)",
-                subText = "44 states",
-                option = CountryCategories.EU_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-        item {
-            RadioButtonComponent(
-                mainText = "North America flags (UN)",
-                subText = "23 states",
-                option = CountryCategories.NA_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "North America flags (non-UN)",
-                subText = "22 territories",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "South America flags (UN)",
-                subText = "13 states",
-                option = CountryCategories.SA_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "South America flags (non-UN)",
-                subText = "6 territories",
-                option = CountryCategories.SA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Africa flags (UN)",
-                subText = "X states",
-                option = CountryCategories.NA_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Africa flags (non-UN)",
-                subText = "X territories",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Asia flags (UN)",
-                subText = "X states",
-                option = CountryCategories.NA_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Asia flags (non-UN)",
-                subText = "X territories",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Oceania flags (UN)",
-                subText = "X states",
-                option = CountryCategories.NA_COUNTRIES_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Oceania flags (non-UN)",
-                subText = "X territories",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
-            )
-        }
-
-        item {
-            RadioButtonComponent(
-                mainText = "Antarctica flags and misc",
-                subText = "X territories",
-                option = CountryCategories.NA_COUNTRIES_NON_UN,
-                selectedOption = selectedOption,
-                onOptionSelected = { onOptionSelected(it) }
+                onOptionSelected = onOptionSelected
             )
         }
     }
