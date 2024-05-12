@@ -8,7 +8,7 @@ States and territories are split into following types:
 
 **Sovereign**
 * `sovereign`
-* `partly sovereign`
+* `partly sovereign` (partially recognized state)
 
 **Non-sovereign**
 * `non-sovereign`
@@ -42,6 +42,7 @@ States and territories can also be divided into:
 - [X] Add feature for categorizing continents
 - [X] Design: improve UI and create a DesignSystem for this project
 - [ ] Design: create logo for app project
+- [ ] Come back to African non UN territories/states
 
 ### Flags progress
 - [X] Europe flags

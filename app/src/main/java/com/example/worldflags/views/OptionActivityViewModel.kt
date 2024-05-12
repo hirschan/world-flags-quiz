@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.worldflags.models.CountryCategories
+import com.example.worldflags.models.JSONFiles.Companion.AFRICA_NON_UN
+import com.example.worldflags.models.JSONFiles.Companion.AFRICA_UN
 import com.example.worldflags.models.JSONFiles.Companion.AN_TERRITORIES
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
@@ -17,7 +19,7 @@ class OptionActivityViewModel(
     private val optionService: OptionServiceImpl,
 ): ViewModel() {
 
-    private val _selectedOption = MutableLiveData<CountryCategories>(CountryCategories.EU_COUNTRIES_NON_UN)
+    private val _selectedOption = MutableLiveData<CountryCategories>(CountryCategories.EU_TERRITORIES_NON_UN)
     val selectedOption: LiveData<CountryCategories> = _selectedOption
 
     init {
@@ -31,12 +33,14 @@ class OptionActivityViewModel(
 
     private fun loadNewJsonFile(newOption: CountryCategories) {
         val tempFile = when (newOption) {
-            CountryCategories.EU_COUNTRIES_UN -> EUROPE_UN
-            CountryCategories.NA_COUNTRIES_UN -> NORTH_AMERICA_UN
-            CountryCategories.NA_COUNTRIES_NON_UN -> NORTH_AMERICA_NON_UN
-            CountryCategories.SA_COUNTRIES_UN -> SOUTH_AMERICA_UN
-            CountryCategories.SA_COUNTRIES_NON_UN -> SOUTH_AMERICA_NON_UN
+            CountryCategories.EU_TERRITORIES_UN -> EUROPE_UN
+            CountryCategories.NA_STATES_UN -> NORTH_AMERICA_UN
+            CountryCategories.NA_TERRITORIES_NON_UN -> NORTH_AMERICA_NON_UN
+            CountryCategories.SA_STATES_UN -> SOUTH_AMERICA_UN
+            CountryCategories.SA_TERRITORIES_NON_UN -> SOUTH_AMERICA_NON_UN
             CountryCategories.AN_TERRITORIES -> AN_TERRITORIES
+            CountryCategories.AF_STATES_UN -> AFRICA_UN
+            CountryCategories.AF_TERRITORIES_NON_NU -> AFRICA_NON_UN
             else -> EUROPE_NON_UN
         }
         optionService.changeJSONAssetFile(tempFile)

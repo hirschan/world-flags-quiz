@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Sahrawi Arab Democratic Republic",
+    "ISOAlpha2": "AF_EH",
+    "continent": "Africa",
+    "capital": "El Aaiún (de jure), Rabuni, Tindouf (de facto), Tifariti (declared provisional)",
+    "type": "partially recognized state",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Somaliland",
+    "ISOAlpha2": "AF_XS",
+    "continent": "Africa",
+    "capital": "Hargeisa",
+    "type": "partially recognized state",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Mayotte",
+    "ISOAlpha2": "AF_YT",
+    "continent": "Africa",
+    "capital": "Mamoudzou",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Réunion",
+    "ISOAlpha2": "AF_RE",
+    "continent": "Africa",
+    "capital": "Saint-Denis",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "ISOAlpha2": "AF_SH",
+    "continent": "Africa",
+    "capital": "Jamestown",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  },
+  {
+    "name": "French Southern and Antarctic Lands",
+    "ISOAlpha2": "AF_TF",
+    "continent": "Africa",
+    "capital": "Saint Pierre",
+    "type": "territory",
+    "isSovereign": false,
+    "isUNMember": false,
+    "existsToday": true
+  }
+]
