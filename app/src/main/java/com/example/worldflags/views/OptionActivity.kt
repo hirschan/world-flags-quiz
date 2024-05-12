@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
+import com.example.worldflags.designsystem.RadioButtonComponent
 import com.example.worldflags.models.CountryCategories
 import org.koin.android.ext.android.get
 
@@ -112,7 +113,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Europe flags (non-UN)",
                 subText = "10 territories", // TODO: create function for counting json file items
                 option = CountryCategories.EU_COUNTRIES_NON_UN,
@@ -121,7 +122,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
             )
         }
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Europe flags (UN)",
                 subText = "44 states",
                 option = CountryCategories.EU_COUNTRIES_UN,
@@ -130,7 +131,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
             )
         }
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "North America flags (UN)",
                 subText = "23 states",
                 option = CountryCategories.NA_COUNTRIES_UN,
@@ -140,7 +141,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "North America flags (non-UN)",
                 subText = "22 territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
@@ -150,7 +151,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "South America flags (UN)",
                 subText = "13 states",
                 option = CountryCategories.SA_COUNTRIES_UN,
@@ -160,7 +161,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "South America flags (non-UN)",
                 subText = "6 territories",
                 option = CountryCategories.SA_COUNTRIES_NON_UN,
@@ -170,7 +171,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Africa flags (UN)",
                 subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
@@ -180,7 +181,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Africa flags (non-UN)",
                 subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
@@ -190,7 +191,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Asia flags (UN)",
                 subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
@@ -200,7 +201,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Asia flags (non-UN)",
                 subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
@@ -210,7 +211,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Oceania flags (UN)",
                 subText = "X states",
                 option = CountryCategories.NA_COUNTRIES_UN,
@@ -220,7 +221,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Oceania flags (non-UN)",
                 subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
@@ -230,7 +231,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
 
         item {
-            CustomRadioButton(
+            RadioButtonComponent(
                 mainText = "Antarctica flags and misc",
                 subText = "X territories",
                 option = CountryCategories.NA_COUNTRIES_NON_UN,
@@ -240,42 +241,6 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
         }
     }
 }
-
-@Composable
-private fun CustomRadioButton(
-    mainText: String,
-    subText: String,
-    option: CountryCategories,
-    selectedOption: CountryCategories,
-    onOptionSelected: (CountryCategories) -> Unit
-) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.clickable { onOptionSelected(option) }
-    ) {
-        RadioButton(
-            selected = option == selectedOption,
-            onClick = { onOptionSelected(option) },
-            colors = RadioButtonDefaults.colors(selectedColor = White)
-        )
-        Column(
-            modifier = Modifier.padding(start = 8.dp)
-        ) {
-            Text(
-                text = mainText,
-                color = White,
-                fontSize = 18.sp
-            )
-            Spacer(modifier = Modifier.height(6.dp))
-            Text(
-                text = subText,
-                color = White,
-                fontSize = 12.sp
-            )
-        }
-    }
-}
-
 
 @Preview(showBackground = true)
 @Composable
