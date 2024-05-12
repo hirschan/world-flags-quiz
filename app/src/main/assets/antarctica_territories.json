@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Antarctica",
+    "ISOAlpha2": "AN_AQ",
+    "continent": "Antarctica",
+    "capital": "",
+    "type": "non-sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Adélie Land",
+    "ISOAlpha2": "AQ_TF",
+    "continent": "Antarctica",
+    "capital": "Dumont d'Urville Station",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "British Antarctic Territory",
+    "ISOAlpha2": "AQ_UK",
+    "continent": "Antarctica",
+    "capital": "Rothera",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Ross Dependency",
+    "ISOAlpha2": "AQ_NZ",
+    "continent": "Antarctica",
+    "capital": "Scott Base",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Peter I Island (proposed flag)",
+    "ISOAlpha2": "AQ_NO",
+    "continent": "Antarctica",
+    "capital": "",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Queen Maud Land (proposed flag)",
+    "ISOAlpha2": "AQ_NO",
+    "continent": "Antarctica",
+    "capital": "",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Australian Antarctic Territory",
+    "ISOAlpha2": "AQ_AU",
+    "continent": "Antarctica",
+    "capital": "Davis Station",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Chilean Antarctic Territory (Magallanes Region)",
+    "ISOAlpha2": "AQ_CL",
+    "continent": "Antarctica",
+    "capital": "Villa Las Estrellas",
+    "type": "sector",
+    "existsToday": true
+  },
+  {
+    "name": "Argentine Antarctica (Tierra del Fuego Province)",
+    "ISOAlpha2": "AQ_AR",
+    "continent": "Antarctica",
+    "capital": "Orcadas Base",
+    "type": "sector",
+    "existsToday": true
+  }
+]

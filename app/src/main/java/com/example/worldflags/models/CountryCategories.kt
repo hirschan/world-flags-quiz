@@ -10,4 +10,5 @@ enum class CountryCategories {
     NA_COUNTRIES_NON_UN,
     SA_COUNTRIES_UN,
     SA_COUNTRIES_NON_UN,
+    AN_TERRITORIES,
 }

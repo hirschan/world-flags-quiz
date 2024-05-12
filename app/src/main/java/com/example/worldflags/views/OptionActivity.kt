@@ -107,20 +107,20 @@ private fun TopAppBarHeader() {
 @Composable
 private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
     val radioButtons = listOf(
-        RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_COUNTRIES_NON_UN),
-        RadioButtonData("Europe flags (UN)", "44 states", CountryCategories.EU_COUNTRIES_UN),
-        RadioButtonData("North America flags (UN)", "23 states", CountryCategories.NA_COUNTRIES_UN),
-        RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_COUNTRIES_NON_UN),
-        RadioButtonData("South America flags (UN)", "13 states", CountryCategories.SA_COUNTRIES_UN),
-        RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_COUNTRIES_NON_UN),
-        RadioButtonData("Africa flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Africa flags (UN)", "X sovereign states", CountryCategories.NA_COUNTRIES_UN),
         RadioButtonData("Africa flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
-        RadioButtonData("Asia flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Antarctica flags", "7 territories", CountryCategories.AN_TERRITORIES),
+        RadioButtonData("Asia flags (UN)", "X sovereign states", CountryCategories.NA_COUNTRIES_UN),
         RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
-        RadioButtonData("Oceania flags (UN)", "X states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("Europe flags (UN)", "44 sovereign states", CountryCategories.EU_COUNTRIES_UN),
+        RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_COUNTRIES_NON_UN),
+        RadioButtonData("North America flags (UN)", "23 sovereign states", CountryCategories.NA_COUNTRIES_UN),
+        RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_COUNTRIES_NON_UN),
+        RadioButtonData("Oceania flags (UN)", "X sovereign states", CountryCategories.NA_COUNTRIES_UN),
         RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_COUNTRIES_NON_UN),
-        RadioButtonData("Antarctica flags and misc", "X territories", CountryCategories.NA_COUNTRIES_NON_UN)
-    )
+        RadioButtonData("South America flags (UN)", "13 sovereign states", CountryCategories.SA_COUNTRIES_UN),
+        RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_COUNTRIES_NON_UN),
+        )
 
     LazyColumn(
         modifier = Modifier

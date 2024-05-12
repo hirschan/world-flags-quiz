@@ -11,5 +11,6 @@ class JSONFiles {
         const val NORTH_AMERICA_NON_UN = "north_america_countries_non_UN.json"
         const val SOUTH_AMERICA_UN = "south_america_countries_UN.json"
         const val SOUTH_AMERICA_NON_UN = "south_america_countries_non_UN.json"
+        const val AN_TERRITORIES = "antarctica_territories.json"
     }
 }

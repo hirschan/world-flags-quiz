@@ -14,14 +14,15 @@ States and territories are split into following types:
 * `non-sovereign`
 * `self-governing`
 * `partly self-governing`
-* `non-self governing` (including uninhabited)
+* `non-self governing` (e.g. uninhabited)
 * `special municipality`
 * `colony`
 * `breakaway state`
+* `sector` (Antarctica)
 
 States and territories can also be divided into:
-* UN member states
-* Non-UN member states
+* `UN member` states/countries/territories
+* `Non-UN member` states/countries/territories
 
 ## Tasks & roadmap
 
@@ -39,7 +40,7 @@ States and territories can also be divided into:
 - [ ] Add unit tests and integration tests
 - [ ] Refactor existing code
 - [X] Add feature for categorizing continents
-- [ ] Design: improve UI and create a DesignSystem for this project
+- [X] Design: improve UI and create a DesignSystem for this project
 - [ ] Design: create logo for app project
 
 ### Flags progress
