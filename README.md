@@ -5,8 +5,19 @@ An Android app intended for learning all the world's flags.
 ## Definitions
 
 States and territories are split into following types:
-* `sovereign`, including `partly sovereign`
-* `non-sovereign`, meaning: `self-governing`, `partly self-governing`, `non-self governing` (including uninhabited), `special municipality`, `colony` or `breakaway state`
+
+**Sovereign**
+* `sovereign`
+* `partly sovereign`
+
+**Non-sovereign**
+* `non-sovereign`
+* `self-governing`
+* `partly self-governing`
+* `non-self governing` (including uninhabited)
+* `special municipality`
+* `colony`
+* `breakaway state`
 
 States and territories can also be divided into:
 * UN member states
