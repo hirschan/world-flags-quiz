@@ -72,8 +72,8 @@ private fun PreviewRadioButtonComponent() {
         RadioButtonComponent(
             "Europe flags (UN)",
             "44 states",
-            CountryCategories.NA_TERRITORIES_NON_UN,
-            CountryCategories.NA_TERRITORIES_NON_UN,
+            CountryCategories.NORTH_AMERICA_NON_UN,
+            CountryCategories.NORTH_AMERICA_NON_UN,
             {}
         )
     }

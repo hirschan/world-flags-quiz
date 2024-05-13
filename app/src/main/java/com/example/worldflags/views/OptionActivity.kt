@@ -54,7 +54,7 @@ class OptionActivity : ComponentActivity() {
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
-    val selectedOption = viewModel.selectedOption.observeAsState().value ?: CountryCategories.EU_TERRITORIES_NON_UN
+    val selectedOption = viewModel.selectedOption.observeAsState().value ?: CountryCategories.EUROPE_NON_UN
 
     OptionScreen(selectedOption) {
         viewModel.changeSelectedOption(it)
@@ -97,19 +97,19 @@ private fun TopAppBarHeader() {
 @Composable
 private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
     val radioButtons = listOf(
-        RadioButtonData("Africa flags (UN)", "54 sovereign states", CountryCategories.NA_STATES_UN),
-        RadioButtonData("Africa flags (non-UN)", "6 territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("Antarctica flags", "7 territories", CountryCategories.AN_TERRITORIES),
-        RadioButtonData("Asia flags (UN)", "X sovereign states", CountryCategories.NA_STATES_UN),
-        RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("Europe flags (UN)", "44 sovereign states", CountryCategories.EU_TERRITORIES_UN),
-        RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_TERRITORIES_NON_UN),
-        RadioButtonData("North America flags (UN)", "23 sovereign states", CountryCategories.NA_STATES_UN),
-        RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("Oceania flags (UN)", "X sovereign states", CountryCategories.NA_STATES_UN),
-        RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("South America flags (UN)", "13 sovereign states", CountryCategories.SA_STATES_UN),
-        RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_TERRITORIES_NON_UN),
+        RadioButtonData("Africa flags", "54 UN states", CountryCategories.AFRICA_UN),
+        //RadioButtonData("Africa flags (non-UN)", "6 territories", CountryCategories.NA_TERRITORIES_NON_UN),
+        //RadioButtonData("Antarctica flags", "7 territories", CountryCategories.AN_TERRITORIES),
+        RadioButtonData("Asia flags", "46 UN states", CountryCategories.ASIA_UN),
+        //RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
+        RadioButtonData("Europe flags", "43 UN states", CountryCategories.EUROPE_UN),
+        //RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_TERRITORIES_NON_UN),
+        RadioButtonData("North America flags", "23 UN states", CountryCategories.NORTH_AMERICA_UN),
+        //RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_TERRITORIES_NON_UN),
+        RadioButtonData("Oceania flags", "14 UN states", CountryCategories.OCEANIA_UN),
+        //RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
+        RadioButtonData("South America flags", "13 UN states", CountryCategories.SOUTH_AMERICA_UN),
+        //RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_TERRITORIES_NON_UN),
         )
 
     LazyColumn(
@@ -134,7 +134,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
 @Preview(showBackground = true)
 @Composable
 private fun PreviewOptionScreen() {
-    val mockSelectedOption = CountryCategories.EU_TERRITORIES_UN
+    val mockSelectedOption = CountryCategories.EUROPE_UN
 
     OptionScreen(mockSelectedOption, onOptionSelected = {})
 }

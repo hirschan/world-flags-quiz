@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Australia",
+    "ISOAlpha2": "OC_AU",
+    "continent": "Oceania",
+    "capital": "Canberra",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Fiji",
+    "ISOAlpha2": "OC_FJ",
+    "continent": "Oceania",
+    "capital": "Suva",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Kiribati",
+    "ISOAlpha2": "OC_KI",
+    "continent": "Oceania",
+    "capital": "South Tarawa",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Marshall Islands",
+    "ISOAlpha2": "OC_MH",
+    "continent": "Oceania",
+    "capital": "Majuro",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Federated States of Micronesia",
+    "ISOAlpha2": "OC_FM",
+    "continent": "Oceania",
+    "capital": "Palikir",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Nauru",
+    "ISOAlpha2": "OC_NR",
+    "continent": "Oceania",
+    "capital": "Yaren",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "New Zealand",
+    "ISOAlpha2": "OC_NZ",
+    "continent": "Oceania",
+    "capital": "Wellington",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Palau",
+    "ISOAlpha2": "OC_PW",
+    "continent": "Oceania",
+    "capital": "Ngerulmud",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Papua New Guinea",
+    "ISOAlpha2": "OC_PG",
+    "continent": "Oceania",
+    "capital": "Port Moresby",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Samoa",
+    "ISOAlpha2": "OC_WS",
+    "continent": "Oceania",
+    "capital": "Apia",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Solomon Islands",
+    "ISOAlpha2": "OC_SB",
+    "continent": "Oceania",
+    "capital": "Honiara",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Tonga",
+    "ISOAlpha2": "OC_TO",
+    "continent": "Oceania",
+    "capital": "Nukuʻalofa",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Tuvalu",
+    "ISOAlpha2": "OC_TV",
+    "continent": "Oceania",
+    "capital": "Funafuti",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Vanuatu",
+    "ISOAlpha2": "OC_VU",
+    "continent": "Oceania",
+    "capital": "Port Vila",
+    "type": "sovereign",
+    "existsToday": true
+  }
+]

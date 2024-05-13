@@ -14,5 +14,7 @@ class JSONFiles {
         const val AN_TERRITORIES = "antarctica_territories.json"
         const val AFRICA_UN = "africa_states_UN.json"
         const val AFRICA_NON_UN = "africa_territories_non_UN.json"
+        const val OCEANIA_UN = "oceania_states_UN.json"
+        const val ASIA_UN = "asia_states_UN.json"
     }
 }

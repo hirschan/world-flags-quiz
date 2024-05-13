@@ -64,14 +64,6 @@
     "existsToday": true
   },
   {
-    "name": "Cyprus",
-    "ISOAlpha2": "EU_CY",
-    "continent": "Europe",
-    "capital": "Nicosia",
-    "type": "sovereign",
-    "existsToday": true
-  },
-  {
     "name": "Czech Republic",
     "ISOAlpha2": "EU_CZ",
     "continent": "Europe",

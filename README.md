@@ -4,6 +4,8 @@ An Android app intended for learning all the world's flags.
 
 ## Definitions
 
+Continents are defined by geographical continent.
+
 States and territories are split into following types:
 
 **Sovereign**

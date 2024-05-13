@@ -1,0 +1,378 @@
+[
+  {
+    "name": "Afghanistan",
+    "ISOAlpha2": "AS_AF1",
+    "continent": "Asia",
+    "capital": "Kabul",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Islamic Emirate of Afghanistan",
+    "ISOAlpha2": "AS_AF2",
+    "continent": "Asia",
+    "capital": "Kabul",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Armenia",
+    "ISOAlpha2": "AS_AM",
+    "continent": "Asia",
+    "capital": "Yerevan",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Azerbaijan",
+    "ISOAlpha2": "AS_AZ",
+    "continent": "Asia",
+    "capital": "Baku",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Bahrain",
+    "ISOAlpha2": "AS_BH",
+    "continent": "Asia",
+    "capital": "Manama",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Bangladesh",
+    "ISOAlpha2": "AS_BD",
+    "continent": "Asia",
+    "capital": "Dhaka",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Bhutan",
+    "ISOAlpha2": "AS_BT",
+    "continent": "Asia",
+    "capital": "Thimphu",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Brunei Darussalam",
+    "ISOAlpha2": "AS_BN",
+    "continent": "Asia",
+    "capital": "Bandar Seri Begawan",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Cambodia",
+    "ISOAlpha2": "AS_KH",
+    "continent": "Asia",
+    "capital": "Phnom Penh",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "China",
+    "ISOAlpha2": "AS_CN",
+    "continent": "Asia",
+    "capital": "Beijing",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Cyprus",
+    "ISOAlpha2": "AS_CY",
+    "continent": "Asia",
+    "capital": "Nicosia",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Georgia",
+    "ISOAlpha2": "AS_GE",
+    "continent": "Asia",
+    "capital": "Tbilisi",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "India",
+    "ISOAlpha2": "AS_IN",
+    "continent": "Asia",
+    "capital": "New Delhi",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Indonesia",
+    "ISOAlpha2": "AS_ID",
+    "continent": "Asia",
+    "capital": "Jakarta",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Islamic Republic of Iran",
+    "ISOAlpha2": "AS_IR",
+    "continent": "Asia",
+    "capital": "Tehran",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Iraq",
+    "ISOAlpha2": "AS_IQ",
+    "continent": "Asia",
+    "capital": "Baghdad",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Israel",
+    "ISOAlpha2": "AS_IL",
+    "continent": "Asia",
+    "capital": "Jerusalem",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Japan",
+    "ISOAlpha2": "AS_JP",
+    "continent": "Asia",
+    "capital": "Tokyo",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Jordan",
+    "ISOAlpha2": "AS_JO",
+    "continent": "Asia",
+    "capital": "Amman",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Kazakhstan",
+    "ISOAlpha2": "AS_KZ",
+    "continent": "Asia",
+    "capital": "Nur-Sultan",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Kuwait",
+    "ISOAlpha2": "AS_KW",
+    "continent": "Asia",
+    "capital": "Kuwait City",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Kyrgyzstan",
+    "ISOAlpha2": "AS_KG",
+    "continent": "Asia",
+    "capital": "Bishkek",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Lao People's Democratic Republic",
+    "ISOAlpha2": "AS_LA",
+    "continent": "Asia",
+    "capital": "Vientiane",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Lebanon",
+    "ISOAlpha2": "AS_LB",
+    "continent": "Asia",
+    "capital": "Beirut",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Malaysia",
+    "ISOAlpha2": "AS_MY",
+    "continent": "Asia",
+    "capital": "Kuala Lumpur",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Maldives",
+    "ISOAlpha2": "AS_MV",
+    "continent": "Asia",
+    "capital": "Malé",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Mongolia",
+    "ISOAlpha2": "AS_MN",
+    "continent": "Asia",
+    "capital": "Ulaanbaatar",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Myanmar",
+    "ISOAlpha2": "AS_MM",
+    "continent": "Asia",
+    "capital": "Naypyidaw",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Nepal",
+    "ISOAlpha2": "AS_NP",
+    "continent": "Asia",
+    "capital": "Kathmandu",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Oman",
+    "ISOAlpha2": "AS_OM",
+    "continent": "Asia",
+    "capital": "Muscat",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Pakistan",
+    "ISOAlpha2": "AS_PK",
+    "continent": "Asia",
+    "capital": "Islamabad",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Philippines",
+    "ISOAlpha2": "AS_PH",
+    "continent": "Asia",
+    "capital": "Manila",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Qatar",
+    "ISOAlpha2": "AS_QA",
+    "continent": "Asia",
+    "capital": "Doha",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Republic of Korea",
+    "ISOAlpha2": "AS_KR",
+    "continent": "Asia",
+    "capital": "Seoul",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Saudi Arabia",
+    "ISOAlpha2": "AS_SA",
+    "continent": "Asia",
+    "capital": "Riyadh",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Singapore",
+    "ISOAlpha2": "AS_SG",
+    "continent": "Asia",
+    "capital": "Singapore",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Sri Lanka",
+    "ISOAlpha2": "AS_LK",
+    "continent": "Asia",
+    "capital": "Colombo",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "ISOAlpha2": "AS_SY",
+    "continent": "Asia",
+    "capital": "Damascus",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Tajikistan",
+    "ISOAlpha2": "AS_TJ",
+    "continent": "Asia",
+    "capital": "Dushanbe",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Thailand",
+    "ISOAlpha2": "AS_TH",
+    "continent": "Asia",
+    "capital": "Bangkok",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Timor-Leste",
+    "ISOAlpha2": "AS_TL",
+    "continent": "Asia",
+    "capital": "Dili",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Turkey",
+    "ISOAlpha2": "AS_TR",
+    "continent": "Asia",
+    "capital": "Ankara",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Turkmenistan",
+    "ISOAlpha2": "AS_TM",
+    "continent": "Asia",
+    "capital": "Ashgabat",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "United Arab Emirates",
+    "ISOAlpha2": "AS_AE",
+    "continent": "Asia",
+    "capital": "Abu Dhabi",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Uzbekistan",
+    "ISOAlpha2": "AS_UZ",
+    "continent": "Asia",
+    "capital": "Tashkent",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Viet Nam",
+    "ISOAlpha2": "AS_VN",
+    "continent": "Asia",
+    "capital": "Hanoi",
+    "type": "sovereign",
+    "existsToday": true
+  },
+  {
+    "name": "Yemen",
+    "ISOAlpha2": "AS_YE",
+    "continent": "Asia",
+    "capital": "Sana'a",
+    "type": "sovereign",
+    "existsToday": true
+  }
+]
