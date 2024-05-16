@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken
 import java.io.InputStream
 
 /**
- * Utils class with the only purpose (Single Responsibility Principle) of handling JSON files (file operations) and its data. */
+ * Utils class with the only purpose (Single Responsibility Principle) of handling JSON file operations and its data. */
 
 class ReadJSONFromAssets(private val context: Context) {
 

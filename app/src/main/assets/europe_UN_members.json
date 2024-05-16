@@ -3,344 +3,258 @@
     "name": "Albania",
     "ISOAlpha2": "EU_AL",
     "continent": "Europe",
-    "capital": "Tirana",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Tirana"
   },
   {
     "name": "Andorra",
     "ISOAlpha2": "EU_AD",
     "continent": "Europe",
-    "capital": "Andorra la Vella",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Andorra la Vella"
   },
   {
     "name": "Austria",
     "ISOAlpha2": "EU_AT",
     "continent": "Europe",
-    "capital": "Vienna",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Vienna"
   },
   {
     "name": "Belarus",
     "ISOAlpha2": "EU_BY",
     "continent": "Europe",
-    "capital": "Minsk",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Minsk"
   },
   {
     "name": "Belgium",
     "ISOAlpha2": "EU_BE",
     "continent": "Europe",
-    "capital": "Brussels",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Brussels"
   },
   {
     "name": "Bosnia and Herzegovina",
     "ISOAlpha2": "EU_BA",
     "continent": "Europe",
-    "capital": "Sarajevo",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Sarajevo"
   },
   {
     "name": "Bulgaria",
     "ISOAlpha2": "EU_BG",
     "continent": "Europe",
-    "capital": "Sofia",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Sofia"
   },
   {
     "name": "Croatia",
     "ISOAlpha2": "EU_HR",
     "continent": "Europe",
-    "capital": "Zagreb",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Zagreb"
   },
   {
     "name": "Czech Republic",
     "ISOAlpha2": "EU_CZ",
     "continent": "Europe",
-    "capital": "Prague",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Prague"
   },
   {
     "name": "Denmark",
     "ISOAlpha2": "EU_DK",
     "continent": "Europe",
-    "capital": "Copenhagen",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Copenhagen"
   },
   {
     "name": "Estonia",
     "ISOAlpha2": "EU_EE",
     "continent": "Europe",
-    "capital": "Tallinn",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Tallinn"
   },
   {
     "name": "Finland",
     "ISOAlpha2": "EU_FI",
     "continent": "Europe",
-    "capital": "Helsinki",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Helsinki"
   },
   {
     "name": "France",
     "ISOAlpha2": "EU_FR",
     "continent": "Europe",
-    "capital": "Paris",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Paris"
   },
   {
     "name": "Germany",
     "ISOAlpha2": "EU_DE",
     "continent": "Europe",
-    "capital": "Berlin",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Berlin"
   },
   {
     "name": "Greece",
     "ISOAlpha2": "EU_GR",
     "continent": "Europe",
-    "capital": "Athens",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Athens"
   },
   {
     "name": "Hungary",
     "ISOAlpha2": "EU_HU",
     "continent": "Europe",
-    "capital": "Budapest",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Budapest"
   },
   {
     "name": "Iceland",
     "ISOAlpha2": "EU_IS",
     "continent": "Europe",
-    "capital": "Reykjavik",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Reykjavik"
   },
   {
     "name": "Ireland",
     "ISOAlpha2": "EU_IE",
     "continent": "Europe",
-    "capital": "Dublin",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Dublin"
   },
   {
     "name": "Italy",
     "ISOAlpha2": "EU_IT",
     "continent": "Europe",
-    "capital": "Rome",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Rome"
   },
   {
     "name": "Latvia",
     "ISOAlpha2": "EU_LV",
     "continent": "Europe",
-    "capital": "Riga",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Riga"
   },
   {
     "name": "Liechtenstein",
     "ISOAlpha2": "EU_LI",
     "continent": "Europe",
-    "capital": "Vaduz",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Vaduz"
   },
   {
     "name": "Lithuania",
     "ISOAlpha2": "EU_LT",
     "continent": "Europe",
-    "capital": "Vilnius",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Vilnius"
   },
   {
     "name": "Luxembourg",
     "ISOAlpha2": "EU_LU",
     "continent": "Europe",
-    "capital": "Luxembourg",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Luxembourg"
   },
   {
     "name": "Malta",
     "ISOAlpha2": "EU_MT",
     "continent": "Europe",
-    "capital": "Valletta",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Valletta"
   },
   {
     "name": "Moldova",
     "ISOAlpha2": "EU_MD",
     "continent": "Europe",
-    "capital": "Chisinau",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Chisinau"
   },
   {
     "name": "Monaco",
     "ISOAlpha2": "EU_MC",
     "continent": "Europe",
-    "capital": "Monaco",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Monaco"
   },
   {
     "name": "Montenegro",
     "ISOAlpha2": "EU_ME",
     "continent": "Europe",
-    "capital": "Podgorica",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Podgorica"
   },
   {
     "name": "Netherlands",
     "ISOAlpha2": "EU_NL",
     "continent": "Europe",
-    "capital": "Amsterdam",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Amsterdam"
   },
   {
     "name": "North Macedonia",
     "ISOAlpha2": "EU_MK",
     "continent": "Europe",
-    "capital": "Skopje",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Skopje"
   },
   {
     "name": "Norway",
     "ISOAlpha2": "EU_NO",
     "continent": "Europe",
-    "capital": "Oslo",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Oslo"
   },
   {
     "name": "Poland",
     "ISOAlpha2": "EU_PL",
     "continent": "Europe",
-    "capital": "Warsaw",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Warsaw"
   },
   {
     "name": "Portugal",
     "ISOAlpha2": "EU_PT",
     "continent": "Europe",
-    "capital": "Lisbon",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Lisbon"
   },
   {
     "name": "Romania",
     "ISOAlpha2": "EU_RO",
     "continent": "Europe",
-    "capital": "Bucharest",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Bucharest"
   },
   {
     "name": "Russia",
     "ISOAlpha2": "EU_RU",
     "continent": "Europe",
-    "capital": "Moscow",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Moscow"
   },
   {
     "name": "San Marino",
     "ISOAlpha2": "EU_SM",
     "continent": "Europe",
-    "capital": "San Marino",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "San Marino"
   },
   {
     "name": "Serbia",
     "ISOAlpha2": "EU_RS",
     "continent": "Europe",
-    "capital": "Belgrade",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Belgrade"
   },
   {
     "name": "Slovakia",
     "ISOAlpha2": "EU_SK",
     "continent": "Europe",
-    "capital": "Bratislava",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Bratislava"
   },
   {
     "name": "Slovenia",
     "ISOAlpha2": "EU_SI",
     "continent": "Europe",
-    "capital": "Ljubljana",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Ljubljana"
   },
   {
     "name": "Spain",
     "ISOAlpha2": "EU_ES",
     "continent": "Europe",
-    "capital": "Madrid",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Madrid"
   },
   {
     "name": "Sweden",
     "ISOAlpha2": "EU_SE",
     "continent": "Europe",
-    "capital": "Stockholm",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Stockholm"
   },
   {
     "name": "Switzerland",
     "ISOAlpha2": "EU_CH",
     "continent": "Europe",
-    "capital": "Bern",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Bern"
   },
   {
     "name": "Ukraine",
     "ISOAlpha2": "EU_UA",
     "continent": "Europe",
-    "capital": "Kyiv",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Kyiv"
   },
   {
     "name": "United Kingdom",
     "ISOAlpha2": "EU_GB",
     "continent": "Europe",
-    "capital": "London",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "London"
   }
 ]

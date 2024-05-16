@@ -2,7 +2,12 @@
 
 An Android app intended for learning all the world's flags.
 
-## Definitions
+## Flags
+
+For the first version of the app, flags from UN member states will be included. Source from [UN](https://www.un.org/en/about-us/member-states).
+- [X] UN member state flags (193 flags, as of 2024)
+
+## Definitions (WIP)
 
 Continents are defined by geographical continent.
 
@@ -26,44 +31,25 @@ States and territories can also be divided into:
 * `UN member` states/countries/territories
 * `Non-UN member` states/countries/territories
 
-## Tasks & roadmap
+## Progress & roadmap
 
+#### V1
+- [X] Figma Design for the UI
 - [X] Set up project
-- [X] Add UI
-- [X] Create a json file for a few countries to test with and logic for reading json
-- [X] Add logic for displaying countries and guessing
-- [X] Have a counter that keeps track of how many you guessed and how many is left
-- [X] Flags: add flags locally to application and display, [Flagpedia](https://flagpedia.net)?
-- [ ] Investigate using json file for storing all countries or move to a database (local SQLite vs. remote MySQL vs. use existing API) 
-- [X] Investigate free icons (icon manager or plugin to use?), [Androidicons](https://www.androidicons.com/)?
-- [ ] Add all countries
-- [ ] Add tracker for correct/incorrect?
-- [ ] Feature: implement localStorage when changing options and store in phone
-- [ ] Add unit tests and integration tests
-- [ ] Refactor existing code
-- [X] Add feature for categorizing continents
-- [X] Design: improve UI and create a DesignSystem for this project
-- [ ] Design: create logo for app project
-- [ ] Come back to African non UN territories/states
+- [X] Add flags and metadata in json file (avoid relying on internet connection)
+- [X] Implement UI
+- [X] Option feature
+- [X] Play feature
+- [ ] Logo and app name
 
-### Flags progress
-- [X] Europe flags
-- [X] Europe flags (non-UN)
-- [X] North America flags
-- [X] North America flags (non-UN)
-- [X] South America flags
-- [X] South America flags (non-UN)
-- [ ] Africa flags
-- [ ] Africa flags (non-UN)
-- [ ] Asia flags
-- [ ] Africa flags (non-UN)
-- [ ] Oceania flags
-- [ ] Oceania flags (non-UN)
-- [ ] Antarctica flags (misc)
-
-### Stretch goals
-- [ ] Add map and have flags as option, or country names
-- [ ] Add feature for U.S. states and regions
+#### V2
+- [ ] Improve UI Design in Figma
+- [ ] Include non-UN flags
+- [ ] Counter of number correct guessed vs. incorrect
+- [ ] Implement localStorage for selected option
+- [ ] Investigate: SQLite instead of json files?
+- [ ] Include unit & integration tests
+- [ ] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)?
 
 ## Links
 

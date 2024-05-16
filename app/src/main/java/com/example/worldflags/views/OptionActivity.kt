@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
-import com.example.worldflags.models.CountryCategories
+import com.example.worldflags.models.FlagCategories
 import com.example.worldflags.models.RadioButtonData
 import org.koin.android.ext.android.get
 
@@ -54,7 +54,7 @@ class OptionActivity : ComponentActivity() {
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
-    val selectedOption = viewModel.selectedOption.observeAsState().value ?: CountryCategories.EUROPE_NON_UN
+    val selectedOption = viewModel.selectedOption.observeAsState().value ?: FlagCategories.AFRICA_UN
 
     OptionScreen(selectedOption) {
         viewModel.changeSelectedOption(it)
@@ -62,7 +62,7 @@ private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
 }
 
 @Composable
-private fun OptionScreen(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
+private fun OptionScreen(selectedOption: FlagCategories, onOptionSelected: (FlagCategories) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -95,20 +95,20 @@ private fun TopAppBarHeader() {
 }
 
 @Composable
-private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelected: (CountryCategories) -> Unit) {
+private fun RadioButtonOptions(selectedOption: FlagCategories, onOptionSelected: (FlagCategories) -> Unit) {
     val radioButtons = listOf(
-        RadioButtonData("Africa flags", "54 UN states", CountryCategories.AFRICA_UN),
+        RadioButtonData("Africa flags", "54 UN members", FlagCategories.AFRICA_UN),
         //RadioButtonData("Africa flags (non-UN)", "6 territories", CountryCategories.NA_TERRITORIES_NON_UN),
         //RadioButtonData("Antarctica flags", "7 territories", CountryCategories.AN_TERRITORIES),
-        RadioButtonData("Asia flags", "46 UN states", CountryCategories.ASIA_UN),
+        RadioButtonData("Asia flags", "47 UN members", FlagCategories.ASIA_UN),
         //RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("Europe flags", "43 UN states", CountryCategories.EUROPE_UN),
-        //RadioButtonData("Europe flags (non-UN)", "10 territories", CountryCategories.EU_TERRITORIES_NON_UN),
-        RadioButtonData("North America flags", "23 UN states", CountryCategories.NORTH_AMERICA_UN),
+        RadioButtonData("Europe flags", "43 UN members", FlagCategories.EUROPE_UN),
+        //RadioButtonData("Europe flags (non-UN)", "10 territories", FlagCategories.EUROPE_NON_UN),
+        RadioButtonData("North America flags", "23 UN members", FlagCategories.NORTH_AMERICA_UN),
         //RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("Oceania flags", "14 UN states", CountryCategories.OCEANIA_UN),
+        RadioButtonData("Oceania flags", "14 UN members", FlagCategories.OCEANIA_UN),
         //RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        RadioButtonData("South America flags", "13 UN states", CountryCategories.SOUTH_AMERICA_UN),
+        RadioButtonData("South America flags", "12 UN members", FlagCategories.SOUTH_AMERICA_UN),
         //RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_TERRITORIES_NON_UN),
         )
 
@@ -134,7 +134,7 @@ private fun RadioButtonOptions(selectedOption: CountryCategories, onOptionSelect
 @Preview(showBackground = true)
 @Composable
 private fun PreviewOptionScreen() {
-    val mockSelectedOption = CountryCategories.EUROPE_UN
+    val mockSelectedOption = FlagCategories.EUROPE_UN
 
     OptionScreen(mockSelectedOption, onOptionSelected = {})
 }

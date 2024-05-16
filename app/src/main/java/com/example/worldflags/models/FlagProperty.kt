@@ -7,6 +7,4 @@ data class FlagProperty(
     val ISOAlpha2: String,
     val continent: String,
     val capital: String,
-    val type: String,
-    val existsToday: Boolean,
 )

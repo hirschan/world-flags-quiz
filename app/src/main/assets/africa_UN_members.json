@@ -1,0 +1,326 @@
+[
+  {
+    "name": "Algeria",
+    "ISOAlpha2": "AF_DZ",
+    "continent": "Africa",
+    "capital": "Algiers"
+  },
+  {
+    "name": "Angola",
+    "ISOAlpha2": "AF_AO",
+    "continent": "Africa",
+    "capital": "Luanda"
+  },
+  {
+    "name": "Benin",
+    "ISOAlpha2": "AF_BJ",
+    "continent": "Africa",
+    "capital": "Porto-Novo"
+  },
+  {
+    "name": "Botswana",
+    "ISOAlpha2": "AF_BW",
+    "continent": "Africa",
+    "capital": "Gaborone"
+  },
+  {
+    "name": "Burkina Faso",
+    "ISOAlpha2": "AF_BF",
+    "continent": "Africa",
+    "capital": "Ouagadougou"
+  },
+  {
+    "name": "Burundi",
+    "ISOAlpha2": "AF_BI",
+    "continent": "Africa",
+    "capital": "Gitega"
+  },
+  {
+    "name": "Cabo Verde",
+    "ISOAlpha2": "AF_CV",
+    "continent": "Africa",
+    "capital": "Praia"
+  },
+  {
+    "name": "Cameroon",
+    "ISOAlpha2": "AF_CM",
+    "continent": "Africa",
+    "capital": "Yaoundé"
+  },
+  {
+    "name": "Central African Republic",
+    "ISOAlpha2": "AF_CF",
+    "continent": "Africa",
+    "capital": "Bangui"
+  },
+  {
+    "name": "Chad",
+    "ISOAlpha2": "AF_TD",
+    "continent": "Africa",
+    "capital": "N'Djamena"
+  },
+  {
+    "name": "Comoros",
+    "ISOAlpha2": "AF_KM",
+    "continent": "Africa",
+    "capital": "Moroni"
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "ISOAlpha2": "AF_CD",
+    "continent": "Africa",
+    "capital": "Kinshasa"
+  },
+  {
+    "name": "Republic of the Congo",
+    "ISOAlpha2": "AF_CG",
+    "continent": "Africa",
+    "capital": "Brazzaville"
+  },
+  {
+    "name": "Djibouti",
+    "ISOAlpha2": "AF_DJ",
+    "continent": "Africa",
+    "capital": "Djibouti"
+  },
+  {
+    "name": "Egypt",
+    "ISOAlpha2": "AF_EG",
+    "continent": "Africa",
+    "capital": "Cairo"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "ISOAlpha2": "AF_GQ",
+    "continent": "Africa",
+    "capital": "Malabo"
+  },
+  {
+    "name": "Eritrea",
+    "ISOAlpha2": "AF_ER",
+    "continent": "Africa",
+    "capital": "Asmara"
+  },
+  {
+    "name": "Eswatini",
+    "ISOAlpha2": "AF_SZ",
+    "continent": "Africa",
+    "capital": "Mbabane"
+  },
+  {
+    "name": "Ethiopia",
+    "ISOAlpha2": "AF_ET",
+    "continent": "Africa",
+    "capital": "Addis Ababa"
+  },
+  {
+    "name": "Gabon",
+    "ISOAlpha2": "AF_GA",
+    "continent": "Africa",
+    "capital": "Libreville"
+  },
+  {
+    "name": "Gambia",
+    "ISOAlpha2": "AF_GM",
+    "continent": "Africa",
+    "capital": "Banjul"
+  },
+  {
+    "name": "Ghana",
+    "ISOAlpha2": "AF_GH",
+    "continent": "Africa",
+    "capital": "Accra"
+  },
+  {
+    "name": "Guinea",
+    "ISOAlpha2": "AF_GN",
+    "continent": "Africa",
+    "capital": "Conakry"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "ISOAlpha2": "AF_GW",
+    "continent": "Africa",
+    "capital": "Bissau"
+  },
+  {
+    "name": "Ivory Coast",
+    "ISOAlpha2": "AF_CI",
+    "continent": "Africa",
+    "capital": "Yamoussoukro"
+  },
+  {
+    "name": "Kenya",
+    "ISOAlpha2": "AF_KE",
+    "continent": "Africa",
+    "capital": "Nairobi"
+  },
+  {
+    "name": "Lesotho",
+    "ISOAlpha2": "AF_LS",
+    "continent": "Africa",
+    "capital": "Maseru"
+  },
+  {
+    "name": "Liberia",
+    "ISOAlpha2": "AF_LR",
+    "continent": "Africa",
+    "capital": "Monrovia"
+  },
+  {
+    "name": "Libya",
+    "ISOAlpha2": "AF_LY",
+    "continent": "Africa",
+    "capital": "Tripoli"
+  },
+  {
+    "name": "Madagascar",
+    "ISOAlpha2": "AF_MG",
+    "continent": "Africa",
+    "capital": "Antananarivo"
+  },
+  {
+    "name": "Malawi",
+    "ISOAlpha2": "AF_MW",
+    "continent": "Africa",
+    "capital": "Lilongwe"
+  },
+  {
+    "name": "Mali",
+    "ISOAlpha2": "AF_ML",
+    "continent": "Africa",
+    "capital": "Bamako"
+  },
+  {
+    "name": "Mauritania",
+    "ISOAlpha2": "AF_MR",
+    "continent": "Africa",
+    "capital": "Nouakchott"
+  },
+  {
+    "name": "Mauritius",
+    "ISOAlpha2": "AF_MU",
+    "continent": "Africa",
+    "capital": "Port Louis"
+  },
+  {
+    "name": "Morocco",
+    "ISOAlpha2": "AF_MA",
+    "continent": "Africa",
+    "capital": "Rabat"
+  },
+  {
+    "name": "Mozambique",
+    "ISOAlpha2": "AF_MZ",
+    "continent": "Africa",
+    "capital": "Maputo"
+  },
+  {
+    "name": "Namibia",
+    "ISOAlpha2": "AF_NA",
+    "continent": "Africa",
+    "capital": "Windhoek"
+  },
+  {
+    "name": "Niger",
+    "ISOAlpha2": "AF_NE",
+    "continent": "Africa",
+    "capital": "Niamey"
+  },
+  {
+    "name": "Nigeria",
+    "ISOAlpha2": "AF_NG",
+    "continent": "Africa",
+    "capital": "Abuja"
+  },
+  {
+    "name": "Rwanda",
+    "ISOAlpha2": "AF_RW",
+    "continent": "Africa",
+    "capital": "Kigali"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "ISOAlpha2": "AF_ST",
+    "continent": "Africa",
+    "capital": "São Tomé"
+  },
+  {
+    "name": "Senegal",
+    "ISOAlpha2": "AF_SN",
+    "continent": "Africa",
+    "capital": "Dakar"
+  },
+  {
+    "name": "Seychelles",
+    "ISOAlpha2": "AF_SC",
+    "continent": "Africa",
+    "capital": "Victoria"
+  },
+  {
+    "name": "Sierra Leone",
+    "ISOAlpha2": "AF_SL",
+    "continent": "Africa",
+    "capital": "Freetown"
+  },
+  {
+    "name": "Somalia",
+    "ISOAlpha2": "AF_SO",
+    "continent": "Africa",
+    "capital": "Mogadishu"
+  },
+  {
+    "name": "South Africa",
+    "ISOAlpha2": "AF_ZA",
+    "continent": "Africa",
+    "capital": "Pretoria"
+  },
+  {
+    "name": "South Sudan",
+    "ISOAlpha2": "AF_SS",
+    "continent": "Africa",
+    "capital": "Juba"
+  },
+  {
+    "name": "Sudan",
+    "ISOAlpha2": "AF_SD",
+    "continent": "Africa",
+    "capital": "Khartoum"
+  },
+  {
+    "name": "Tanzania",
+    "ISOAlpha2": "AF_TZ",
+    "continent": "Africa",
+    "capital": "Dodoma"
+  },
+  {
+    "name": "Togo",
+    "ISOAlpha2": "AF_TG",
+    "continent": "Africa",
+    "capital": "Lomé"
+  },
+  {
+    "name": "Tunisia",
+    "ISOAlpha2": "AF_TN",
+    "continent": "Africa",
+    "capital": "Tunis"
+  },
+  {
+    "name": "Uganda",
+    "ISOAlpha2": "AF_UG",
+    "continent": "Africa",
+    "capital": "Kampala"
+  },
+  {
+    "name": "Zambia",
+    "ISOAlpha2": "AF_ZM",
+    "continent": "Africa",
+    "capital": "Lusaka"
+  },
+  {
+    "name": "Zimbabwe",
+    "ISOAlpha2": "AF_ZW",
+    "continent": "Africa",
+    "capital": "Harare"
+  }
+]

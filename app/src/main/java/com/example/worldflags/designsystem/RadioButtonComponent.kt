@@ -21,15 +21,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
-import com.example.worldflags.models.CountryCategories
+import com.example.worldflags.models.FlagCategories
 
 @Composable
 fun RadioButtonComponent(
     mainText: String,
     subText: String,
-    option: CountryCategories,
-    selectedOption: CountryCategories,
-    onOptionSelected: (CountryCategories) -> Unit
+    option: FlagCategories,
+    selectedOption: FlagCategories,
+    onOptionSelected: (FlagCategories) -> Unit
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -70,10 +70,10 @@ private fun PreviewRadioButtonComponent() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         RadioButtonComponent(
-            "Europe flags (UN)",
-            "44 states",
-            CountryCategories.NORTH_AMERICA_NON_UN,
-            CountryCategories.NORTH_AMERICA_NON_UN,
+            "Europe flags",
+            "43 members",
+            FlagCategories.NORTH_AMERICA_NON_UN,
+            FlagCategories.NORTH_AMERICA_NON_UN,
             {}
         )
     }

@@ -3,96 +3,72 @@
     "name": "Argentina",
     "ISOAlpha2": "SA_AR",
     "continent": "South America",
-    "capital": "Buenos Aires",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Buenos Aires"
   },
   {
-    "name": "Bolivia (Plurinational State of)",
+    "name": "Bolivia",
     "ISOAlpha2": "SA_BO",
     "continent": "South America",
-    "capital": "Sucre",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Sucre"
   },
   {
     "name": "Brazil",
     "ISOAlpha2": "SA_BR",
     "continent": "South America",
-    "capital": "Brasília",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Brasília"
   },
   {
     "name": "Chile",
     "ISOAlpha2": "SA_CL",
     "continent": "South America",
-    "capital": "Santiago",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Santiago"
   },
   {
     "name": "Colombia",
     "ISOAlpha2": "SA_CO",
     "continent": "South America",
-    "capital": "Bogotá",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Bogotá"
   },
   {
     "name": "Ecuador",
     "ISOAlpha2": "SA_EC",
     "continent": "South America",
-    "capital": "Quito",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Quito"
   },
   {
     "name": "Guyana",
     "ISOAlpha2": "SA_GY",
     "continent": "South America",
-    "capital": "Georgetown",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Georgetown"
   },
   {
     "name": "Paraguay",
     "ISOAlpha2": "SA_PY",
     "continent": "South America",
-    "capital": "Asunción",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Asunción"
   },
   {
     "name": "Peru",
     "ISOAlpha2": "SA_PE",
     "continent": "South America",
-    "capital": "Lima",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Lima"
   },
   {
     "name": "Suriname",
     "ISOAlpha2": "SA_SR",
     "continent": "South America",
-    "capital": "Paramaribo",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Paramaribo"
   },
   {
     "name": "Uruguay",
     "ISOAlpha2": "SA_UY",
     "continent": "South America",
-    "capital": "Montevideo",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Montevideo"
   },
   {
     "name": "Venezuela",
     "ISOAlpha2": "SA_VE",
     "continent": "South America",
-    "capital": "Caracas",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Caracas"
   }
 ]

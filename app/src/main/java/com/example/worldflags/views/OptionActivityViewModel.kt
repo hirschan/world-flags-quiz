@@ -3,7 +3,7 @@ package com.example.worldflags.views
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.worldflags.models.CountryCategories
+import com.example.worldflags.models.FlagCategories
 import com.example.worldflags.models.JSONFiles.Companion.AFRICA_NON_UN
 import com.example.worldflags.models.JSONFiles.Companion.AFRICA_UN
 import com.example.worldflags.models.JSONFiles.Companion.AN_TERRITORIES
@@ -21,31 +21,31 @@ class OptionActivityViewModel(
     private val optionService: OptionServiceImpl,
 ): ViewModel() {
 
-    private val _selectedOption = MutableLiveData<CountryCategories>(CountryCategories.EUROPE_NON_UN)
-    val selectedOption: LiveData<CountryCategories> = _selectedOption
+    private val _selectedOption = MutableLiveData<FlagCategories>(FlagCategories.AFRICA_UN)
+    val selectedOption: LiveData<FlagCategories> = _selectedOption
 
     init {
         println("ALF OptionActivityViewModel initialized.")
     }
 
-    fun changeSelectedOption(newOption: CountryCategories) {
+    fun changeSelectedOption(newOption: FlagCategories) {
         _selectedOption.value = newOption
         loadNewJsonFile(newOption)
     }
 
-    private fun loadNewJsonFile(newOption: CountryCategories) {
+    private fun loadNewJsonFile(newOption: FlagCategories) {
         val tempFile = when (newOption) {
-            CountryCategories.EUROPE_UN -> EUROPE_UN
-            CountryCategories.NORTH_AMERICA_UN -> NORTH_AMERICA_UN
-            CountryCategories.NORTH_AMERICA_NON_UN -> NORTH_AMERICA_NON_UN
-            CountryCategories.SOUTH_AMERICA_UN -> SOUTH_AMERICA_UN
-            CountryCategories.SOUTH_AMERICA_NON_UN -> SOUTH_AMERICA_NON_UN
-            CountryCategories.ANTARCTICA -> AN_TERRITORIES
-            CountryCategories.AFRICA_UN -> AFRICA_UN
-            CountryCategories.AFRICA_NON_UN -> AFRICA_NON_UN
-            CountryCategories.OCEANIA_UN -> OCEANIA_UN
-            CountryCategories.ASIA_UN -> ASIA_UN
-            else -> EUROPE_NON_UN
+            FlagCategories.EUROPE_UN -> EUROPE_UN
+            FlagCategories.NORTH_AMERICA_UN -> NORTH_AMERICA_UN
+            FlagCategories.NORTH_AMERICA_NON_UN -> NORTH_AMERICA_NON_UN
+            FlagCategories.SOUTH_AMERICA_UN -> SOUTH_AMERICA_UN
+            FlagCategories.SOUTH_AMERICA_NON_UN -> SOUTH_AMERICA_NON_UN
+            FlagCategories.ANTARCTICA -> AN_TERRITORIES
+            FlagCategories.AFRICA_UN -> AFRICA_UN
+            FlagCategories.AFRICA_NON_UN -> AFRICA_NON_UN
+            FlagCategories.OCEANIA_UN -> OCEANIA_UN
+            FlagCategories.ASIA_UN -> ASIA_UN
+            else -> AFRICA_UN
         }
         optionService.changeJSONAssetFile(tempFile)
     }

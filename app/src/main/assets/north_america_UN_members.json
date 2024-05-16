@@ -3,184 +3,138 @@
     "name": "Antigua and Barbuda",
     "ISOAlpha2": "NA_AG",
     "continent": "North America",
-    "capital": "St. John's",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "St. John's"
   },
   {
     "name": "Bahamas",
     "ISOAlpha2": "NA_BS",
     "continent": "North America",
-    "capital": "Nassau",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Nassau"
   },
   {
     "name": "Barbados",
     "ISOAlpha2": "NA_BB",
     "continent": "North America",
-    "capital": "Bridgetown",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Bridgetown"
   },
   {
     "name": "Belize",
     "ISOAlpha2": "NA_BZ",
     "continent": "North America",
-    "capital": "Belmopan",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Belmopan"
   },
   {
     "name": "Canada",
     "ISOAlpha2": "NA_CA",
     "continent": "North America",
-    "capital": "Ottawa",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Ottawa"
   },
   {
     "name": "Costa Rica",
     "ISOAlpha2": "NA_CR",
     "continent": "North America",
-    "capital": "San José",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "San José"
   },
   {
     "name": "Cuba",
     "ISOAlpha2": "NA_CU",
     "continent": "North America",
-    "capital": "Havana",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Havana"
   },
   {
     "name": "Dominica",
     "ISOAlpha2": "NA_DM",
     "continent": "North America",
-    "capital": "Roseau",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Roseau"
   },
   {
     "name": "Dominican Republic",
     "ISOAlpha2": "NA_DO",
     "continent": "North America",
-    "capital": "Santo Domingo",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Santo Domingo"
   },
   {
     "name": "El Salvador",
     "ISOAlpha2": "NA_SV",
     "continent": "North America",
-    "capital": "San Salvador",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "San Salvador"
   },
   {
     "name": "Grenada",
     "ISOAlpha2": "NA_GD",
     "continent": "North America",
-    "capital": "St. George's",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "St. George's"
   },
   {
     "name": "Guatemala",
     "ISOAlpha2": "NA_GT",
     "continent": "North America",
-    "capital": "Guatemala City",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Guatemala City"
   },
   {
     "name": "Haiti",
     "ISOAlpha2": "NA_HT",
     "continent": "North America",
-    "capital": "Port-au-Prince",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Port-au-Prince"
   },
   {
     "name": "Honduras",
     "ISOAlpha2": "NA_HN",
     "continent": "North America",
-    "capital": "Tegucigalpa",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Tegucigalpa"
   },
   {
     "name": "Jamaica",
     "ISOAlpha2": "NA_JM",
     "continent": "North America",
-    "capital": "Kingston",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Kingston"
   },
   {
     "name": "Mexico",
     "ISOAlpha2": "NA_MX",
     "continent": "North America",
-    "capital": "Mexico City",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Mexico City"
   },
   {
     "name": "Nicaragua",
     "ISOAlpha2": "NA_NI",
     "continent": "North America",
-    "capital": "Managua",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Managua"
   },
   {
     "name": "Panama",
     "ISOAlpha2": "NA_PA",
     "continent": "North America",
-    "capital": "Panama City",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Panama City"
   },
   {
     "name": "Saint Kitts and Nevis",
     "ISOAlpha2": "NA_KN",
     "continent": "North America",
-    "capital": "Basseterre",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Basseterre"
   },
   {
     "name": "Saint Lucia",
     "ISOAlpha2": "NA_LC",
     "continent": "North America",
-    "capital": "Castries",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Castries"
   },
   {
     "name": "Saint Vincent and the Grenadines",
     "ISOAlpha2": "NA_VC",
     "continent": "North America",
-    "capital": "Kingstown",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Kingstown"
   },
   {
     "name": "Trinidad and Tobago",
     "ISOAlpha2": "NA_TT",
     "continent": "North America",
-    "capital": "Port of Spain",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Port of Spain"
   },
   {
     "name": "United States of America",
     "ISOAlpha2": "NA_US",
     "continent": "North America",
-    "capital": "Washington, D.C.",
-    "type": "sovereign",
-    "existsToday": true
+    "capital": "Washington, D.C."
   }
 ]

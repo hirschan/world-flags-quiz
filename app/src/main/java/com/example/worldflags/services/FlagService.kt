@@ -11,7 +11,7 @@ interface FlagService {
 
     fun getTotalNumberOfFlags(): Int
 
-    fun getRandomFlag(flagPropertyList: List<FlagProperty>?): FlagProperty?
+    fun getRandomFlagProp(flagPropertyList: List<FlagProperty>?): FlagProperty?
 
     fun getFourRandomFlagPropsToDisplay(): List<FlagProperty>?
 

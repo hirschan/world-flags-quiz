@@ -28,7 +28,7 @@ class FlagServiceImpl(
         return listOfFlags?.size ?: 0
     }
 
-    override fun getRandomFlag(flagPropertyList: List<FlagProperty>?): FlagProperty? {
+    override fun getRandomFlagProp(flagPropertyList: List<FlagProperty>?): FlagProperty? {
         val temporaryFlagsList = flagPropertyList
         return if (temporaryFlagsList?.isEmpty() == true) {
             null
@@ -57,7 +57,7 @@ class FlagServiceImpl(
         }
 
         while (fourRandomFlagPropsInSet.size < 4) {
-            getRandomFlag(listOfFlags)?.let { fourRandomFlagPropsInSet.add(it) }
+            getRandomFlagProp(listOfFlags)?.let { fourRandomFlagPropsInSet.add(it) }
         }
         _fourRandomNoDuplicateFlagProps = ArrayList(fourRandomFlagPropsInSet)
         return _fourRandomNoDuplicateFlagProps.shuffled()
