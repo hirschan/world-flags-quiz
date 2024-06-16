@@ -18,6 +18,7 @@ States/countries/territories are divided into:
 ## Acknowledgements
 
 - The flag on the app icon in this project is from [Gitlab B.V.](https://gitlab.com/gitlab-org/gitlab-svgs/-/tree/main) and under the MIT License.
+- "ic_action_arrow_left.webp" by [Android icons](https://www.androidicons.com/) is licensed under CC BY-SA 4.0.
 
 ## Progress & roadmap
 
