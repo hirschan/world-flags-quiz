@@ -38,9 +38,12 @@ States/countries/territories are divided into:
 - [ ] Implement localStorage for selected option
 - [ ] Investigate: SQLite instead of json files?
 - [ ] Include unit & integration tests
+- [ ] Light & dark mode (stretch goal)
+- [ ] Crop flags in same size?
 - [ ] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)?
 
 ## Links
 
 * Abbreviations of the world's continents: [here](https://planetarynames.wr.usgs.gov/Abbreviations) (`AF, AN, AS, EU, NA, OC, SA`)
-* Android emulator bugfix: [here](https://stackoverflow.com/questions/42816127/waiting-for-target-device-to-come-online)
+* Android Studio emulator bug fix: [here](https://stackoverflow.com/questions/42816127/waiting-for-target-device-to-come-online)
+* Android Studio disable "show logcat automatically": [here](https://stackoverflow.com/questions/76118961/how-to-prevent-android-studio-to-automatically-switch-to-run-tab-when-i-start)
