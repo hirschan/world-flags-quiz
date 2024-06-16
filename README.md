@@ -41,7 +41,7 @@ States/countries/territories are divided into:
 - [ ] Include unit & integration tests
 - [ ] Light & dark mode (stretch goal)
 - [ ] Crop flags in same size?
-- [ ] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)?
+- [X] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)
 
 ## Links
 
