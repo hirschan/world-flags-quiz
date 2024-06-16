@@ -143,7 +143,7 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
 private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
     Column(
         modifier = Modifier
-            .padding(100.dp),
+            .padding(50.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
