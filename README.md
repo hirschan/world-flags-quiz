@@ -27,16 +27,18 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [X] App icon
 
 #### V2
+- [X] Crop flags in same size (same height & width ratio)
+- [X] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)
 - [ ] Bug: exit screen when finished, no delay
 - [ ] Improve UI Design in Figma
-- [ ] Include non-UN flags
 - [ ] Counter of number correct guessed vs. incorrect
 - [ ] Implement localStorage for selected option
 - [ ] Investigate: SQLite instead of json files?
 - [ ] Include unit & integration tests
-- [ ] Light & dark mode (stretch goal)
-- [X] Crop flags in same size (same height & width ratio)
-- [X] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)
+- [ ] Add button for wiki link to flag of country
+- [ ] Display result of which flags were correct and wrong after a game
+- [ ] Stretch goal: Light & dark mode
+- [ ] Stretch goal: Include non-UN flags
 
 ## Links
 
