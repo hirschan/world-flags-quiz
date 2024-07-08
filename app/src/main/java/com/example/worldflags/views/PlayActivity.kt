@@ -1,5 +1,6 @@
 package com.example.worldflags.views
 
+import FlagButtonComponent
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -184,56 +185,32 @@ private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagPr
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            Button(
-                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
+            FlagButtonComponent(
+                text = fourFlagsToDisplay[0]?.name,
                 onClick = { onFlagNameButtonClick(fourFlagsToDisplay[0]?.name, correctFlagProperty?.name, isCorrectClicked) },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(100.dp)
-                    .padding(end = 8.dp),
-                shape = RoundedCornerShape(20.dp)
-            ) {
-                Text(text = fourFlagsToDisplay[0]?.name ?: "Null 1", style = TextStyle(fontSize = 18.sp))
-            }
-            Button(
-                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
+                paddingEnd = 8.dp,
+            )
+            FlagButtonComponent(
+                text = fourFlagsToDisplay[1]?.name,
                 onClick = { onFlagNameButtonClick(fourFlagsToDisplay[1]?.name, correctFlagProperty?.name, isCorrectClicked) },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(100.dp)
-                    .padding(start = 8.dp),
-                shape = RoundedCornerShape(20.dp)
-            ) {
-                Text(text = fourFlagsToDisplay[1]?.name ?: "Null 2", style = TextStyle(fontSize = 18.sp))
-            }
+                paddingStart = 8.dp,
+            )
         }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            Button(
-                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
+            FlagButtonComponent(
+                text = fourFlagsToDisplay[2]?.name,
                 onClick = { onFlagNameButtonClick(fourFlagsToDisplay[2]?.name, correctFlagProperty?.name, isCorrectClicked) },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(100.dp)
-                    .padding(end = 8.dp),
-                shape = RoundedCornerShape(20.dp)
-            ) {
-                Text(text = fourFlagsToDisplay[2]?.name ?: "Null 3", style = TextStyle(fontSize = 18.sp))
-            }
-            Button(
-                colors = ButtonDefaults.buttonColors(colorResource(id = R.color.light_blue)),
+                paddingEnd = 8.dp,
+            )
+            FlagButtonComponent(
+                text = fourFlagsToDisplay[3]?.name,
                 onClick = { onFlagNameButtonClick(fourFlagsToDisplay[3]?.name, correctFlagProperty?.name, isCorrectClicked) },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(100.dp)
-                    .padding(start = 8.dp),
-                shape = RoundedCornerShape(20.dp)
-            ) {
-                Text(text = fourFlagsToDisplay[3]?.name ?: "Null 4", style = TextStyle(fontSize = 18.sp))
-            }
+                paddingStart = 8.dp,
+            )
         }
     }
 }
