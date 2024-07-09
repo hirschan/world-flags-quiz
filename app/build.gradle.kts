@@ -74,4 +74,7 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose:3.1.2") // Fixes VM injection in @Composable functions
 
     implementation("androidx.compose.runtime:runtime-livedata:1.6.4") // Adds observeAsState() in Jetpack Compose
+
+    // Splash Screen API
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }

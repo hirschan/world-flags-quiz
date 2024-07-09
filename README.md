@@ -25,6 +25,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [X] Crop flags in same size (same height & width ratio)
 - [X] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)
 - [X] Color buttons red when clicking on wrong flag name
+- [X] Splash screen for app (using Splash Screen API)
 - [ ] Bug: exit screen when finished, no delay
 - [ ] Improve UI Design in Figma
 - [ ] Counter of number correct guessed vs. incorrect
