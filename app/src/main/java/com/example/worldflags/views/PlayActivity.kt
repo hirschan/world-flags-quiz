@@ -81,10 +81,8 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
 
     if (fourCountryNamesToDisplay != null) {
         PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries, nbrOfCountries) { isCorrectClicked ->
-            if (isCorrectClicked) {
-                if (correctCountry != null) {
-                    viewModel.onCorrectAnswerSelected(correctCountry)
-                }
+            if (isCorrectClicked && correctCountry != null) {
+                viewModel.onCorrectAnswerSelected(correctCountry)
             }
         }
     }
