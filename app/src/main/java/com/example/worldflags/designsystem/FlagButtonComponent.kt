@@ -1,3 +1,4 @@
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,11 +36,15 @@ fun RowScope.FlagButtonComponent(
     val initialButtonColor: Color = colorResource(id = R.color.light_blue)
     val customRedColor: Color = colorResource(id = R.color.dark_red)
 
-    val buttonColorState  = remember { mutableStateOf(initialButtonColor) }
+    val initialBorderStroke = BorderStroke(0.dp, Color.Transparent)
+    val customBorderStroke = BorderStroke(1.dp, colorResource(id = R.color.red))
 
-    // Reset color when resetButtonColors changes to true
+    val buttonColorState  = remember { mutableStateOf(initialButtonColor) }
+    val borderStrokeState = remember { mutableStateOf(initialBorderStroke) }
+
     if (resetButtonColors.value) {
         buttonColorState.value = initialButtonColor
+        borderStrokeState.value = initialBorderStroke
     }
 
     fun onFlagNameButtonClick(buttonFlagLabel: String?, correctFlag: String?, isCorrectClicked: (Boolean) -> Unit) {
@@ -47,11 +52,13 @@ fun RowScope.FlagButtonComponent(
             isCorrectClicked(true)
         } else {
             buttonColorState.value = customRedColor
+            borderStrokeState.value = customBorderStroke
             isCorrectClicked(false)
         }
     }
 
     Button(
+        border = borderStrokeState.value,
         colors = ButtonDefaults.buttonColors(buttonColorState.value),
         onClick = {
             onFlagNameButtonClick(flagName, correctFlagName, onClick)
