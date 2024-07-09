@@ -13,14 +13,14 @@ class PlayActivityViewModel(
     private val flagService: FlagServiceImpl,
 ): ViewModel() {
 
-    private val _fourRandomNoDuplicateFlagProps = MutableLiveData<List<FlagProperty>>()
-    val fourRandomNoDuplicateFlagProps: LiveData<List<FlagProperty>> = _fourRandomNoDuplicateFlagProps
+    private val _fourRandomUniqueFlagProps = MutableLiveData<List<FlagProperty>>()
+    val fourRandomUniqueFlagProps: LiveData<List<FlagProperty>> = _fourRandomUniqueFlagProps
 
     private val _correctFlagProperty = MutableLiveData<FlagProperty>()
     val correctFlagProperty: MutableLiveData<FlagProperty> = _correctFlagProperty
 
-    private val _isComplete = MutableLiveData<Boolean>(false)
-    val isComplete: MutableLiveData<Boolean> = _isComplete
+    private val _isGameComplete = MutableLiveData<Boolean>(false)
+    val isGameComplete: MutableLiveData<Boolean> = _isGameComplete
 
     private val _nbrOfGuessedFlags = MutableLiveData<Int>(0)
     val nbrOfGuessedFlags: MutableLiveData<Int> = _nbrOfGuessedFlags
@@ -31,7 +31,7 @@ class PlayActivityViewModel(
     }
 
     private fun generateFourNewFlagProps() {
-        _fourRandomNoDuplicateFlagProps.value = flagService.getFourRandomFlagPropsToDisplay()
+        _fourRandomUniqueFlagProps.value = flagService.getFourRandomFlagPropsToDisplay()
         setNewCorrectFlagProp()
     }
 
@@ -44,7 +44,7 @@ class PlayActivityViewModel(
         flagService.addFlagPropToBlacklist(correctFlagProperty)
 
         if (flagService.blacklistedFlags.size == flagService.getTotalNumberOfFlags()) {
-            _isComplete.value = true
+            _isGameComplete.value = true
         }
 
         generateFourNewFlagProps()

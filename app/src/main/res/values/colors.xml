@@ -6,6 +6,7 @@
     <color name="dark_blue_btn">#112846</color>
     <color name="blue_btn_stroke">#7ABFFF</color>
     <color name="light_blue">#253745</color>
-    <color name="pink">#CB69C1</color>
+    <color name="red">#F73822</color>
+    <color name="dark_red">#38191B</color>
     <color name="custom_white">#EEEDF0</color>
 </resources>

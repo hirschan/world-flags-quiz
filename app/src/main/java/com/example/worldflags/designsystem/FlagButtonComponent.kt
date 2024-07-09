@@ -8,6 +8,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -20,33 +23,61 @@ import com.example.worldflags.R
 
 @Composable
 fun RowScope.FlagButtonComponent(
-    text: String?,
-    onClick: () -> Unit,
+    flagName: String?,
+    correctFlagName: String?,
+    onClick: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
+    resetButtonColors: MutableState<Boolean>,
     paddingEnd: Dp = 0.dp,
     paddingStart: Dp = 0.dp,
-    buttonColor: Color = colorResource(id = R.color.light_blue)
 ) {
+
+    val initialButtonColor: Color = colorResource(id = R.color.light_blue)
+    val customRedColor: Color = colorResource(id = R.color.dark_red)
+
+    val buttonColorState  = remember { mutableStateOf(initialButtonColor) }
+
+    // Reset color when resetButtonColors changes to true
+    if (resetButtonColors.value) {
+        buttonColorState.value = initialButtonColor
+    }
+
+    fun onFlagNameButtonClick(buttonFlagLabel: String?, correctFlag: String?, isCorrectClicked: (Boolean) -> Unit) {
+        if (buttonFlagLabel.equals(correctFlag)) {
+            isCorrectClicked(true)
+        } else {
+            buttonColorState.value = customRedColor
+            isCorrectClicked(false)
+        }
+    }
+
     Button(
-        colors = ButtonDefaults.buttonColors(buttonColor),
-        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(buttonColorState.value),
+        onClick = {
+            onFlagNameButtonClick(flagName, correctFlagName, onClick)
+        },
         modifier = modifier
             .weight(1f)
             .height(100.dp)
             .padding(end = paddingEnd, start = paddingStart),
         shape = RoundedCornerShape(20.dp)
     ) {
-        Text(text = text ?: "Null", style = TextStyle(fontSize = 18.sp))
+        Text(text = flagName ?: "Null", style = TextStyle(fontSize = 18.sp))
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun PreviewFlagButtonComponent() {
+
+    val mockResetButtonColors = remember { mutableStateOf(false) }
+
     Row(modifier = Modifier.fillMaxWidth()) {
         FlagButtonComponent(
-            text = "Flag Button",
+            flagName = "Flag Button",
+            correctFlagName = "Flag Button",
             onClick = {},
+            resetButtonColors = mockResetButtonColors,
         )
     }
 }

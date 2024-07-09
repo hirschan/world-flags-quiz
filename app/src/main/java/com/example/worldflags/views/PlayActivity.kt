@@ -14,12 +14,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -27,7 +24,10 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -35,10 +35,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.models.FlagProperty
@@ -66,13 +64,15 @@ class PlayActivity : ComponentActivity() {
 private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
-    val fourCountryNamesToDisplay = viewModel.fourRandomNoDuplicateFlagProps.observeAsState().value
+    val fourCountryNamesToDisplay = viewModel.fourRandomUniqueFlagProps.observeAsState().value
     val correctCountry = viewModel.correctFlagProperty.observeAsState().value
-    val isGameComplete = viewModel.isComplete.observeAsState().value
+    val isGameComplete = viewModel.isGameComplete.observeAsState().value
     val nbrOfGuessedCountries = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
     val nbrOfCountries = viewModel.getNumberOfFlags()
 
-    // Trigger side-effect when isComplete changes to true
+    val resetButtonColors  = remember { mutableStateOf(false) }
+
+    // Trigger side-effect when isGameComplete changes to true
     LaunchedEffect(isGameComplete) {
         if (isGameComplete == true) {
             context.startActivity(Intent(context, MainActivity::class.java))
@@ -80,16 +80,19 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourCountryNamesToDisplay != null) {
-        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries, nbrOfCountries) { isCorrectClicked ->
+        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries, nbrOfCountries, resetButtonColors) { isCorrectClicked ->
             if (isCorrectClicked && correctCountry != null) {
+                resetButtonColors.value = true
                 viewModel.onCorrectAnswerSelected(correctCountry)
+            } else {
+                resetButtonColors.value = false
             }
         }
     }
 }
 
 @Composable
-private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -100,7 +103,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagP
     ){
         TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries)
         FlagPlaceholder(correctFlagProperty)
-        OptionButtons(fourCountriesToDisplay, correctFlagProperty, isCorrectClicked)
+        OptionButtons(fourCountriesToDisplay, correctFlagProperty, resetButtonColors, isCorrectClicked)
     }
 }
 
@@ -170,7 +173,7 @@ private fun getResourceId(correctFlagISO: String): Int {
 }
 
 @Composable
-private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, isCorrectClicked: (Boolean) -> Unit) {
+private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -184,13 +187,17 @@ private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagPr
                 .padding(10.dp)
         ) {
             FlagButtonComponent(
-                text = fourFlagsToDisplay[0]?.name,
-                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[0]?.name, correctFlagProperty?.name, isCorrectClicked) },
+                flagName = fourFlagsToDisplay[0]?.name,
+                correctFlagName = correctFlagProperty?.name,
+                onClick = isCorrectClicked,
+                resetButtonColors = resetButtonColors,
                 paddingEnd = 8.dp,
             )
             FlagButtonComponent(
-                text = fourFlagsToDisplay[1]?.name,
-                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[1]?.name, correctFlagProperty?.name, isCorrectClicked) },
+                flagName = fourFlagsToDisplay[1]?.name,
+                correctFlagName = correctFlagProperty?.name,
+                onClick = isCorrectClicked,
+                resetButtonColors = resetButtonColors,
                 paddingStart = 8.dp,
             )
         }
@@ -200,24 +207,20 @@ private fun OptionButtons(fourFlagsToDisplay: List<FlagProperty?>, correctFlagPr
                 .padding(10.dp)
         ) {
             FlagButtonComponent(
-                text = fourFlagsToDisplay[2]?.name,
-                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[2]?.name, correctFlagProperty?.name, isCorrectClicked) },
+                flagName = fourFlagsToDisplay[2]?.name,
+                correctFlagName = correctFlagProperty?.name,
+                onClick = isCorrectClicked,
+                resetButtonColors = resetButtonColors,
                 paddingEnd = 8.dp,
             )
             FlagButtonComponent(
-                text = fourFlagsToDisplay[3]?.name,
-                onClick = { onFlagNameButtonClick(fourFlagsToDisplay[3]?.name, correctFlagProperty?.name, isCorrectClicked) },
+                flagName = fourFlagsToDisplay[3]?.name,
+                correctFlagName = correctFlagProperty?.name,
+                onClick = isCorrectClicked,
+                resetButtonColors = resetButtonColors,
                 paddingStart = 8.dp,
             )
         }
-    }
-}
-
-fun onFlagNameButtonClick(buttonFlagLabel: String?, correctFlag: String?, isCorrectClicked: (Boolean) -> Unit) {
-    if (buttonFlagLabel.equals(correctFlag)) {
-        isCorrectClicked(true)
-    } else {
-        isCorrectClicked(false)
     }
 }
 
@@ -232,6 +235,7 @@ private fun PreviewPlayScreen() {
     val mockIsCorrectClicked: (Boolean) -> Unit = {}
     val mockNbrOfGuessedFlags = 1
     val mockNbrOfFlags = 4
+    val mockResetButtonColors = remember { mutableStateOf(false) }
 
-    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockIsCorrectClicked)
+    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockResetButtonColors, mockIsCorrectClicked)
 }
