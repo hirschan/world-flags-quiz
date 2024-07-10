@@ -64,11 +64,11 @@ class PlayActivity : ComponentActivity() {
 private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val context = LocalContext.current
 
-    val fourCountryNamesToDisplay = viewModel.fourRandomUniqueFlagProps.observeAsState().value
-    val correctCountry = viewModel.correctFlagProperty.observeAsState().value
+    val fourFlagNamesToDisplay = viewModel.fourRandomUniqueFlagProps.observeAsState().value
+    val correctFlag = viewModel.correctFlagProperty.observeAsState().value
     val isGameComplete = viewModel.isGameComplete.observeAsState().value
-    val nbrOfGuessedCountries = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
-    val nbrOfCountries = viewModel.getNumberOfFlags()
+    val nbrOfGuessedFlags = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
+    val nbrOfFlags = viewModel.getNumberOfFlags()
 
     val resetButtonColors  = remember { mutableStateOf(false) }
 
@@ -79,11 +79,11 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
         }
     }
 
-    if (fourCountryNamesToDisplay != null) {
-        PlayScreen(fourCountryNamesToDisplay, correctCountry, nbrOfGuessedCountries, nbrOfCountries, resetButtonColors) { isCorrectClicked ->
-            if (isCorrectClicked && correctCountry != null) {
+    if (fourFlagNamesToDisplay != null) {
+        PlayScreen(fourFlagNamesToDisplay, correctFlag, nbrOfGuessedFlags, nbrOfFlags, resetButtonColors) { isCorrectClicked ->
+            if (isCorrectClicked && correctFlag != null) {
                 resetButtonColors.value = true
-                viewModel.onCorrectAnswerSelected(correctCountry)
+                viewModel.onCorrectAnswerSelected(correctFlag)
             } else {
                 resetButtonColors.value = false
             }
@@ -132,11 +132,16 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
     Box(
         modifier = Modifier
             .padding(end = 16.dp)
-            .wrapContentWidth(Alignment.End),
+            .wrapContentWidth(Alignment.End)
+            .background(
+                color = colorResource(R.color.dark_green),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Text(
             text = "${nbrOfGuessedCountries}/${nbrOfCountries}",
-            color = colorResource(R.color.custom_white)
+            color = colorResource(R.color.green_stroke),
         )
     }
 }

@@ -30,7 +30,6 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [ ] Improve UI Design in Figma
 - [ ] Counter of number correct guessed vs. incorrect
 - [ ] Implement localStorage for selected option
-- [ ] Investigate: SQLite instead of json files?
 - [ ] Include unit & integration tests
 - [ ] Add button for wiki link to flag of country
 - [ ] Display result of which flags were correct and wrong after a game
