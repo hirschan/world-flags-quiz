@@ -2,7 +2,7 @@
 <resources>
     <style name="Theme.WorldFlags.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#11212D</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_green_flag_square</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_flag_green_square</item>
         <item name="postSplashScreenTheme">@style/Theme.WorldFlags</item>
     </style>
 </resources>
