@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -69,6 +70,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val isGameComplete = viewModel.isGameComplete.observeAsState().value
     val nbrOfGuessedFlags = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
     val nbrOfFlags = viewModel.getNumberOfFlags()
+    val nbrOfIncorrectGuessedFlags = viewModel.nbrOfIncorrectGuessedFlags.observeAsState().value ?: 0 //remember { mutableIntStateOf(0) }
 
     val resetButtonColors  = remember { mutableStateOf(false) }
 
@@ -80,7 +82,10 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourFlagNamesToDisplay != null) {
-        PlayScreen(fourFlagNamesToDisplay, correctFlag, nbrOfGuessedFlags, nbrOfFlags, resetButtonColors) { isCorrectClicked ->
+        PlayScreen(fourFlagNamesToDisplay, correctFlag, nbrOfGuessedFlags, nbrOfFlags, nbrOfIncorrectGuessedFlags, resetButtonColors) { isCorrectClicked ->
+            if (!isCorrectClicked) {
+                viewModel.onIncorrectAnswerSelected()
+            }
             if (isCorrectClicked && correctFlag != null) {
                 resetButtonColors.value = true
                 viewModel.onCorrectAnswerSelected(correctFlag)
@@ -92,7 +97,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, nbrOfIncorrectGuessedFlags: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -101,7 +106,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagP
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries)
+        TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries, nbrOfIncorrectGuessedFlags)
         FlagPlaceholder(correctFlagProperty)
         OptionButtons(fourCountriesToDisplay, correctFlagProperty, resetButtonColors, isCorrectClicked)
     }
@@ -109,7 +114,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagP
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
+private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int, nbrOfIncorrectGuessedFlags: Int) {
     val context = LocalContext.current
 
     TopAppBar(
@@ -121,10 +126,32 @@ private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
             }
         },
         title = { Text(text = "", color = Color.White) },
-        actions = { CounterText(nbrOfGuessedCountries, nbrOfCountries) },
+        actions = {
+            IncorrectCounterText(nbrOfIncorrectGuessedFlags)
+            CounterText(nbrOfGuessedCountries, nbrOfCountries)
+                  },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(id = R.color.light_blue))
 
     )
+}
+
+@Composable
+private fun IncorrectCounterText(nbrOfIncorrectGuessedFlags: Int) {
+    Box(
+        modifier = Modifier
+            .padding(end = 16.dp)
+            .wrapContentWidth(Alignment.End)
+            .background(
+                color = colorResource(R.color.dark_red),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .padding(horizontal = 8.dp, vertical = 4.dp)
+    ) {
+        Text(
+            text = "$nbrOfIncorrectGuessedFlags",
+            color = colorResource(R.color.red),
+        )
+    }
 }
 
 @Composable
@@ -241,6 +268,7 @@ private fun PreviewPlayScreen() {
     val mockNbrOfGuessedFlags = 1
     val mockNbrOfFlags = 4
     val mockResetButtonColors = remember { mutableStateOf(false) }
+    val mocknbrOfIncorrectGuessedFlags = 0
 
-    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockResetButtonColors, mockIsCorrectClicked)
+    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mocknbrOfIncorrectGuessedFlags, mockResetButtonColors, mockIsCorrectClicked)
 }

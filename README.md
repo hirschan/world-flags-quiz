@@ -28,7 +28,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [X] Splash screen for app (using Splash Screen API)
 - [ ] Bug: exit screen when finished, no delay
 - [ ] Improve UI Design in Figma
-- [ ] Counter of number correct guessed vs. incorrect
+- [X] Counter of number correct guessed vs. incorrect
 - [ ] Implement localStorage for selected option
 - [ ] Include unit & integration tests
 - [ ] Add button for wiki link to flag of country

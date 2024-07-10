@@ -25,6 +25,9 @@ class PlayActivityViewModel(
     private val _nbrOfGuessedFlags = MutableLiveData<Int>(0)
     val nbrOfGuessedFlags: MutableLiveData<Int> = _nbrOfGuessedFlags
 
+    private val _nbrOfIncorrectGuessedFlags = MutableLiveData<Int>(0)
+    val nbrOfIncorrectGuessedFlags: MutableLiveData<Int> = _nbrOfIncorrectGuessedFlags
+
     init {
         println("ALF PlayActivityViewModel initialized.")
         generateFourNewFlagProps()
@@ -48,6 +51,11 @@ class PlayActivityViewModel(
         }
 
         generateFourNewFlagProps()
+    }
+
+    fun onIncorrectAnswerSelected() {
+        val currentValue = _nbrOfIncorrectGuessedFlags.value ?: 0
+        _nbrOfIncorrectGuessedFlags.value = currentValue + 1
     }
 
     fun getNumberOfFlags(): Int {
