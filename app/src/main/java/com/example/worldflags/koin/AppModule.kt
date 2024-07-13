@@ -10,11 +10,11 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val appModule = module {
-    // Define dependencies, using Koin framework
+    // Define dependencies, using Koin dependency injection framework
 
     single { ReadJSONFromAssets(androidContext()) }
 
-    factory { FlagServiceImpl(readJSONFromAssets = get(), optionService = get()) } // TODO: investigate Service as Factory
+    factory { FlagServiceImpl(readJSONFromAssets = get(), optionService = get()) }
 
     single { OptionServiceImpl() }
 

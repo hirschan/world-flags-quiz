@@ -67,7 +67,7 @@ fun RowScope.FlagButtonComponent(
             .weight(1f)
             .height(100.dp)
             .padding(end = paddingEnd, start = paddingStart),
-        shape = RoundedCornerShape(20.dp)
+        shape = RoundedCornerShape(20.dp),
     ) {
         Text(text = flagName ?: "Null", style = TextStyle(fontSize = 18.sp))
     }

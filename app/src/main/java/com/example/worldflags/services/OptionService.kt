@@ -1,7 +1,7 @@
 package com.example.worldflags.services
 
 /**
- * An interface that handles all business logic, related to options and settings in the app. */
+ * An interface that handles all business logic related to options and settings in the app. */
 
 interface OptionService {
 

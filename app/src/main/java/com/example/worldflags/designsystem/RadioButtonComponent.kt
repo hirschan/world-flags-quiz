@@ -38,21 +38,23 @@ fun RadioButtonComponent(
         RadioButton(
             selected = option == selectedOption,
             onClick = { onOptionSelected(option) },
-            colors = RadioButtonDefaults.colors(selectedColor = Color.White)
+            colors = RadioButtonDefaults.colors(selectedColor = colorResource(
+                id = R.color.custom_white)
+            )
         )
         Column(
             modifier = Modifier.padding(start = 8.dp)
         ) {
             Text(
                 text = mainText,
-                color = Color.White,
-                fontSize = 18.sp
+                color = colorResource(id = R.color.custom_white),
+                fontSize = 18.sp,
             )
             Spacer(modifier = Modifier.height(6.dp))
             Text(
                 text = subText,
-                color = Color.White,
-                fontSize = 12.sp
+                color = colorResource(id = R.color.custom_white),
+                fontSize = 12.sp,
             )
         }
     }
@@ -67,14 +69,13 @@ private fun PreviewRadioButtonComponent() {
             .padding(16.dp)
             .wrapContentSize(Alignment.TopStart),
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         RadioButtonComponent(
             "Europe flags",
-            "43 members",
+            "43 UN members",
             FlagCategories.NORTH_AMERICA_NON_UN,
             FlagCategories.NORTH_AMERICA_NON_UN,
-            {}
-        )
+        ) {}
     }
 }

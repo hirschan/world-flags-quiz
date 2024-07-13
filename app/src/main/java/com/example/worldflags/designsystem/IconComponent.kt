@@ -21,7 +21,7 @@ fun IconComponent() {
         painter = painterResource(id = R.drawable.ic_action_arrow_left),
         contentDescription = "Go back arrow icon",
         tint = Color.White,
-        modifier = Modifier.size(30.dp)
+        modifier = Modifier.size(30.dp),
     )
 }
 
@@ -29,10 +29,9 @@ fun IconComponent() {
 @Composable
 private fun PreviewIconComponent() {
     Column(
-        modifier = Modifier
-            .background(colorResource(id = R.color.dark_blue_background)),
+        modifier = Modifier.background(colorResource(id = R.color.dark_blue_background)),
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         IconComponent()
     }
