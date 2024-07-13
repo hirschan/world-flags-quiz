@@ -154,14 +154,14 @@ private fun IncorrectCounterText(nbrOfIncorrectGuessedFlags: Int) {
             .padding(end = 16.dp)
             .wrapContentWidth(Alignment.End)
             .background(
-                color = colorResource(R.color.dark_red),
+                color = if (nbrOfIncorrectGuessedFlags == 0) Color.Transparent else colorResource(R.color.dark_red),
                 shape = RoundedCornerShape(8.dp)
             )
             .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Text(
             text = "$nbrOfIncorrectGuessedFlags",
-            color = colorResource(R.color.red),
+            color = if (nbrOfIncorrectGuessedFlags == 0) Color.Transparent else colorResource(R.color.red),
         )
     }
 }
@@ -280,7 +280,7 @@ private fun PreviewPlayScreen() {
     val mockNbrOfGuessedFlags = 1
     val mockNbrOfFlags = 4
     val mockResetButtonColors = remember { mutableStateOf(false) }
-    val mocknbrOfIncorrectGuessedFlags = 0
+    val mockNbrOfIncorrectGuessedFlags = 1
 
-    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mocknbrOfIncorrectGuessedFlags, mockResetButtonColors, mockIsCorrectClicked)
+    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockNbrOfIncorrectGuessedFlags, mockResetButtonColors, mockIsCorrectClicked)
 }

@@ -41,7 +41,6 @@ class ResultActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        intent = getIntent()
         val nbrOfCorrectGuessedFlags = intent.getIntExtra("nbrOfCorrectGuessesOnFirstTry", 0)
         val nbrOfFlags = intent.getIntExtra("nbrOfFlags", 0)
 
@@ -77,8 +76,6 @@ private fun ResultScreen(nbrOfCorrectGuessedFlags: Int, nbrOfFlags: Int) {
             )
             CircleWithText(nbrOfCorrectGuessedFlags, nbrOfFlags)
         }
-
-        // Bottom sheet-like component positioned at the bottom
         Box(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
@@ -100,7 +97,7 @@ private fun CircleWithText(nbrOfCorrectGuessedFlags: Int, nbrOfFlags: Int) {
     ) {
         val text = buildAnnotatedString {
             withStyle(style = SpanStyle(color = colorResource(id = R.color.green_stroke))) {
-                append("${nbrOfCorrectGuessedFlags}")
+                append("$nbrOfCorrectGuessedFlags")
             }
             withStyle(style = SpanStyle(color = colorResource(id = R.color.custom_white))) {
                 append("/${nbrOfFlags}")
@@ -108,7 +105,7 @@ private fun CircleWithText(nbrOfCorrectGuessedFlags: Int, nbrOfFlags: Int) {
         }
         Text(
             text = text,
-            fontSize = 24.sp
+            fontSize = 32.sp
         )
     }
 }
