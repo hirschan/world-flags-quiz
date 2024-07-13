@@ -7,7 +7,7 @@ import com.example.worldflags.models.FlagProperty
 import com.example.worldflags.services.FlagServiceImpl
 
 /**
- * An ViewModel-class that handles all UI logic, related to flags. */
+ * An ViewModel-class that handles all UI logic, related to the game. */
 
 class PlayActivityViewModel(
     private val flagService: FlagServiceImpl,
@@ -27,6 +27,9 @@ class PlayActivityViewModel(
 
     private val _nbrOfIncorrectGuessedFlags = MutableLiveData<Int>(0)
     val nbrOfIncorrectGuessedFlags: MutableLiveData<Int> = _nbrOfIncorrectGuessedFlags
+
+    private val _nbrOfCorrectGuessesOnFirstTry = MutableLiveData<Int>(0)
+    val nbrOfCorrectGuessesOnFirstTry: MutableLiveData<Int> = _nbrOfCorrectGuessesOnFirstTry
 
     init {
         println("ALF PlayActivityViewModel initialized.")
@@ -51,6 +54,11 @@ class PlayActivityViewModel(
         }
 
         generateFourNewFlagProps()
+    }
+
+    fun onCorrectAnswerClickedOnFirstTry() {
+        val currentVal = _nbrOfCorrectGuessesOnFirstTry.value ?: 0
+        _nbrOfCorrectGuessesOnFirstTry.value = currentVal + 1
     }
 
     fun onIncorrectAnswerSelected() {

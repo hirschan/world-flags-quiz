@@ -32,7 +32,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [ ] Implement localStorage for selected option
 - [ ] Include unit & integration tests
 - [ ] Add button for wiki link to flag of country
-- [ ] Display result of which flags were correct and wrong after a game
+- [ ] Display result
 - [ ] Stretch goal: Light & dark mode
 - [ ] Stretch goal: Include non-UN flags
 

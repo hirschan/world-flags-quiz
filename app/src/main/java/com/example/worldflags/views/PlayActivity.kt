@@ -70,14 +70,20 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     val isGameComplete = viewModel.isGameComplete.observeAsState().value
     val nbrOfGuessedFlags = viewModel.nbrOfGuessedFlags.observeAsState().value ?: 0
     val nbrOfFlags = viewModel.getNumberOfFlags()
-    val nbrOfIncorrectGuessedFlags = viewModel.nbrOfIncorrectGuessedFlags.observeAsState().value ?: 0 //remember { mutableIntStateOf(0) }
+    val nbrOfIncorrectGuessedFlags = viewModel.nbrOfIncorrectGuessedFlags.observeAsState().value ?: 0
+
+    val nbrOfClicksPerFlag = remember { mutableIntStateOf(0) }
+    val nbrOfCorrectGuessesOnFirstTry = viewModel.nbrOfCorrectGuessesOnFirstTry.observeAsState().value ?: 0
 
     val resetButtonColors  = remember { mutableStateOf(false) }
 
     // Trigger side-effect when isGameComplete changes to true
     LaunchedEffect(isGameComplete) {
         if (isGameComplete == true) {
-            context.startActivity(Intent(context, MainActivity::class.java))
+            val intent = Intent(context, ResultActivity::class.java)
+            intent.putExtra("nbrOfCorrectGuessesOnFirstTry", nbrOfCorrectGuessesOnFirstTry)
+            intent.putExtra("nbrOfFlags", nbrOfFlags)
+            context.startActivity(intent)
         }
     }
 
@@ -85,10 +91,16 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
         PlayScreen(fourFlagNamesToDisplay, correctFlag, nbrOfGuessedFlags, nbrOfFlags, nbrOfIncorrectGuessedFlags, resetButtonColors) { isCorrectClicked ->
             if (!isCorrectClicked) {
                 viewModel.onIncorrectAnswerSelected()
+                nbrOfClicksPerFlag.intValue += 1
             }
             if (isCorrectClicked && correctFlag != null) {
                 resetButtonColors.value = true
                 viewModel.onCorrectAnswerSelected(correctFlag)
+                if (nbrOfClicksPerFlag.intValue == 0) {
+                    viewModel.onCorrectAnswerClickedOnFirstTry()
+                } else {
+                    nbrOfClicksPerFlag.value = 0
+                }
             } else {
                 resetButtonColors.value = false
             }
@@ -97,7 +109,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
 }
 
 @Composable
-private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfCountries: Int, nbrOfIncorrectGuessedFlags: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfFlags: Int, nbrOfIncorrectGuessedFlags: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -106,7 +118,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagP
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-        TopAppBarHeader(nbrOfGuessedCountries, nbrOfCountries, nbrOfIncorrectGuessedFlags)
+        TopAppBarHeader(nbrOfGuessedCountries, nbrOfFlags, nbrOfIncorrectGuessedFlags)
         FlagPlaceholder(correctFlagProperty)
         OptionButtons(fourCountriesToDisplay, correctFlagProperty, resetButtonColors, isCorrectClicked)
     }
@@ -114,7 +126,7 @@ private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagP
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int, nbrOfIncorrectGuessedFlags: Int) {
+private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfFlags: Int, nbrOfIncorrectGuessedFlags: Int) {
     val context = LocalContext.current
 
     TopAppBar(
@@ -128,7 +140,7 @@ private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfCountries: Int, nbr
         title = { Text(text = "", color = Color.White) },
         actions = {
             IncorrectCounterText(nbrOfIncorrectGuessedFlags)
-            CounterText(nbrOfGuessedCountries, nbrOfCountries)
+            CounterText(nbrOfGuessedCountries, nbrOfFlags)
                   },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(id = R.color.light_blue))
 
@@ -155,7 +167,7 @@ private fun IncorrectCounterText(nbrOfIncorrectGuessedFlags: Int) {
 }
 
 @Composable
-private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
+private fun CounterText(nbrOfGuessedCountries: Int, nbrOfFlags: Int) {
     Box(
         modifier = Modifier
             .padding(end = 16.dp)
@@ -167,7 +179,7 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfCountries: Int) {
             .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Text(
-            text = "${nbrOfGuessedCountries}/${nbrOfCountries}",
+            text = "${nbrOfGuessedCountries}/${nbrOfFlags}",
             color = colorResource(R.color.green_stroke),
         )
     }

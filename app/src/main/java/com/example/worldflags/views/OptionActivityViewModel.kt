@@ -50,4 +50,9 @@ class OptionActivityViewModel(
         optionService.changeJSONAssetFile(tempFile)
     }
 
+    override fun onCleared() {
+        // Perform cleanup tasks here
+        super.onCleared()
+    }
+
 }

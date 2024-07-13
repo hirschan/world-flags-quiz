@@ -76,7 +76,8 @@ private fun PlayButton() {
         Text(
             text = "Play",
             color = colorResource(id = R.color.green_stroke),
-            fontSize = 25.sp)
+            fontSize = 25.sp,
+        )
     }
 }
 
