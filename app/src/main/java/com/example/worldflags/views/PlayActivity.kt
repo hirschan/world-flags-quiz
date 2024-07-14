@@ -215,6 +215,7 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
     ) {
 
         val correctFlagISO = correctFlagProperty?.ISOAlpha2?.lowercase() ?: "eu_se"
+        val correctFlagName = correctFlagProperty?.name ?: ""
 
         Image(
             painter = painterResource(getResourceId(correctFlagISO)),
@@ -222,19 +223,19 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
             modifier = Modifier
                 .clip(RoundedCornerShape(7.dp))
                 .clickable {
-                    openWikipediaPage(context, correctFlagISO)
+                    openWikipediaPage(context, correctFlagName)
                 }
         )
     }
 }
 
 // TODO: move to VM?
-private fun openWikipediaPage(context: Context, correctFlagISO: String) {
-    // getFlagNameBasedOnISO()
-    val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/Main_Page")).apply {
+private fun openWikipediaPage(context: Context, correctFlagName: String) {
+    //TODO convertFlagNameToURL() -> e.g. Faroe Islands, Faroe_Islands
+    val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/${correctFlagName}")).apply {
         `package` = "org.wikipedia"
     }
-    val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/Main_Page"))
+    val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/${correctFlagName}"))
 
     try {
         context.startActivity(wikiAppIntent)
