@@ -1,6 +1,7 @@
 package com.example.worldflags.views
 
 import FlagButtonComponent
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,6 +25,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableIntStateOf
@@ -80,10 +82,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     // Trigger side-effect when isGameComplete changes to true
     LaunchedEffect(isGameComplete) {
         if (isGameComplete == true) {
-            val intent = Intent(context, ResultActivity::class.java)
-            intent.putExtra("nbrOfCorrectGuessesOnFirstTry", nbrOfCorrectGuessesOnFirstTry)
-            intent.putExtra("nbrOfFlags", nbrOfFlags)
-            context.startActivity(intent)
+            finishGame(context, nbrOfFlags, nbrOfCorrectGuessesOnFirstTry)
         }
     }
 
@@ -94,18 +93,34 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
                 nbrOfClicksPerFlag.intValue += 1
             }
             if (isCorrectClicked && correctFlag != null) {
-                resetButtonColors.value = true
-                viewModel.onCorrectAnswerSelected(correctFlag)
-                if (nbrOfClicksPerFlag.intValue == 0) {
-                    viewModel.onCorrectAnswerClickedOnFirstTry()
-                } else {
-                    nbrOfClicksPerFlag.value = 0
-                }
+                onCorrectAnswerClicked(resetButtonColors, viewModel, correctFlag, nbrOfClicksPerFlag)
             } else {
                 resetButtonColors.value = false
             }
         }
     }
+}
+
+private fun onCorrectAnswerClicked(
+    resetButtonColors: MutableState<Boolean>,
+    viewModel: PlayActivityViewModel,
+    correctFlag: FlagProperty,
+    nbrOfClicksPerFlag: MutableIntState
+) {
+    resetButtonColors.value = true
+    viewModel.onCorrectAnswerSelected(correctFlag)
+    if (nbrOfClicksPerFlag.intValue == 0) {
+        viewModel.onCorrectAnswerClickedOnFirstTry()
+    } else {
+        nbrOfClicksPerFlag.intValue = 0
+    }
+}
+
+private fun finishGame(context: Context, nbrOfFlags: Int, nbrOfCorrectGuessesOnFirstTry: Int) {
+    val intent = Intent(context, ResultActivity::class.java)
+    intent.putExtra("nbrOfCorrectGuessesOnFirstTry", nbrOfCorrectGuessesOnFirstTry)
+    intent.putExtra("nbrOfFlags", nbrOfFlags)
+    context.startActivity(intent)
 }
 
 @Composable
