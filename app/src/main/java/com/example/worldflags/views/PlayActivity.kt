@@ -1,13 +1,16 @@
 package com.example.worldflags.views
 
 import FlagButtonComponent
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -202,6 +205,8 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfFlags: Int) {
 
 @Composable
 private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
+    val context = LocalContext.current
+
     Column(
         modifier = Modifier
             .padding(50.dp),
@@ -216,10 +221,29 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
             contentDescription = null,
             modifier = Modifier
                 .clip(RoundedCornerShape(7.dp))
+                .clickable {
+                    openWikipediaPage(context, correctFlagISO)
+                }
         )
     }
 }
 
+// TODO: move to VM?
+private fun openWikipediaPage(context: Context, correctFlagISO: String) {
+    // getFlagNameBasedOnISO()
+    val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/Main_Page")).apply {
+        `package` = "org.wikipedia"
+    }
+    val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/Main_Page"))
+
+    try {
+        context.startActivity(wikiAppIntent)
+    } catch (e: ActivityNotFoundException) {
+        context.startActivity(webIntent)
+    }
+}
+
+// TODO: move to utils?
 private fun getResourceId(correctFlagISO: String): Int {
     val resourceId = try {
         val field = R.drawable::class.java.getField(correctFlagISO)
