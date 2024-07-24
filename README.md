@@ -31,7 +31,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [X] Counter of number correct guessed vs. incorrect
 - [ ] Implement localStorage for selected option
 - [ ] Include unit & integration tests
-- [ ] Add button for wiki link to flag of country
+- [X] Add button for wiki link to flag of country
 - [X] Display result
 - [ ] Stretch goal: Light & dark mode
 - [ ] Stretch goal: Include non-UN flags

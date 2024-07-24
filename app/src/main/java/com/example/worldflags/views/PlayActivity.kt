@@ -51,6 +51,8 @@ import org.koin.android.ext.android.get
 
 /** UI for play screen. */
 
+private val EN_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/"
+
 class PlayActivity : ComponentActivity() {
 
     private lateinit var viewModel: PlayActivityViewModel
@@ -231,17 +233,21 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
 
 // TODO: move to VM?
 private fun openWikipediaPage(context: Context, correctFlagName: String) {
-    //TODO convertFlagNameToURL() -> e.g. Faroe Islands, Faroe_Islands
-    val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/${correctFlagName}")).apply {
+    val formattedFlagName = convertFlagName(correctFlagName)
+    val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse(EN_WIKIPEDIA_URL + formattedFlagName)).apply {
         `package` = "org.wikipedia"
     }
-    val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/${correctFlagName}"))
+    val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(EN_WIKIPEDIA_URL + formattedFlagName))
 
     try {
         context.startActivity(wikiAppIntent)
     } catch (e: ActivityNotFoundException) {
         context.startActivity(webIntent)
     }
+}
+
+private fun convertFlagName(flagName: String): String {
+    return flagName.replace(" ", "_")
 }
 
 // TODO: move to utils?
