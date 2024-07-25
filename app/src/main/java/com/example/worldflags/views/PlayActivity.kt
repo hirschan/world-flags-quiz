@@ -51,7 +51,7 @@ import org.koin.android.ext.android.get
 
 /** UI for play screen. */
 
-private val EN_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/"
+private const val EN_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/"
 
 class PlayActivity : ComponentActivity() {
 
@@ -92,7 +92,14 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
     }
 
     if (fourFlagNamesToDisplay != null) {
-        PlayScreen(fourFlagNamesToDisplay, correctFlag, nbrOfGuessedFlags, nbrOfFlags, nbrOfIncorrectGuessedFlags, resetButtonColors) { isCorrectClicked ->
+        PlayScreen(
+            fourFlagNamesToDisplay,
+            correctFlag,
+            nbrOfGuessedFlags,
+            nbrOfFlags,
+            nbrOfIncorrectGuessedFlags,
+            resetButtonColors
+        ) { isCorrectClicked ->
             if (!isCorrectClicked) {
                 viewModel.onIncorrectAnswerSelected()
                 nbrOfClicksPerFlag.intValue += 1
@@ -129,7 +136,15 @@ private fun finishGame(context: Context, nbrOfFlags: Int, nbrOfCorrectGuessesOnF
 }
 
 @Composable
-private fun PlayScreen(fourCountriesToDisplay: List<FlagProperty?>, correctFlagProperty: FlagProperty?, nbrOfGuessedCountries: Int, nbrOfFlags: Int, nbrOfIncorrectGuessedFlags: Int, resetButtonColors: MutableState<Boolean>, isCorrectClicked: (Boolean) -> Unit) {
+private fun PlayScreen(
+    fourCountriesToDisplay: List<FlagProperty?>,
+    correctFlagProperty: FlagProperty?,
+    nbrOfGuessedCountries: Int,
+    nbrOfFlags: Int,
+    nbrOfIncorrectGuessedFlags: Int,
+    resetButtonColors: MutableState<Boolean>,
+    isCorrectClicked: (Boolean) -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -328,5 +343,13 @@ private fun PreviewPlayScreen() {
     val mockResetButtonColors = remember { mutableStateOf(false) }
     val mockNbrOfIncorrectGuessedFlags = 1
 
-    PlayScreen(mockFourFlagProps, mockCorrectFlag, mockNbrOfGuessedFlags, mockNbrOfFlags, mockNbrOfIncorrectGuessedFlags, mockResetButtonColors, mockIsCorrectClicked)
+    PlayScreen(
+        mockFourFlagProps,
+        mockCorrectFlag,
+        mockNbrOfGuessedFlags,
+        mockNbrOfFlags,
+        mockNbrOfIncorrectGuessedFlags,
+        mockResetButtonColors,
+        mockIsCorrectClicked,
+    )
 }
