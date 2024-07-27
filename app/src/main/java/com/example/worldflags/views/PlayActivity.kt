@@ -47,6 +47,7 @@ import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.models.FlagProperty
 import com.example.worldflags.utils.MockData
+import com.example.worldflags.utils.Utils
 import org.koin.android.ext.android.get
 
 /** UI for play screen. */
@@ -98,7 +99,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
             nbrOfGuessedFlags,
             nbrOfFlags,
             nbrOfIncorrectGuessedFlags,
-            resetButtonColors
+            resetButtonColors,
         ) { isCorrectClicked ->
             if (!isCorrectClicked) {
                 viewModel.onIncorrectAnswerSelected()
@@ -223,6 +224,7 @@ private fun CounterText(nbrOfGuessedCountries: Int, nbrOfFlags: Int) {
 @Composable
 private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
     val context = LocalContext.current
+    val utils = Utils()
 
     Column(
         modifier = Modifier
@@ -235,7 +237,7 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
         val correctFlagName = correctFlagProperty?.name ?: ""
 
         Image(
-            painter = painterResource(getResourceId(correctFlagISO)),
+            painter = painterResource(utils.getResourceId(correctFlagISO)),
             contentDescription = null,
             modifier = Modifier
                 .clip(RoundedCornerShape(7.dp))
@@ -248,7 +250,9 @@ private fun FlagPlaceholder(correctFlagProperty: FlagProperty?) {
 
 // TODO: move to VM?
 private fun openWikipediaPage(context: Context, correctFlagName: String) {
-    val formattedFlagName = convertFlagName(correctFlagName)
+    val utils = Utils()
+
+    val formattedFlagName = utils.convertFlagName(correctFlagName)
     val wikiAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse(EN_WIKIPEDIA_URL + formattedFlagName)).apply {
         `package` = "org.wikipedia"
     }
@@ -259,22 +263,6 @@ private fun openWikipediaPage(context: Context, correctFlagName: String) {
     } catch (e: ActivityNotFoundException) {
         context.startActivity(webIntent)
     }
-}
-
-private fun convertFlagName(flagName: String): String {
-    return flagName.replace(" ", "_")
-}
-
-// TODO: move to utils?
-private fun getResourceId(correctFlagISO: String): Int {
-    val resourceId = try {
-        val field = R.drawable::class.java.getField(correctFlagISO)
-        field.getInt(null)
-    } catch (e: Exception) {
-        // Handle the case where the resource for the given country code doesn't exist
-        R.drawable._missing_flag
-    }
-    return resourceId
 }
 
 @Composable

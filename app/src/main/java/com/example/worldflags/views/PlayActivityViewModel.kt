@@ -7,7 +7,7 @@ import com.example.worldflags.models.FlagProperty
 import com.example.worldflags.services.FlagServiceImpl
 
 /**
- * An ViewModel-class that handles all UI logic, related to the game. */
+ * A ViewModel-class that handles all UI logic, related to the game. */
 
 class PlayActivityViewModel(
     private val flagService: FlagServiceImpl,
