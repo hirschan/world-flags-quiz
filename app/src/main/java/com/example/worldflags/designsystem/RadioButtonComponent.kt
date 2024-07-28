@@ -74,8 +74,8 @@ private fun PreviewRadioButtonComponent() {
         RadioButtonComponent(
             "Europe flags",
             "43 UN members",
-            FlagCategories.NORTH_AMERICA_NON_UN,
-            FlagCategories.NORTH_AMERICA_NON_UN,
+            FlagCategories.EUROPE_UN,
+            FlagCategories.EUROPE_UN,
         ) {}
     }
 }

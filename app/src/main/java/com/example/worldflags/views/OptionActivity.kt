@@ -98,18 +98,11 @@ private fun TopAppBarHeader() {
 private fun RadioButtonOptions(selectedOption: FlagCategories, onOptionSelected: (FlagCategories) -> Unit) {
     val radioButtons = listOf(
         RadioButtonData("Africa flags", "54 UN members", FlagCategories.AFRICA_UN),
-        //RadioButtonData("Africa flags (non-UN)", "6 territories", CountryCategories.NA_TERRITORIES_NON_UN),
-        //RadioButtonData("Antarctica flags", "7 territories", CountryCategories.AN_TERRITORIES),
         RadioButtonData("Asia flags", "47 UN members", FlagCategories.ASIA_UN),
-        //RadioButtonData("Asia flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
         RadioButtonData("Europe flags", "43 UN members", FlagCategories.EUROPE_UN),
-        //RadioButtonData("Europe flags (non-UN)", "10 territories", FlagCategories.EUROPE_NON_UN),
         RadioButtonData("North America flags", "23 UN members", FlagCategories.NORTH_AMERICA_UN),
-        //RadioButtonData("North America flags (non-UN)", "22 territories", CountryCategories.NA_TERRITORIES_NON_UN),
         RadioButtonData("Oceania flags", "14 UN members", FlagCategories.OCEANIA_UN),
-        //RadioButtonData("Oceania flags (non-UN)", "X territories", CountryCategories.NA_TERRITORIES_NON_UN),
         RadioButtonData("South America flags", "12 UN members", FlagCategories.SOUTH_AMERICA_UN),
-        //RadioButtonData("South America flags (non-UN)", "6 territories", CountryCategories.SA_TERRITORIES_NON_UN),
         )
 
     LazyColumn(
