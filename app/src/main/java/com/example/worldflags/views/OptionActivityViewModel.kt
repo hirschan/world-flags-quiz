@@ -17,15 +17,15 @@ class OptionActivityViewModel(
     private val optionService: OptionServiceImpl,
 ): ViewModel() {
 
-    private val _selectedOption = MutableLiveData<FlagCategories>(FlagCategories.AFRICA_UN)
-    val selectedOption: LiveData<FlagCategories> = _selectedOption
+    private val _selectedOption = MutableLiveData<String>(FlagCategories.AFRICA_UN.name)
+    val selectedOption: LiveData<String> = _selectedOption
 
     init {
         println("ALF OptionActivityViewModel initialized.")
     }
 
     fun changeSelectedOption(newOption: FlagCategories) {
-        _selectedOption.value = newOption
+        _selectedOption.value = newOption.name
         loadNewJsonFile(newOption)
     }
 

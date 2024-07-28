@@ -54,7 +54,7 @@ class OptionActivity : ComponentActivity() {
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
-    val selectedOption = viewModel.selectedOption.observeAsState().value ?: FlagCategories.AFRICA_UN
+    val selectedOption = viewModel.selectedOption.observeAsState().value ?: FlagCategories.AFRICA_UN.name
 
     OptionScreen(selectedOption) {
         viewModel.changeSelectedOption(it)
@@ -62,7 +62,7 @@ private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
 }
 
 @Composable
-private fun OptionScreen(selectedOption: FlagCategories, onOptionSelected: (FlagCategories) -> Unit) {
+private fun OptionScreen(selectedOption: String, onOptionSelected: (FlagCategories) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -95,7 +95,7 @@ private fun TopAppBarHeader() {
 }
 
 @Composable
-private fun RadioButtonOptions(selectedOption: FlagCategories, onOptionSelected: (FlagCategories) -> Unit) {
+private fun RadioButtonOptions(selectedOption: String, onOptionSelected: (FlagCategories) -> Unit) {
     val radioButtons = listOf(
         RadioButtonData("Africa flags", "54 UN members", FlagCategories.AFRICA_UN),
         RadioButtonData("Asia flags", "47 UN members", FlagCategories.ASIA_UN),
@@ -127,7 +127,7 @@ private fun RadioButtonOptions(selectedOption: FlagCategories, onOptionSelected:
 @Preview(showBackground = true)
 @Composable
 private fun PreviewOptionScreen() {
-    val mockSelectedOption = FlagCategories.EUROPE_UN
+    val mockSelectedOption = FlagCategories.EUROPE_UN.name
 
     OptionScreen(mockSelectedOption, onOptionSelected = {})
 }

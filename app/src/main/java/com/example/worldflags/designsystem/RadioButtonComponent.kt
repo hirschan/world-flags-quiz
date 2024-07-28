@@ -28,7 +28,7 @@ fun RadioButtonComponent(
     mainText: String,
     subText: String,
     option: FlagCategories,
-    selectedOption: FlagCategories,
+    selectedOption: String,
     onOptionSelected: (FlagCategories) -> Unit
 ) {
     Row(
@@ -36,7 +36,7 @@ fun RadioButtonComponent(
         modifier = Modifier.clickable { onOptionSelected(option) }
     ) {
         RadioButton(
-            selected = option == selectedOption,
+            selected = option.name == selectedOption,
             onClick = { onOptionSelected(option) },
             colors = RadioButtonDefaults.colors(selectedColor = colorResource(
                 id = R.color.custom_white)
@@ -75,7 +75,7 @@ private fun PreviewRadioButtonComponent() {
             "Europe flags",
             "43 UN members",
             FlagCategories.EUROPE_UN,
-            FlagCategories.EUROPE_UN,
+            FlagCategories.EUROPE_UN.name,
         ) {}
     }
 }
