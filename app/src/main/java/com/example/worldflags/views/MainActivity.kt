@@ -16,6 +16,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -25,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.worldflags.R
+import com.example.worldflags.models.FlagCategories
 import org.koin.android.ext.android.get
 
 /** UI for main screen. */
@@ -41,15 +45,30 @@ class MainActivity : ComponentActivity() {
         viewModel = get<MainActivityViewModel>()
 
         setContent {
-            MainScreen()
+            MainTopLevel(viewModel)
         }
     }
 }
 
-// TODO: read from dataStore saved option
+@Composable
+private fun MainTopLevel(viewModel: MainActivityViewModel) {
+    val context = LocalContext.current
+
+    // Use remember and mutableStateOf to hold the value that will be updated
+    val selectedOptionState = remember { mutableStateOf<String?>(null) }
+
+    // Use LaunchedEffect to read initial selected option from DataStore
+    LaunchedEffect(context) {
+        selectedOptionState.value = viewModel.readFromDataStore(context)
+        viewModel.loadJsonFile(selectedOptionState.value)
+    }
+
+    MainScreen()
+}
 
 @Composable
 private fun MainScreen() {
+
     Column(
         modifier = Modifier
             .fillMaxWidth()

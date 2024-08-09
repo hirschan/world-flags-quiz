@@ -29,7 +29,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [ ] Bug: exit screen when finished, no delay
 - [ ] Improve UI Design in Figma
 - [X] Counter of number correct guessed vs. incorrect
-- [ ] Implement localStorage for selected option
+- [X] Implement localStorage (dataStore) for saving and reading option from device
 - [ ] Include unit & integration tests
 - [X] Add button for wiki link to flag of country
 - [X] Display result

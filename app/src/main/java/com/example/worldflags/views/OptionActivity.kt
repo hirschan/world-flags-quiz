@@ -67,7 +67,6 @@ private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
     // Use LaunchedEffect to read initial selected option from DataStore
     LaunchedEffect(context) {
         selectedOptionState.value = viewModel.readFromDataStore(context)
-        println("ALF reading in Activity: " + selectedOptionState.value)
     }
 
     selectedOptionState.value?.let { selectedOption ->

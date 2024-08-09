@@ -23,7 +23,7 @@ val appModule = module {
 
     factory { PlayActivityViewModel(flagService = get()) }
 
-    single { MainActivityViewModel() }
+    single { MainActivityViewModel(optionService = get(), dataStoreService = get()) }
 
     single { OptionActivityViewModel(optionService = get(), dataStoreService = get()) }
 }
