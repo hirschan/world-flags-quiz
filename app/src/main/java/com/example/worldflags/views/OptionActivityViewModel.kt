@@ -1,5 +1,6 @@
 package com.example.worldflags.views
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,21 +12,19 @@ import com.example.worldflags.models.JSONFiles.Companion.EUROPE_UN
 import com.example.worldflags.models.JSONFiles.Companion.NORTH_AMERICA_UN
 import com.example.worldflags.models.JSONFiles.Companion.OCEANIA_UN
 import com.example.worldflags.models.JSONFiles.Companion.SOUTH_AMERICA_UN
+import com.example.worldflags.services.DataStoreServiceImpl
 import com.example.worldflags.services.OptionServiceImpl
 
 class OptionActivityViewModel(
     private val optionService: OptionServiceImpl,
+    private val dataStoreService: DataStoreServiceImpl,
 ): ViewModel() {
-
-    private val _selectedOption = MutableLiveData<String>(FlagCategories.AFRICA_UN.name)
-    val selectedOption: LiveData<String> = _selectedOption
 
     init {
         println("ALF OptionActivityViewModel initialized.")
     }
 
     fun changeSelectedOption(newOption: FlagCategories) {
-        _selectedOption.value = newOption.name
         loadNewJsonFile(newOption)
     }
 
@@ -40,6 +39,14 @@ class OptionActivityViewModel(
             FlagCategories.ASIA_UN -> ASIA_UN
         }
         optionService.changeJSONAssetFile(tempFile)
+    }
+
+    suspend fun readFromDataStore(context: Context): String {
+        return dataStoreService.readFromDataStore(context)
+    }
+
+    suspend fun saveToDataStore(context: Context, value: String) {
+        dataStoreService.saveToDataStore(context, value)
     }
 
     override fun onCleared() {

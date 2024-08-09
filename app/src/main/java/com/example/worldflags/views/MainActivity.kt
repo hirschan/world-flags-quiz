@@ -46,6 +46,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// TODO: read from dataStore saved option
+
 @Composable
 private fun MainScreen() {
     Column(

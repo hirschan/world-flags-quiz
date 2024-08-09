@@ -20,7 +20,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.White
@@ -33,6 +36,7 @@ import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
 import com.example.worldflags.models.FlagCategories
 import com.example.worldflags.models.RadioButtonData
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 
 /** UI for options screen. */
@@ -54,10 +58,26 @@ class OptionActivity : ComponentActivity() {
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
-    val selectedOption = viewModel.selectedOption.observeAsState().value ?: FlagCategories.AFRICA_UN.name
+    val context = LocalContext.current
+    val coroutineScope = rememberCoroutineScope()
 
-    OptionScreen(selectedOption) {
-        viewModel.changeSelectedOption(it)
+    // Use remember and mutableStateOf to hold the value that will be updated
+    val selectedOptionState = remember { mutableStateOf<String?>(FlagCategories.AFRICA_UN.name) }
+
+    // Use LaunchedEffect to read initial selected option from DataStore
+    LaunchedEffect(context) {
+        selectedOptionState.value = viewModel.readFromDataStore(context)
+        println("ALF reading in Activity: " + selectedOptionState.value)
+    }
+
+    selectedOptionState.value?.let { selectedOption ->
+        OptionScreen(selectedOption) { newOption ->
+            selectedOptionState.value = newOption.name
+            viewModel.changeSelectedOption(newOption)
+            coroutineScope.launch {
+                viewModel.saveToDataStore(context, newOption.name)
+            }
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 package com.example.worldflags.koin
 
+import com.example.worldflags.services.DataStoreServiceImpl
 import com.example.worldflags.services.FlagServiceImpl
 import com.example.worldflags.services.OptionServiceImpl
 import com.example.worldflags.utils.ReadJSONFromAssets
@@ -18,9 +19,11 @@ val appModule = module {
 
     single { OptionServiceImpl() }
 
+    single { DataStoreServiceImpl() }
+
     factory { PlayActivityViewModel(flagService = get()) }
 
     single { MainActivityViewModel() }
 
-    single { OptionActivityViewModel(optionService = get()) }
+    single { OptionActivityViewModel(optionService = get(), dataStoreService = get()) }
 }
