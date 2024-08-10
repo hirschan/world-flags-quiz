@@ -50,6 +50,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Top-level component, handling ViewModel logic. Allows us to preview MainScreen() composable. */
 @Composable
 private fun MainTopLevel(viewModel: MainActivityViewModel) {
     val context = LocalContext.current

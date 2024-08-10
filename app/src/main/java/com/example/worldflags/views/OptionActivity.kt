@@ -31,6 +31,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.designsystem.IconComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
@@ -91,7 +92,25 @@ private fun OptionScreen(selectedOption: String, onOptionSelected: (FlagCategori
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TopAppBarHeader()
+        OptionText()
         RadioButtonOptions(selectedOption, onOptionSelected)
+    }
+}
+
+@Composable
+fun OptionText() {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 16.dp, end = 16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.Start
+    ) {
+        Text(
+            text = "UN member states, as of 08-2024",
+            color = White,
+            fontSize = 20.sp,
+        )
     }
 }
 
@@ -122,7 +141,7 @@ private fun RadioButtonOptions(selectedOption: String, onOptionSelected: (FlagCa
         RadioButtonData("North America flags", "23 UN members", FlagCategories.NORTH_AMERICA_UN),
         RadioButtonData("Oceania flags", "14 UN members", FlagCategories.OCEANIA_UN),
         RadioButtonData("South America flags", "12 UN members", FlagCategories.SOUTH_AMERICA_UN),
-        )
+    )
 
     LazyColumn(
         modifier = Modifier
