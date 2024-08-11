@@ -33,7 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
-import com.example.worldflags.designsystem.IconComponent
+import com.example.worldflags.designsystem.IconArrowComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
 import com.example.worldflags.models.FlagCategories
 import com.example.worldflags.models.RadioButtonData
@@ -56,6 +56,9 @@ class OptionActivity : ComponentActivity() {
         }
     }
 }
+
+/**
+ * Top-level component, handling ViewModel logic. Allows us to preview OptionScreen() composable. */
 
 @Composable
 private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
@@ -124,7 +127,7 @@ private fun TopAppBarHeader() {
             IconButton(
                 onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
             ) {
-                IconComponent()
+                IconArrowComponent()
             }
         },
         title = { Text(text = "Options", color = White) },

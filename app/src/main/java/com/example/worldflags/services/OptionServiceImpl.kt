@@ -7,7 +7,7 @@ class OptionServiceImpl(): OptionService {
 
     private var jsonFileName = AFRICA_UN // By default
 
-    override fun getJSONAssetFile(): String { // TODO: read from dataStore?
+    override fun getJSONAssetFile(): String {
         return jsonFileName
     }
 

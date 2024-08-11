@@ -50,6 +50,9 @@ class ResultActivity : ComponentActivity() {
     }
 }
 
+/**
+ * Top-level component, handling ViewModel logic. Allows us to preview ResultScreen() composable. */
+
 @Composable
 private fun PlayTopLevel(nbrOfCorrectGuessedFlags: Int, nbrOfFlags: Int) {
     ResultScreen(nbrOfCorrectGuessedFlags, nbrOfFlags)

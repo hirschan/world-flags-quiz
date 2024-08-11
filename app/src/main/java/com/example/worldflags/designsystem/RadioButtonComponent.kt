@@ -23,6 +23,10 @@ import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 import com.example.worldflags.models.FlagCategories
 
+
+/**
+ * Composable function, displaying a radio button. */
+
 @Composable
 fun RadioButtonComponent(
     mainText: String,

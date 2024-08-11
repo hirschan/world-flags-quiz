@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.worldflags.R
-import com.example.worldflags.models.FlagCategories
 import org.koin.android.ext.android.get
 
 /** UI for main screen. */
@@ -52,6 +51,7 @@ class MainActivity : ComponentActivity() {
 
 /**
  * Top-level component, handling ViewModel logic. Allows us to preview MainScreen() composable. */
+
 @Composable
 private fun MainTopLevel(viewModel: MainActivityViewModel) {
     val context = LocalContext.current

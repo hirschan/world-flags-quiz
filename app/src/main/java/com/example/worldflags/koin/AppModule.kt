@@ -10,9 +10,11 @@ import com.example.worldflags.views.PlayActivityViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-val appModule = module {
-    // Define dependencies, using Koin dependency injection framework
 
+/**
+ * For Koin dependency injection, defining dependencies and injecting them. */
+
+val appModule = module {
     single { ReadJSONFromAssets(androidContext()) }
 
     factory { FlagServiceImpl(readJSONFromAssets = get(), optionService = get()) }

@@ -22,6 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
 
+/**
+ * Composable function, displaying a button component. */
+
 @Composable
 fun RowScope.FlagButtonComponent(
     flagName: String?,

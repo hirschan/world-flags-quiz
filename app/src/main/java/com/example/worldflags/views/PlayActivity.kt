@@ -44,7 +44,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.worldflags.R
-import com.example.worldflags.designsystem.IconComponent
+import com.example.worldflags.designsystem.IconArrowComponent
 import com.example.worldflags.models.FlagProperty
 import com.example.worldflags.utils.MockData
 import com.example.worldflags.utils.Utils
@@ -170,7 +170,7 @@ private fun TopAppBarHeader(nbrOfGuessedCountries: Int, nbrOfFlags: Int, nbrOfIn
             IconButton(
                 onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
             ) {
-                IconComponent()
+                IconArrowComponent()
             }
         },
         title = { Text(text = "", color = Color.White) },

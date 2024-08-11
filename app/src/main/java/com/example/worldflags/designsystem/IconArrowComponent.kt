@@ -15,8 +15,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.worldflags.R
 
+
+/**
+ * Composable function, displaying a back-arrow icon component. */
+
 @Composable
-fun IconComponent() {
+fun IconArrowComponent() {
     Icon(
         painter = painterResource(id = R.drawable.ic_action_arrow_left),
         contentDescription = "Go back arrow icon",
@@ -27,12 +31,12 @@ fun IconComponent() {
 
 @Preview(showBackground = true)
 @Composable
-private fun PreviewIconComponent() {
+private fun PreviewIconArrowComponent() {
     Column(
         modifier = Modifier.background(colorResource(id = R.color.dark_blue_background)),
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        IconComponent()
+        IconArrowComponent()
     }
 }
