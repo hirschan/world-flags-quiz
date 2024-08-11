@@ -27,7 +27,7 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 - [X] Color buttons red when clicking on wrong flag name
 - [X] Splash screen for app (using Splash Screen API)
 - [ ] Bug: exit screen when finished, no delay
-- [ ] Improve UI Design in Figma
+- [X] Improve UI Design in Figma
 - [X] Counter of number correct guessed vs. incorrect
 - [X] Implement localStorage (dataStore) for saving and reading option from device
 - [ ] Include unit & integration tests
@@ -41,8 +41,10 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 * Abbreviations of the world's continents: [here](https://planetarynames.wr.usgs.gov/Abbreviations) (`AF, AN, AS, EU, NA, OC, SA`)
 * Android Studio emulator bug fix: [here](https://stackoverflow.com/questions/42816127/waiting-for-target-device-to-come-online)
 * Android Studio disable "show logcat automatically": [here](https://stackoverflow.com/questions/76118961/how-to-prevent-android-studio-to-automatically-switch-to-run-tab-when-i-start)
+* Android Studio, format code: [here](https://stackoverflow.com/questions/16580171/code-formatting-shortcuts-in-android-studio-for-operation-systems)
 
 ## Acknowledgements
 
 - The flag on the app icon in this project is from [Gitlab B.V.](https://gitlab.com/gitlab-org/gitlab-svgs/-/tree/main) and under the MIT License.
 - Arrow icon `ic_action_arrow_left.webp` by [Android icons](https://www.androidicons.com/) is licensed under CC BY-SA 4.0.
+- The image "Nationality icons" (`im_globe_flags.webp`), created by [Uniconlabs - Flaticon](https://www.flaticon.com/free-icons/nationality)
