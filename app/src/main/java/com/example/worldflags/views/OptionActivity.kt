@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +16,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -33,7 +37,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.worldflags.R
-import com.example.worldflags.designsystem.IconArrowComponent
+import com.example.worldflags.designsystem.IconArrowLeftComponent
+import com.example.worldflags.designsystem.IconArrowRightComponent
 import com.example.worldflags.designsystem.RadioButtonComponent
 import com.example.worldflags.models.FlagCategories
 import com.example.worldflags.models.RadioButtonData
@@ -86,17 +91,35 @@ private fun OptionsTopLevel(viewModel: OptionActivityViewModel) {
 
 @Composable
 private fun OptionScreen(selectedOption: String, onOptionSelected: (FlagCategories) -> Unit) {
-    Column(
+    val context = LocalContext.current
+
+    Box(
         modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight()
-            .background(colorResource(id = R.color.dark_blue_background)),
-        verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .fillMaxSize()
+            .background(colorResource(id = R.color.dark_blue_background))
     ) {
-        TopAppBarHeader()
-        OptionText()
-        RadioButtonOptions(selectedOption, onOptionSelected)
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(),
+            verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            TopAppBarHeader()
+            OptionText()
+            RadioButtonOptions(selectedOption, onOptionSelected)
+        }
+
+        Button(
+            border = BorderStroke(2.dp, colorResource(id = R.color.green_stroke)),
+            colors = ButtonDefaults.buttonColors(colorResource(id = R.color.dark_green)),
+            onClick = { context.startActivity(Intent(context, PlayActivity::class.java)) },
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp)
+        ) {
+            IconArrowRightComponent()
+        }
     }
 }
 
@@ -127,7 +150,7 @@ private fun TopAppBarHeader() {
             IconButton(
                 onClick = { context.startActivity(Intent(context, MainActivity::class.java)) },
             ) {
-                IconArrowComponent()
+                IconArrowLeftComponent()
             }
         },
         title = { Text(text = "Options", color = White) },

@@ -20,9 +20,19 @@ import com.example.worldflags.R
  * Composable function, displaying a back-arrow icon component. */
 
 @Composable
-fun IconArrowComponent() {
+fun IconArrowLeftComponent() {
     Icon(
         painter = painterResource(id = R.drawable.ic_action_arrow_left),
+        contentDescription = "Go back arrow icon",
+        tint = Color.White,
+        modifier = Modifier.size(30.dp),
+    )
+}
+
+@Composable
+fun IconArrowRightComponent() {
+    Icon(
+        painter = painterResource(id = R.drawable.ic_action_arrow_right),
         contentDescription = "Go back arrow icon",
         tint = Color.White,
         modifier = Modifier.size(30.dp),
@@ -37,6 +47,6 @@ private fun PreviewIconArrowComponent() {
         verticalArrangement = Arrangement.spacedBy(40.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        IconArrowComponent()
+        IconArrowLeftComponent()
     }
 }

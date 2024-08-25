@@ -46,5 +46,5 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 ## Acknowledgements
 
 - The flag on the app icon in this project is from [Gitlab B.V.](https://gitlab.com/gitlab-org/gitlab-svgs/-/tree/main) and under the MIT License.
-- Arrow icon `ic_action_arrow_left.webp` by [Android icons](https://www.androidicons.com/) is licensed under CC BY-SA 4.0.
+- Arrow icons (`ic_action_arrow_left.webp` & `ic_action_arrow_right.webp`) by [Android icons](https://www.androidicons.com/) is licensed under CC BY-SA 4.0.
 - The image "Nationality icons" (`im_globe_flags.webp`), created by [Uniconlabs - Flaticon](https://www.flaticon.com/free-icons/nationality)
