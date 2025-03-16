@@ -2,8 +2,7 @@
 
 An Android app intended for learning all the world's flags!
 
-![main menu](./media/main_menu.png)
-![play screen](./media/play_screen.png)
+<img src="./media/main_menu.png" width="200" /> <img src="./media/play_screen.png" width="200" />
 
 ## Flags
 
