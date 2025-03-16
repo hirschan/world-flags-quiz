@@ -131,7 +131,7 @@ private fun onCorrectAnswerClicked(
         } else {
             nbrOfClicksPerFlag.intValue = 0
         }
-    }, 750) // Ensure the green color is visible
+    }, 500) // Ensure the green color is visible
 }
 
 private fun finishGame(context: Context, nbrOfFlags: Int, nbrOfCorrectGuessesOnFirstTry: Int) {

@@ -1,10 +1,13 @@
 # World Flags Quiz 🌎
 
-An Android app intended for learning all the world's flags.
+An Android app intended for learning all the world's flags!
+
+![main menu](./media/main_menu.png)
+![play screen](./media/play_screen.png)
 
 ## Flags
 
-For the first version of the app, flags from UN member states will be included. UN flags listed from UN [here](https://www.un.org/en/about-us/member-states). As of June 2024, there is a total of 193 UN member state flags.
+Flags from UN member states included. UN flags listed from UN [here](https://www.un.org/en/about-us/member-states). As of March 2025, there is a total of 193 UN member state flags.
 
 ## Definitions
 
@@ -21,4 +24,4 @@ Continents are defined by geographical continent, learn more [here](https://en.w
 
 - The flag on the app icon in this project is from [Gitlab B.V.](https://gitlab.com/gitlab-org/gitlab-svgs/-/tree/main) and under the MIT License.
 - Arrow icons (`ic_action_arrow_left.webp` & `ic_action_arrow_right.webp`) by [Android icons](https://www.androidicons.com/) is licensed under CC BY-SA 4.0.
-- The image "Nationality icons" (`im_globe_flags.webp`), created by [Uniconlabs - Flaticon](https://www.flaticon.com/free-icons/nationality)
+- The image "Nationality icons" (`im_globe_flags.webp`), created by [Uniconlabs - Flaticon](https://www.flaticon.com/free-icons/nationality).
