@@ -133,7 +133,7 @@ fun OptionText() {
         horizontalAlignment = Alignment.Start
     ) {
         Text(
-            text = "UN member states, as of 08-2024",
+            text = "UN member states, as of 03-2025",
             color = White,
             fontSize = 20.sp,
         )

@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -106,6 +108,7 @@ private fun PlayTopLevel(viewModel: PlayActivityViewModel) {
                 nbrOfClicksPerFlag.intValue += 1
             }
             if (isCorrectClicked && correctFlag != null) {
+                resetButtonColors.value = false
                 onCorrectAnswerClicked(resetButtonColors, viewModel, correctFlag, nbrOfClicksPerFlag)
             } else {
                 resetButtonColors.value = false
@@ -120,13 +123,15 @@ private fun onCorrectAnswerClicked(
     correctFlag: FlagProperty,
     nbrOfClicksPerFlag: MutableIntState
 ) {
-    resetButtonColors.value = true
-    viewModel.onCorrectAnswerSelected(correctFlag)
-    if (nbrOfClicksPerFlag.intValue == 0) {
-        viewModel.onCorrectAnswerClickedOnFirstTry()
-    } else {
-        nbrOfClicksPerFlag.intValue = 0
-    }
+    Handler(Looper.getMainLooper()).postDelayed({
+        resetButtonColors.value = true // Reset colors after delay
+        viewModel.onCorrectAnswerSelected(correctFlag)
+        if (nbrOfClicksPerFlag.intValue == 0) {
+            viewModel.onCorrectAnswerClickedOnFirstTry()
+        } else {
+            nbrOfClicksPerFlag.intValue = 0
+        }
+    }, 750) // Ensure the green color is visible
 }
 
 private fun finishGame(context: Context, nbrOfFlags: Int, nbrOfCorrectGuessesOnFirstTry: Int) {

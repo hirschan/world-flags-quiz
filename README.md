@@ -10,32 +10,6 @@ For the first version of the app, flags from UN member states will be included. 
 
 Continents are defined by geographical continent, learn more [here](https://en.wikipedia.org/wiki/Continent).
 
-## Progress & roadmap
-
-#### V1
-- [X] Figma Design for the UI
-- [X] Set up project
-- [X] Add flags and metadata in json file (avoid relying on internet connection)
-- [X] Implement UI
-- [X] Option feature
-- [X] Play feature
-- [X] App icon
-
-#### V2
-- [X] Crop flags in same size (same height & width ratio)
-- [X] Investigate free icons to use, [Androidicons](https://www.androidicons.com/)
-- [X] Color buttons red when clicking on wrong flag name
-- [X] Splash screen for app (using Splash Screen API)
-- [ ] Bug: exit screen when finished, no delay
-- [X] Improve UI Design in Figma
-- [X] Counter of number correct guessed vs. incorrect
-- [X] Implement localStorage (dataStore) for saving and reading option from device
-- [ ] Include unit & integration tests
-- [X] Add button for wiki link to flag of country
-- [X] Display result
-- [ ] Stretch goal: Light & dark mode
-- [ ] Stretch goal: Include non-UN flags
-
 ## Links
 
 * Abbreviations of the world's continents: [here](https://planetarynames.wr.usgs.gov/Abbreviations) (`AF, AN, AS, EU, NA, OC, SA`)

@@ -38,9 +38,11 @@ fun RowScope.FlagButtonComponent(
 
     val initialButtonColor: Color = colorResource(id = R.color.light_blue)
     val customRedColor: Color = colorResource(id = R.color.dark_red)
+    val customGreenColor: Color = colorResource(id = R.color.dark_green)
 
     val initialBorderStroke = BorderStroke(0.dp, Color.Transparent)
-    val customBorderStroke = BorderStroke(1.dp, colorResource(id = R.color.red))
+    val customRedBorderStroke = BorderStroke(1.dp, colorResource(id = R.color.red))
+    val customGreenBorderStroke = BorderStroke(1.dp, colorResource(id = R.color.green_stroke))
 
     val buttonColorState  = remember { mutableStateOf(initialButtonColor) }
     val borderStrokeState = remember { mutableStateOf(initialBorderStroke) }
@@ -52,10 +54,12 @@ fun RowScope.FlagButtonComponent(
 
     fun onFlagNameButtonClick(buttonFlagLabel: String?, correctFlag: String?, isCorrectClicked: (Boolean) -> Unit) {
         if (buttonFlagLabel.equals(correctFlag)) {
+            buttonColorState.value = customGreenColor
+            borderStrokeState.value = customGreenBorderStroke
             isCorrectClicked(true)
         } else {
             buttonColorState.value = customRedColor
-            borderStrokeState.value = customBorderStroke
+            borderStrokeState.value = customRedBorderStroke
             isCorrectClicked(false)
         }
     }
